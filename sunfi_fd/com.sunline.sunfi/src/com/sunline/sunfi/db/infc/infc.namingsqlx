@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- author:goutf -->
+<sqlMap>
+    
+    <parameterMap id="InfcParam" class="map">
+
+	    <parameter property="Pi_Prcscd" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+	
+	    <parameter property="Pi_Pckgdt" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+	
+	    <parameter property="Po_Retuin" jdbcType="VARCHAR" javaType="java.lang.Integer" mode="OUT"/>
+	
+	    <parameter property="Po_Erortx" jdbcType="VARCHAR" javaType="java.lang.String" mode="OUT"/>	    
+
+	</parameterMap>
+	
+	<parameterMap id="InfcOtherParam" class="map">
+	
+	    <parameter property="Pi_Pckgdt" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+	
+	    <parameter property="Po_Retuin" jdbcType="VARCHAR" javaType="java.lang.Integer" mode="OUT"/>
+	
+	    <parameter property="Po_Erortx" jdbcType="VARCHAR" javaType="java.lang.String" mode="OUT"/>	    
+
+	</parameterMap>
+	
+    <procedure id="Infc" parameterMap="InfcParam">
+		{call Pkg_Infc.Main (?,?,?,?)}
+	</procedure>
+	
+	<procedure id="InfcOther" parameterMap="InfcOtherParam">
+		{call Pkg_Infc.Main_Other (?,?,?)}
+	</procedure>
+    
+</sqlMap>

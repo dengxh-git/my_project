@@ -1,0 +1,128 @@
+.table.table_style {
+    min-width:120px;
+    padding: 0 10px;
+    color: #ffffff;
+    background-color: #f18d01;
+    border-radius: 5px 5px 0px 0px;  
+    height:30px;
+    font-size:14px;
+    font-weight:bold;
+}
+
+.mini-toolbar.nui-toolbar_style{
+    margin:10px;    
+    }
+
+
+.mini-fit_style{
+    margin:0px 5px 0px 5px; 
+    }
+    
+.shu_style{
+    margin:10px 0px 0px 5px;    
+    }
+    
+.biank_style{
+
+border: 1px #cdcdcd solid; 
+border-radius: 5px; 
+height:99%;
+}
+
+.mini-toolbar .mini-button
+{
+    padding:0;
+    border:1px solid #b5b5b5;
+    background: #fff;
+    background: linear-gradient( #ffffff, #efefef);
+    border-radius:5px;
+    font-size:12px;
+   
+    line-height:22px;
+    
+    text-decoration:none;
+    text-align: center;
+    display:inline-block;
+    zoom:1;    
+    cursor:pointer;
+    -khtml-user-select: none;
+    -moz-user-select:none;
+    vertical-align:middle;          
+    outline:none;
+}
+.mini-toolbar .mini-button
+{
+    color:#151515;
+}
+.mini-tabs-body-top.mini-tabs-bodys{
+border: none;
+}
+
+.mini-grid-border.mini-panel-border{
+margin:0px 10px;
+}
+
+.mini-tab .mini-tab-text{
+    color:#f18d01;
+    font-size:14px;
+    font-weight:bold;
+    }
+    
+    
+td.mini-tab.mini-tab-active {
+    
+    border:none;
+    border-radius: 5px 5px 0px 0px; 
+    background:#f18d01;
+    }
+        
+    
+.mini-tab.mini-tab-active .mini-tab-text{
+    color:#fff;
+    line-height:28px;
+    }
+    
+.mini-tabs-header .mini-tab{
+    border:none;
+   /*  background:#f18d01; */
+    height:23px;
+}
+
+div.mini-tabs-scrollCt{
+    border:none;
+}   
+
+div.mini-tabs-scrollCt{
+    border:none;
+}   
+
+.mini-tabs-headers.mini-tabs-header-top .mini-tabs-header td{
+    border-bottom:4px solid #f18d01;
+    }
+.mini-tabs-headers.mini-tabs-header-top .mini-tabs-header td.mini-tabs-firstSpace{
+    border-bottom:none;
+    }
+
+div.mini-window .mini-panel-header{
+background:#f18d01; 
+color:#fff;
+height:28px;
+line-height:28px;
+}
+
+
+div.mini-window .mini-panel-header .mini-panel-title{
+width:98%;
+text-align:center;
+}
+
+.mini-grid-table .mini-grid-headerCell{
+background:rgb(240,240,240) 
+
+} 
+.mini-tools-close{
+background:url(../../default/images/tools/close.gif) no-repeat 50% 1px;		
+} 
+.mini-tab{
+	background:none;  	
+} 

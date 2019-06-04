@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-Name: com.sunline.sunfi.sunfi_eq
+Bundle-Description: 股权管理
+eos-webCtxPath: sunfi_eq
+Bundle-Vendor: Administrator
+Bundle-SymbolicName: com.sunline.sunfi.sunfi_eq
+Require-Bundle: com.sunline.sunfi,com.sunline.sunfi.sunfi_cm,com.sunli
+ ne.sunfi.sunfi_de,com.sunline.sunfi.sunfi_gw,com.sunline.sunfi.sunfi_
+ wf,com.eos.foundation,com.eos.workflow,com.primeton.workflow.core
+Bundle-Version: 1.0.0
+

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- author:kaifasanshi93 -->
+<sqlMap>
+    <parameterMap class="commonj.sdo.DataObject" id="parameterMap">
+        <parameter javaType="date" jdbcType="DATE" property="dateType"/>
+    </parameterMap>
+    
+    <resultMap class="commonj.sdo.DataObject" id="bkvrgst_brname">
+        <result column="cohome" javaType="java.lang.String"  property="cohome"/>
+        <result column="bracno" javaType="java.lang.String"  property="bracno"/>
+        <result column="brname" javaType="java.lang.String"  property="brname"/>
+    </resultMap>
+    
+    <select id="get_bkvrgst_brname" parameterClass="java.util.HashMap" resultMap="bkvrgst_brname">
+	      SELECT a.cohome, b.bracno, b.brname
+			    FROM BKV_RGST a
+			    left join BKV_RGST_DETL b on a.bankno = b.bankno
+			   where 1 = 1
+     <isNotNull property="brname1">
+	       and 	b.brname like '%$brname1$%'
+	 </isNotNull>
+	 <isNotNull property="brname2">
+	       and 	b.brname like '%$brname2$%'
+	 </isNotNull>
+    </select>
+    
+</sqlMap>

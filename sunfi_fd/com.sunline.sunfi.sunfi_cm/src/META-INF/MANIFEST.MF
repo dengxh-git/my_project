@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Require-Bundle: com.sunline.sunfi,com.eos.workflow,com.primeton.eos.ri
+ chweb,com.eos.foundation
+Bundle-Vendor: weixin
+eos-webCtxPath: sunfi_cm
+Bundle-Version: 1.0.0
+Bundle-Name: com.sunline.sunfi.sunfi_cm
+Bundle-Description: 公共模块
+Bundle-SymbolicName: com.sunline.sunfi.sunfi_cm
+

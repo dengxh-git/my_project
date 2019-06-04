@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- author:weixin -->
+<sqlMap>
+   <resultMap class="com.eos.workflow.omservice.WFParticipant" id="resultMap" >
+        <result column="ID" property="id"/>
+        <result column="NAME" property="name"/>
+        <result column="EMAIL" property="email"/>
+        <result column="TYPECODE" property="typeCode"/>      
+    </resultMap>
+    
+    <select id="query_wkflid" parameterClass="java.util.HashMap" resultMap="resultMap">
+       select a.empid as id, a.empname as name ,'' as email,'emp' as typecode
+       from org_employee a,wk_node_user b where a.userid=b.usercd and b.wkflid=#wkflid# and
+       b.fldcid = (select fldcid-1 from wk_node where wkflid=#wkflid#)
+    </select>
+    
+    <select id="query_userRole" parameterClass="java.util.HashMap" resultMap="resultMap">
+      select a.empid as id,c.userna as name,'' as email, 'emp' as typecode from  org_employee a,
+      (select party_id  from cap_partyauth where role_id =
+      (select role_id from cap_role where role_code=#roleid#) and role_type='role' and party_type='emp') b
+    </select>
+    <select id="query_roleUser" parameterClass="java.util.HashMap" resultMap="resultMap">
+    	select a.empid as id,a.empname as name,'' as email, 'emp' as typecode from  org_employee a,
+      	(select party_id  from cap_partyauth where role_id =#roleid# and role_type='role' and party_type='emp') b
+    	  where a.empid=b.party_id
+    </select>
+</sqlMap>

@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Require-Bundle: com.sunline.sunfi,com.eos.workflow,com.primeton.eos.ri
+ chweb,com.eos.foundation,com.sunline.sunfi.sunfi_cm
+eos-webCtxPath: fdeqb
+Bundle-Vendor: chenc
+Bundle-Version: 1.0.0
+Bundle-Name: com.sunline.fdeqb
+Bundle-Description: 
+Bundle-SymbolicName: com.sunline.fdeqb
+

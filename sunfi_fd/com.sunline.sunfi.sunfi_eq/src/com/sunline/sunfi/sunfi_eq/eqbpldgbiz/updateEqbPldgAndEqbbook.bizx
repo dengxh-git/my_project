@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<process:tBusinessLogic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://com.primeton.emf.core" xmlns:process="http://primeton.com/emf/core/process" name="updateEqbPldgAndEqbbook" detailDescription="" demonstration="" urls="" gridVisibility="false" rulerVisibility="true" snapToGeometry="true" productVersion="6.0">
+  <nodes xsi:type="model:Note" id="node0" name="注释" displayName="注释" nodeType="note" type="note" content="实现修改股权冻结&#xD;&#xA;&#xD;&#xA;删除eqbbook记录为单获事务" title="dengxh&#x9;19-5-10 下午4:08">
+    <location x="165" y="511"/>
+    <size height="150" width="225"/>
+  </nodes>
+  <nodes xsi:type="process:tStart" id="start0" name="开始" displayName="开始" type="start">
+    <sourceConnections xsi:type="process:tLink" id="link0" name="link0" displayName="连接线" isDefault="true" type="transition">
+      <sourceNode>start0</sourceNode>
+      <targetNode>transactionbegin0</targetNode>
+    </sourceConnections>
+    <location x="60" y="220"/>
+    <size height="28" width="28"/>
+    <nodeLabel>start0label</nodeLabel>
+  </nodes>
+  <nodes xsi:type="process:tEnd" id="end0" name="结束" displayName="结束" type="end">
+    <targetConnections>link3</targetConnections>
+    <location x="1426" y="495"/>
+    <size height="28" width="28"/>
+    <nodeLabel>end0label</nodeLabel>
+    <process:returns/>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="start0label" name="label" displayName="label" nodeType="label">
+    <location x="56" y="256"/>
+    <figSize height="24" width="37"/>
+    <node>start0</node>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="end0label" name="label" displayName="label" nodeType="label">
+    <location x="1422" y="531"/>
+    <figSize height="24" width="37"/>
+    <node>end0</node>
+  </nodes>
+  <nodes xsi:type="process:tSubprocess" description="" id="subprocess2" name="transferProcedure" displayName="transferProcedure" type="subprocess">
+    <sourceConnections xsi:type="process:tLink" id="link7" name="link7" displayName="连接线" isDefault="true" type="transition">
+      <sourceNode>subprocess2</sourceNode>
+      <targetNode>transactioncommit0</targetNode>
+    </sourceConnections>
+    <sourceConnections xsi:type="process:tLink" id="link12" name="link12" displayName="连接线" lineType="note" type="exception">
+      <sourceNode>subprocess2</sourceNode>
+      <targetNode>transactionrollback1</targetNode>
+    </sourceConnections>
+    <targetConnections>link1</targetConnections>
+    <location x="1283" y="360"/>
+    <size height="27" width="27"/>
+    <nodeLabel>subprocess2label</nodeLabel>
+    <process:flow index="2" synchronization="true" transactionType="join" varArgs="false">
+      <process:partner type="literal">com.sunline.sunfi.sunfi_cm.busbiz.transferProcedure</process:partner>
+      <process:inputVariables>
+        <process:inputVariable id="0" name="master" type="query" value="java.util.HashMap" valueType="Java" pattern="reference">param/master</process:inputVariable>
+        <process:inputVariable id="1" name="detail" type="query" value="commonj.sdo.DataObject[]" valueType="Java" pattern="reference">param/detail</process:inputVariable>
+      </process:inputVariables>
+      <process:outputVariables>
+        <process:outputVariable id="0" name="retmsg" type="query" value="java.util.HashMap" valueType="Java">retmsg</process:outputVariable>
+      </process:outputVariables>
+    </process:flow>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="subprocess2label" name="label" nodeType="label">
+    <location x="1219" y="395"/>
+    <figSize height="24" width="155"/>
+    <node>subprocess2</node>
+  </nodes>
+  <nodes xsi:type="process:tTransactionBegin" id="transactionbegin0" name="事务开始" displayName="事务开始" type="transactionbegin">
+    <sourceConnections xsi:type="process:tLink" id="link4" name="link4" displayName="连接线" isDefault="true" type="transition">
+      <sourceNode>transactionbegin0</sourceNode>
+      <targetNode>assign1</targetNode>
+    </sourceConnections>
+    <targetConnections>link0</targetConnections>
+    <location x="165" y="220"/>
+    <size height="28" width="28"/>
+    <nodeLabel>transactionbegin0label</nodeLabel>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="transactionbegin0label" name="label" nodeType="label">
+    <location x="143" y="256"/>
+    <figSize height="24" width="73"/>
+    <node>transactionbegin0</node>
+  </nodes>
+  <nodes xsi:type="process:tTransactionCommit" id="transactioncommit0" name="事务提交" displayName="事务提交" type="transactioncommit">
+    <sourceConnections xsi:type="process:tLink" id="link3" name="link3" displayName="连接线" isDefault="true" type="transition">
+      <sourceNode>transactioncommit0</sourceNode>
+      <targetNode>end0</targetNode>
+    </sourceConnections>
+    <targetConnections>link7</targetConnections>
+    <location x="1283" y="495"/>
+    <size height="28" width="28"/>
+    <nodeLabel>transactioncommit0label</nodeLabel>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="transactioncommit0label" name="label" nodeType="label">
+    <location x="1261" y="531"/>
+    <figSize height="24" width="73"/>
+    <node>transactioncommit0</node>
+  </nodes>
+  <nodes xsi:type="process:tTransactionRollback" id="transactionrollback1" name="事务回滚" displayName="事务回滚" collapsed="false" type="transactionrollback">
+    <sourceConnections xsi:type="process:tLink" id="link8" name="link8" displayName="link10" isDefault="true" type="transition">
+      <sourceNode>transactionrollback1</sourceNode>
+      <targetNode>throw1</targetNode>
+    </sourceConnections>
+    <targetConnections>link9</targetConnections>
+    <targetConnections>link10</targetConnections>
+    <targetConnections>link11</targetConnections>
+    <targetConnections>link12</targetConnections>
+    <location x="713" y="600"/>
+    <size height="28" width="28"/>
+    <nodeLabel>transactionrollback1label</nodeLabel>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="transactionrollback1label" name="label" nodeType="label">
+    <location x="691" y="636"/>
+    <figSize height="24" width="73"/>
+    <node>transactionrollback1</node>
+  </nodes>
+  <nodes xsi:type="process:tThrow" description="" id="throw1" name="异常抛出" displayName="异常抛出" collapsed="false" type="throw">
+    <targetConnections>link8</targetConnections>
+    <location x="865" y="600"/>
+    <size height="28" width="28"/>
+    <nodeLabel>throw1label</nodeLabel>
+    <process:exception code="comm.exception.msg" message="{0}" type="com.eos.system.exception.EOSException">
+      <process:args>
+        <process:arg type="literal">bmgd.public.oprtfail</process:arg>
+      </process:args>
+    </process:exception>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="throw1label" name="label" nodeType="label">
+    <location x="843" y="636"/>
+    <figSize height="24" width="73"/>
+    <node>throw1</node>
+  </nodes>
+  <nodes xsi:type="process:tAssign" description="" id="assign1" name="赋值1" displayName="赋值" type="assign">
+    <sourceConnections xsi:type="process:tLink" id="link13" name="link13" displayName="连接线" isDefault="true" type="transition">
+      <sourceNode>assign1</sourceNode>
+      <targetNode>invokePojo1</targetNode>
+    </sourceConnections>
+    <targetConnections>link4</targetConnections>
+    <location x="279" y="220"/>
+    <size height="28" width="28"/>
+    <nodeLabel>assign1label</nodeLabel>
+    <process:copy>
+      <process:from type="query" pattern="reference">param/eqbpldg/eqbkno</process:from>
+      <process:to type="query">eqbpldg/eqbkno</process:to>
+    </process:copy>
+    <process:copy>
+      <process:from type="query" pattern="reference">param/eqbpldg/bsnsdt</process:from>
+      <process:to type="query">eqbpldg/bsnsdt</process:to>
+    </process:copy>
+    <process:copy>
+      <process:from type="query" pattern="reference">param/eqbpldg/bsnssq</process:from>
+      <process:to type="query">eqbpldg/bsnssq</process:to>
+    </process:copy>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="assign1label" name="label" nodeType="label">
+    <location x="269" y="256"/>
+    <figSize height="24" width="48"/>
+    <node>assign1</node>
+  </nodes>
+  <nodes xsi:type="process:tAssign" description="" id="assign2" name="赋值2" displayName="赋值" type="assign">
+    <sourceConnections xsi:type="process:tLink" id="link14" name="link14" displayName="连接线" isDefault="true" type="transition">
+      <sourceNode>assign2</sourceNode>
+      <targetNode>invokePojo2</targetNode>
+      <process:transitionCondition/>
+    </sourceConnections>
+    <targetConnections>link5</targetConnections>
+    <location x="480" y="220"/>
+    <size height="28" width="28"/>
+    <nodeLabel>assign2label</nodeLabel>
+    <process:copy>
+      <process:from type="query" pattern="reference">param/eqbpldg/eqbkno</process:from>
+      <process:to type="query">eqbbook/eqbkno</process:to>
+    </process:copy>
+    <process:copy>
+      <process:from type="literal" pattern="reference">-1</process:from>
+      <process:to type="query">eqbbook/cardsq</process:to>
+    </process:copy>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="assign2label" name="label" nodeType="label">
+    <location x="470" y="256"/>
+    <figSize height="24" width="48"/>
+    <node>assign2</node>
+  </nodes>
+  <nodes xsi:type="process:tInvoke" description="" id="invokePojo1" name="deleteEqbPldg" displayName=" Cascade delete a record" type="invoke" index="0" invokeType="invoke_pojo" varArgs="false">
+    <sourceConnections xsi:type="process:tLink" id="link9" name="link9" displayName="连接线" lineType="note" type="exception">
+      <sourceNode>invokePojo1</sourceNode>
+      <targetNode>transactionrollback1</targetNode>
+    </sourceConnections>
+    <sourceConnections xsi:type="process:tLink" id="link5" name="link5" displayName="连接线" isDefault="true" type="transition">
+      <sourceNode>invokePojo1</sourceNode>
+      <targetNode>assign2</targetNode>
+    </sourceConnections>
+    <targetConnections>link13</targetConnections>
+    <location x="390" y="220"/>
+    <size height="28" width="22"/>
+    <nodeLabel>invokePojo1label</nodeLabel>
+    <process:pojo methodType="instance" synchronization="true" transactionType="join">
+      <process:partner type="literal">com.eos.foundation.database.DatabaseExt.deleteEntityCascade</process:partner>
+      <process:instance instanceName=""/>
+    </process:pojo>
+    <process:inputVariables>
+      <process:inputVariable id="0" name="dsName" type="literal" value="java.lang.String" valueType="Java" pattern="reference">sunfi</process:inputVariable>
+      <process:inputVariable id="1" name="entity" type="query" value="commonj.sdo.DataObject" valueType="Java" pattern="reference">eqbpldg</process:inputVariable>
+    </process:inputVariables>
+    <process:outputVariables/>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="invokePojo1label" name="label" nodeType="label">
+    <location x="337" y="256"/>
+    <figSize height="24" width="129"/>
+    <node>invokePojo1</node>
+  </nodes>
+  <nodes xsi:type="process:tInvoke" description="" id="invokePojo2" name="deleteEqbBook" displayName=" Cascade delete a record" type="invoke" index="0" invokeType="invoke_pojo" varArgs="false">
+    <sourceConnections xsi:type="process:tLink" id="link6" name="link6" displayName="连接线" isDefault="true" type="transition">
+      <sourceNode>invokePojo2</sourceNode>
+      <targetNode>assign3</targetNode>
+    </sourceConnections>
+    <sourceConnections xsi:type="process:tLink" id="link10" name="link10" displayName="连接线" lineType="note" type="exception">
+      <sourceNode>invokePojo2</sourceNode>
+      <targetNode>transactionrollback1</targetNode>
+    </sourceConnections>
+    <targetConnections>link14</targetConnections>
+    <location x="585" y="220"/>
+    <size height="28" width="22"/>
+    <nodeLabel>invokePojo2label</nodeLabel>
+    <process:pojo methodType="instance" synchronization="true" transactionType="suspend">
+      <process:partner type="literal">com.eos.foundation.database.DatabaseExt.deleteEntityCascade</process:partner>
+      <process:instance instanceName=""/>
+    </process:pojo>
+    <process:inputVariables>
+      <process:inputVariable id="0" name="dsName" type="literal" value="java.lang.String" valueType="Java" pattern="reference">sunfi</process:inputVariable>
+      <process:inputVariable id="1" name="entity" type="query" value="commonj.sdo.DataObject" valueType="Java" pattern="reference">eqbbook</process:inputVariable>
+    </process:inputVariables>
+    <process:outputVariables/>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="invokePojo2label" name="label" nodeType="label">
+    <location x="530" y="256"/>
+    <figSize height="24" width="132"/>
+    <node>invokePojo2</node>
+  </nodes>
+  <nodes xsi:type="process:tInvoke" description="" id="invokePojo3" name="queryEqbbook" displayName=" Query according to  criteria Entity" type="invoke" index="0" invokeType="invoke_pojo" varArgs="false">
+    <sourceConnections xsi:type="process:tLink" id="link16" name="link16" displayName="连接线" isDefault="true" type="transition">
+      <sourceNode>invokePojo3</sourceNode>
+      <targetNode>loopstart0</targetNode>
+    </sourceConnections>
+    <targetConnections>link15</targetConnections>
+    <location x="822" y="220"/>
+    <size height="28" width="22"/>
+    <nodeLabel>invokePojo3label</nodeLabel>
+    <process:pojo methodType="instance" synchronization="true" transactionType="join">
+      <process:partner type="literal">com.eos.foundation.database.DatabaseUtil.queryEntitiesByCriteriaEntity</process:partner>
+      <process:instance instanceName=""/>
+    </process:pojo>
+    <process:inputVariables>
+      <process:inputVariable id="0" name="dsName" type="literal" value="java.lang.String" valueType="Java" pattern="reference">default</process:inputVariable>
+      <process:inputVariable id="1" name="criteriaEntity" type="query" value="commonj.sdo.DataObject" valueType="Java" pattern="reference">eqbbook</process:inputVariable>
+    </process:inputVariables>
+    <process:outputVariables>
+      <process:outputVariable id="0" name="out0" type="query" value="commonj.sdo.DataObject[]" valueType="Java">eqbbooks</process:outputVariable>
+    </process:outputVariables>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="invokePojo3label" name="label" nodeType="label">
+    <location x="769" y="256"/>
+    <figSize height="24" width="129"/>
+    <node>invokePojo3</node>
+  </nodes>
+  <nodes xsi:type="process:tAssign" description="" id="assign3" name="赋值3" displayName="赋值" type="assign">
+    <sourceConnections xsi:type="process:tLink" id="link15" name="link15" displayName="连接线" isDefault="true" type="transition">
+      <sourceNode>assign3</sourceNode>
+      <targetNode>invokePojo3</targetNode>
+    </sourceConnections>
+    <targetConnections>link6</targetConnections>
+    <location x="684" y="220"/>
+    <size height="28" width="28"/>
+    <nodeLabel>assign3label</nodeLabel>
+    <process:copy>
+      <process:from type="literal" pattern="reference">com.sunline.sunfi.sunfi_eq.eqb.EqbBook</process:from>
+      <process:to type="query">criteria/_entity</process:to>
+    </process:copy>
+    <process:copy>
+      <process:from type="query" pattern="reference">param/eqbpldg/eqbkno</process:from>
+      <process:to type="query">criteria/_expr[1]/eqbkno</process:to>
+    </process:copy>
+    <process:copy>
+      <process:from type="literal" pattern="reference">0</process:from>
+      <process:to type="query">criteria/_expr[2]/cardsq</process:to>
+    </process:copy>
+    <process:copy>
+      <process:from type="literal" pattern="reference">>=</process:from>
+      <process:to type="query">criteria/_expr[2]/_op</process:to>
+    </process:copy>
+    <process:copy>
+      <process:from type="literal" pattern="reference">asc</process:from>
+      <process:to type="query">criteria/_orderby[1]/_property</process:to>
+    </process:copy>
+    <process:copy>
+      <process:from type="literal" pattern="reference">cardsq</process:from>
+      <process:to type="query">criteria/_orderby[1]/_sort</process:to>
+    </process:copy>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="assign3label" name="label" nodeType="label">
+    <location x="674" y="256"/>
+    <figSize height="24" width="48"/>
+    <node>assign3</node>
+  </nodes>
+  <nodes xsi:type="process:tLoopStart" description="" id="loopstart0" name="循环" displayName="循环" grouped="true" type="loopstart" matchedName="loopend0" loopType="iterate">
+    <sourceConnections xsi:type="process:tLink" id="link17" name="link17" displayName="连接线" isDefault="true" type="transition">
+      <sourceNode>loopstart0</sourceNode>
+      <targetNode>assign0</targetNode>
+    </sourceConnections>
+    <targetConnections>link16</targetConnections>
+    <location x="944" y="222"/>
+    <size height="24" width="24"/>
+    <nodeLabel>loopstart0label</nodeLabel>
+    <process:condition/>
+    <process:iterate iterable="eqbbooks" iterableElement="eqbbook"/>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="loopstart0label" name="label" nodeType="label">
+    <location x="938" y="254"/>
+    <figSize height="24" width="37"/>
+    <node>loopstart0</node>
+  </nodes>
+  <nodes xsi:type="process:tLoopEnd" id="loopend0" name="循环结束" displayName="循环结束" grouped="true" type="loopend" matchedName="loopstart0">
+    <sourceConnections xsi:type="process:tLink" id="link1" name="link1" displayName="连接线" isDefault="true" type="transition">
+      <sourceNode>loopend0</sourceNode>
+      <targetNode>subprocess2</targetNode>
+      <process:transitionCondition/>
+    </sourceConnections>
+    <targetConnections>link18</targetConnections>
+    <location x="1282" y="222"/>
+    <size height="24" width="24"/>
+    <nodeLabel>loopend0label</nodeLabel>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="loopend0label" name="label" nodeType="label">
+    <location x="1258" y="254"/>
+    <figSize height="24" width="73"/>
+    <node>loopend0</node>
+  </nodes>
+  <nodes xsi:type="model:GroupNode" id="group0" name="group" grouped="true" gstart="loopstart0" gend="loopend0">
+    <location x="944" y="195"/>
+    <size height="94" width="363"/>
+    <chidren>loopend0</chidren>
+    <chidren>loopstart0</chidren>
+    <chidren>subprocess0</chidren>
+    <chidren>assign0</chidren>
+  </nodes>
+  <nodes xsi:type="process:tSubprocess" description="" id="subprocess0" name="updateEqbBook" displayName="updateEqbBook" grouped="true" type="subprocess">
+    <sourceConnections xsi:type="process:tLink" id="link18" name="link18" displayName="连接线" isDefault="true" type="transition">
+      <sourceNode>subprocess0</sourceNode>
+      <targetNode>loopend0</targetNode>
+    </sourceConnections>
+    <sourceConnections xsi:type="process:tLink" id="link11" name="link11" displayName="连接线" lineType="note" type="exception">
+      <sourceNode>subprocess0</sourceNode>
+      <targetNode>transactionrollback1</targetNode>
+    </sourceConnections>
+    <targetConnections>link2</targetConnections>
+    <location x="1160" y="220"/>
+    <size height="27" width="27"/>
+    <nodeLabel>subprocess0label</nodeLabel>
+    <process:flow index="1" synchronization="true" transactionType="join" varArgs="false">
+      <process:partner type="literal">com.sunline.sunfi.sunfi_eq.eqbbookbiz.updateEqbBook</process:partner>
+      <process:inputVariables>
+        <process:inputVariable id="0" name="eqbbook" type="query" value="com.sunline.sunfi.sunfi_eq.eqb.EqbBook" valueType="DataObject" pattern="reference">eqbbook</process:inputVariable>
+      </process:inputVariables>
+      <process:outputVariables/>
+    </process:flow>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="subprocess0label" name="label" nodeType="label">
+    <location x="1103" y="255"/>
+    <figSize height="24" width="140"/>
+    <node>subprocess0</node>
+  </nodes>
+  <nodes xsi:type="process:tAssign" description="" id="assign0" name="cardsq-1" displayName="赋值" grouped="true" type="assign">
+    <sourceConnections xsi:type="process:tLink" id="link2" name="link2" displayName="连接线" isDefault="true" type="transition">
+      <sourceNode>assign0</sourceNode>
+      <targetNode>subprocess0</targetNode>
+    </sourceConnections>
+    <targetConnections>link17</targetConnections>
+    <location x="1035" y="220"/>
+    <size height="28" width="28"/>
+    <nodeLabel>assign0label</nodeLabel>
+    <process:copy>
+      <process:from type="query" pattern="reference">eqbbook/cardsq</process:from>
+      <process:to type="query">cardsq</process:to>
+    </process:copy>
+    <process:copy>
+      <process:from type="expression" pattern="reference">cardsq-1 </process:from>
+      <process:to type="query">eqbbook/cardsq</process:to>
+    </process:copy>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="assign0label" name="label" nodeType="label">
+    <location x="1010" y="256"/>
+    <figSize height="24" width="78"/>
+    <node>assign0</node>
+  </nodes>
+  <topRuler/>
+  <leftRuler/>
+  <process:info author="Administrator" createTime="2011-11-02 17:44:55" date="2011-11-02Z" description="" name="updateEqbPldg" version="6.0"/>
+  <process:variables>
+    <process:variable description="" historyStateLocation="client" isArray="false" modelType="com.sunline.sunfi.sunfi_eq.eqb.EqbPldg" name="eqbpldg"/>
+    <process:variable description="" historyStateLocation="client" isArray="false" modelType="com.sunline.sunfi.sunfi_eq.eqb.EqbBook" name="eqbbook"/>
+    <process:variable description="" historyStateLocation="client" isArray="false" modelType="com.primeton.das.criteria.criteriaType" name="criteria"/>
+    <process:variable description="" historyStateLocation="client" isArray="true" modelType="com.sunline.sunfi.sunfi_eq.eqb.EqbBook" name="eqbbooks"/>
+    <process:variable description="" historyStateLocation="client" isArray="false" name="cardsq" primitiveType="Int"/>
+  </process:variables>
+  <process:serviceVariables/>
+  <process:inputs varArgs="false">
+    <process:input anyType="java.util.HashMap" description="" isArray="false" name="param"/>
+  </process:inputs>
+  <process:outputs/>
+  <process:extAttribute1>public</process:extAttribute1>
+  <process:transactionType>true</process:transactionType>
+</process:tBusinessLogic>

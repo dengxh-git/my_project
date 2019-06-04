@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="eqpbookfr" pageWidth="595" pageHeight="200" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="eqbkno" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select b.shhdcd,b.shhdna,b.atfcna,b.idcard,a.stcknm,c.opendt from Eqb_Book a
+inner join eqp_shhd b on a.shhdcd=b.shhdcd
+inner join eqd_dcmt_detl c on a.dcmtno=c.dcmtno
+where a.cardsq=0 and a.transt='1' and a.eqbkno=$P{eqbkno}]]>
+	</queryString>
+	<field name="SHHDCD" class="java.lang.String"/>
+	<field name="SHHDNA" class="java.lang.String"/>
+	<field name="ATFCNA" class="java.lang.String"/>
+	<field name="IDCARD" class="java.lang.String"/>
+	<field name="STCKNM" class="java.math.BigDecimal"/>
+	<field name="OPENDT" class="java.lang.String"/>
+	<detail>
+		<band height="160" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement x="100" y="0" width="100" height="20"/>
+				<textElement>
+					<font fontName="宋体" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{SHHDCD}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="100" y="20" width="100" height="20"/>
+				<textElement>
+					<font fontName="宋体" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{SHHDNA}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="宋体" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[股东编号：]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="20" width="100" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="宋体" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[股东名称：]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="40" width="100" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="宋体" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[法人登记号：]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="60" width="100" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="宋体" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[法定代表人：]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="80" width="100" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="宋体" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[身份证号：]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="100" width="100" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="宋体" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[持股数：]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="100" y="60" width="100" height="20"/>
+				<textElement>
+					<font fontName="宋体" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{ATFCNA}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="100" y="80" width="100" height="20"/>
+				<textElement>
+					<font fontName="宋体" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{IDCARD}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="120" width="100" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="宋体" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[签发日期：]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="100" y="100" width="100" height="20"/>
+				<textElement>
+					<font fontName="宋体" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{STCKNM}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="100" y="120" width="100" height="20"/>
+				<textElement>
+					<font fontName="宋体" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{OPENDT}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

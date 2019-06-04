@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<process:tPageFlow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://com.primeton.emf.core" xmlns:process="http://primeton.com/emf/core/process" name="exportAfbSupp" detailDescription="" demonstration="" urls="" gridVisibility="false" rulerVisibility="true" snapToGeometry="true" productVersion="7.0.0.0" state="stateless">
+  <nodes xsi:type="process:tStart" id="start0" name="开始" displayName="开始" type="start">
+    <sourceConnections xsi:type="process:tActionLink" description="" id="link0" name="link0" lineType="reference" isDefault="true" type="action" actionName="action0" dataConvertClass="">
+      <sourceNode>start0</sourceNode>
+      <targetNode>assign0</targetNode>
+      <process:validateRules errorPage="" onError="default"/>
+      <process:inputParameters>
+        <process:parameter description="" historyStateLocation="client" isArray="false" name="suppna" primitiveType="String"/>
+        <process:parameter description="" historyStateLocation="client" isArray="false" name="brname" primitiveType="String"/>
+      </process:inputParameters>
+    </sourceConnections>
+    <location x="100" y="150"/>
+    <size height="28" width="28"/>
+    <nodeLabel>start0label</nodeLabel>
+  </nodes>
+  <nodes xsi:type="process:tEnd" description="" id="end0" name="结束" displayName="结束" type="end" contextPath="" method="forward" uri="/download.jsp">
+    <targetConnections>link2</targetConnections>
+    <location x="660" y="150"/>
+    <size height="28" width="28"/>
+    <nodeLabel>end0label</nodeLabel>
+    <process:inputVariables/>
+    <process:returns/>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="start0label" name="label" displayName="label" nodeType="label">
+    <location x="102" y="186"/>
+    <figSize height="17" width="25"/>
+    <node>start0</node>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="end0label" name="label" displayName="label" nodeType="label">
+    <location x="662" y="186"/>
+    <figSize height="17" width="25"/>
+    <node>end0</node>
+  </nodes>
+  <nodes xsi:type="process:tSubprocess" description="" id="subprocess0" name="导出excel" displayName="exportAfbSuppExcel" type="subprocess">
+    <sourceConnections xsi:type="process:tLink" id="link2" name="link2" displayName="连接线" isDefault="true" type="transition">
+      <sourceNode>subprocess0</sourceNode>
+      <targetNode>end0</targetNode>
+    </sourceConnections>
+    <targetConnections>link1</targetConnections>
+    <location x="420" y="150"/>
+    <size height="27" width="27"/>
+    <nodeLabel>subprocess0label</nodeLabel>
+    <process:flow index="0" synchronization="true" transactionType="join" varArgs="false">
+      <process:partner type="literal">com.sunline.sunfi.sunfi_cm.afbsuppbiz.exportAfbSuppExcel</process:partner>
+      <process:inputVariables>
+        <process:inputVariable id="0" name="params" type="query" value="java.util.HashMap" valueType="Java" pattern="reference">params</process:inputVariable>
+      </process:inputVariables>
+      <process:outputVariables>
+        <process:outputVariable id="0" name="downloadFile" type="query" value="String" valueType="Primitive">downloadFile</process:outputVariable>
+      </process:outputVariables>
+    </process:flow>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="subprocess0label" name="label" nodeType="label">
+    <location x="406" y="185"/>
+    <figSize height="17" width="54"/>
+    <node>subprocess0</node>
+  </nodes>
+  <nodes xsi:type="process:tAssign" description="" id="assign0" name="赋值" displayName="赋值" type="assign">
+    <sourceConnections xsi:type="process:tLink" id="link1" name="link1" displayName="连接线" isDefault="true" type="transition">
+      <sourceNode>assign0</sourceNode>
+      <targetNode>subprocess0</targetNode>
+    </sourceConnections>
+    <targetConnections>link0</targetConnections>
+    <location x="270" y="150"/>
+    <size height="28" width="28"/>
+    <nodeLabel>assign0label</nodeLabel>
+    <process:copy>
+      <process:from type="query" pattern="reference">m:userObject/attributes/EXTEND_USER_ID</process:from>
+      <process:to type="query">params/usercd</process:to>
+    </process:copy>
+    <process:copy>
+      <process:from type="query" pattern="reference">suppna</process:from>
+      <process:to type="query">params/suppna</process:to>
+    </process:copy>
+    <process:copy>
+      <process:from type="query" pattern="reference">brname</process:from>
+      <process:to type="query">params/brname</process:to>
+    </process:copy>
+    <process:copy>
+      <process:from type="literal" pattern="reference">供应商信息</process:from>
+      <process:to type="query">filename</process:to>
+    </process:copy>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="assign0label" name="label" nodeType="label">
+    <location x="272" y="186"/>
+    <figSize height="17" width="25"/>
+    <node>assign0</node>
+  </nodes>
+  <topRuler/>
+  <leftRuler/>
+  <process:info author="weixin" createTime="2018-12-26 18:14:38" date="2018-12-26Z" description="" name="exportExpAeuv" version="7.0.0.0"/>
+  <process:variables>
+    <process:variable anyType="java.util.HashMap" description="" historyStateLocation="client" isArray="false" name="params"/>
+  </process:variables>
+  <process:inputParameters/>
+</process:tPageFlow>

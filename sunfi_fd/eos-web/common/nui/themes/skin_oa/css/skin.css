@@ -1,0 +1,1161 @@
+body {
+	font-family: Microsoft YaHei;
+	font-size: 12px;
+	line-height: 28px;
+	color: #333333;
+}
+
+html body {
+	margin: 0px;
+}
+
+html,body {
+	_background-image: url(about:blank);
+	_background-attachment: fixed;
+	margin: 0px;
+}
+
+.mini-popup {
+	font-size: 14px;
+}
+
+.mini-mask-msg {
+	font-size: 14px;
+}
+
+.mini-tools .mini-tools-collapse {
+	width: 14px;
+}
+
+.mini-tools .mini-tools-expand {
+	width: 14px;
+}
+
+.mini-toolbar {
+	border: none;;
+	padding: 0;
+	background: none;
+}
+
+body .mini-toolbar a.mini-button-disabled,body .mini-toolbar a:hover.mini-button-disabled,body .mini-pager a.mini-button-disabled,body .mini-pager a:hover.mini-button-disabled,body .mini-toolbar a.mini-button-disabled,body .mini-toolbar a:hover.mini-button-disabled
+	{
+	padding: 0;
+	border:1px solid #b5b5b5;
+}
+
+.mini-feedback {
+	font: normal 14px tahoma, arial, helvetica, sans-serif;
+}
+
+.mini-button
+{
+    padding:0;
+    border:1px solid #b5b5b5;
+    background:transparent;
+    background: linear-gradient( #ffffff, #efefef);
+    border-radius:3px;
+    font-size:12px;
+    margin:0px 3px;
+    line-height:22px;
+    
+    text-decoration:none;
+    text-align: center;
+    display:inline-block;
+    zoom:1;    
+    cursor:pointer;
+    -khtml-user-select: none;
+    -moz-user-select:none;
+    vertical-align:middle;          
+    outline:none;
+}
+.mini-button {
+	color: #151515;
+}
+.mini-button .mini-button-icon{
+    padding-left: 24px;
+}
+
+.mini-button-text {
+	line-height: 25px;
+}
+
+.mini-checkbox {
+	font-size: 14px;
+}
+
+.mini-textbox {
+	height: 30px;
+	/* margin: 0px 3px; */
+}
+
+.mini-textbox-border {
+	height: 28px;
+}
+
+.mini-textbox-input {
+	height: 28px;
+	line-height: 30px;
+	font-size: 12px;
+}
+
+.mini-buttonedit {
+	height: 30px;
+	margin: 0px 3px;
+}
+
+.mini-buttonedit-border {
+	height: 28px;
+}
+
+.mini-buttonedit-input {
+	line-height: 25px;
+	font-size: 12px;
+	width: 100%;
+	height: 25px;
+	float: right;
+}
+
+.mini-buttonedit-button,.mini-buttonedit-close {
+	width: 15px;
+	height: 23px;
+}
+
+.mini-buttonedit-icon {
+	height: 23px;
+}
+
+.mini-datepicker .mini-buttonedit-icon {
+	background: url(../images/datepicker/ic_date.png) no-repeat 50% 2px;
+}
+
+.mini-panel {
+	font-size: 14px;
+}
+
+.mini-panel-border {
+	border: 1px solid #cdcdcd;
+}
+
+.mini-panel .mini-panel-title {
+	font-size: 14px;
+}
+
+.mini-messagebox-content td {
+	font-size: 12px;
+}
+
+.mini-outlookbar {
+	font-size: 14px;
+}
+
+.mini-tabs {
+	font-size: 14px;
+}
+
+.mini-tabs-table {
+	font-size: 12px;
+}
+
+.mini-tabs-headers {
+	top: 2px;
+}
+
+.mini-tab {
+	font: 14px Tahoma;
+	padding: 3px 15px 3px 15px;
+}
+
+.mini-tab-text {
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.mini-tab-close {
+	width: 14px;
+	height: 14px;
+}
+
+.mini-splitter {
+	font-size: 14px;
+}
+
+.mini-splitter-border {
+	border: 0px;
+}
+
+.mini-splitter-pane1 {
+	border-width: 1px;
+	border-color: #df8e07;
+	border-style: solid;
+	border-radius: 5px;
+	padding: 5px 0px 5px 0px;
+}
+
+.mini-splitter-pane2 {
+	border-width: 1px;
+	border-color: #cdcdcd;
+	border-style: solid;
+	border-left: 0px;
+	border-radius: 5px;
+}
+
+.mini-layout {
+	font-size: 14px;
+}
+
+.mini-menu {
+	font-size: 14px;
+}
+
+.mini-menuitem-text a {
+	font-size: 14px;
+}
+
+.mini-calendar {
+	font-size: 14px;
+}
+
+.mini-calendar-daysheader td {
+	font-size: 12px;
+}
+
+.mini-calendar-days td {
+	font-size: 12px;
+}
+
+.mini-calendar-title {
+	font-size: 14px;
+}
+
+.mini-calendar-tadayButton,.mini-calendar-clearButton,.mini-calendar-okButton,.mini-calendar-cancelButton
+	{
+	font-size: 14px;
+}
+
+.mini-calendar-menu-month {
+	font-size: 14px;
+}
+
+.mini-calendar-menu-year {
+	font-size: 14px;
+}
+
+.mini-listbox td {
+	font-size: 12px;
+}
+
+.mini-checkboxlist {
+	font-size: 14px;
+}
+
+.mini-checkboxlist input,.mini-radiobuttonlist input {
+	overflow: hidden;
+	vertical-align: middle; +
+	vertical-align: middle;
+	display: inline-block;
+}
+
+.mini-radiobuttonlist {
+	font-size: 14px;
+}
+
+.mini-radiobuttonlist table label {
+	line-height: 25px;
+	font-size: 14px;
+}
+
+.mini-radiobuttonlist input { +
+	vertical-align: middle;
+}
+
+.mini-tooltip {
+	font-size: 14px;
+}
+
+.mini-tooltip-inner {
+	border-radius: 5px;
+}
+
+.mini-grid-table {
+	text-align: left;
+}
+
+.mini-grid-cell-inner,.mini-grid-headerCell-inner {
+	font-size: 12px;
+	line-height: 28px;
+} 
+
+/*.mini-grid-headerCell {
+	border-right: 0px;
+	border-left: 0px;
+}*/
+.mini-grid-cell, .mini-grid-headerCell,
+.mini-grid-filterCell/* , .mini-grid-summaryCell */
+{
+   
+    border-right:#d2d2d2 1px solid;
+    border-bottom:#d2d2d2 1px solid;     
+}
+.mini-grid-headerCell-inner {
+	line-height: 28px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.mini-checkcolumn
+{
+    padding:0;text-align:center;
+}
+.mini-grid-groupTitle {
+	font-size: 14px;
+}
+
+.mini-grid-pager {
+	overflow: hidden;
+	border-top: 0px;
+	background: none;
+}
+
+.mini-pager .mini-pager-left .mini-button {
+	border: 1px solid #b5b5b5;
+	background: linear-gradient(#ffffff, #efefef);
+	border-radius: 5px;
+}
+
+.mini-pager .mini-pager-left .mini-button-text {
+	line-height: 17px;
+}
+
+.mini-pager .mini-pager-left .mini-button:hover {
+	border: 1px solid #b5b5b5;
+	background: #d7d7d7;
+	border-radius: 5px;
+	padding: 1px;
+	color: #333;
+	cursor: pointer;
+}
+
+.mini-pager .mini-pager-left .mini-button span {
+	cursor: pointer;
+}
+
+.mini-grid-pager .mini-pager-index input {
+	margin: 0 0px 0px 5px;
+	width: 20px;
+	border-radius: 5px;
+}
+
+.mini-grid-pager .separator {
+	display: none;
+}
+
+.mini-grid-pager .mini-pager-right {
+	float: right;
+	margin-left: 10PX;
+}
+
+.mini-grid-pager .mini-pager-left {
+	float: right;
+	margin-right: 20PX;
+}
+
+.mini-grid-pager .mini-buttonedit-border {
+	border-radius: 5px;
+}
+
+.mini-grid-pager .mini-pager-size .mini-buttonedit .mini-buttonedit-border
+	{
+	border: 1px solid #b5b5b5;
+}
+
+.mini-pager-left .mini-pager-size {
+	height: 25px;
+}
+
+.mini-pager-left .mini-buttonedit {
+	height: 25px;
+}
+
+.mini-pager-left .mini-buttonedit-border {
+	height: 22px;
+}
+.mini-labelfield-label{
+	line-height: 28px;
+}
+.mini-grid-pager .mini-pager-first:hover{background-image: url(images/pager/first_pre.gif);}
+.mini-grid-pager .mini-pager-prev:hover{background-image: url(images/pager/prev_pre.gif);}
+.mini-grid-pager .mini-pager-next:hover{background-image: url(images/pager/next_pre.gif);}
+.mini-grid-pager .mini-pager-last:hover{background-image: url(images/pager/last_pre.gif);}
+.mini-grid-pager .mini-pager-reload:hover{background-image: url(images/pager/reload_pre.png);}
+
+.mini-grid-columnproxy {
+	font-size: 14px;
+}
+
+.mini-tree-editinput {
+	font-size: 14px;
+}
+
+.mini-pager {
+	height: 35px;
+	font-size: 12px;
+}
+
+.mini-pager-left {
+	line-height: 30px;
+	height: 30px;
+}
+
+.mini-pager-right {
+	line-height: 35px;
+}
+
+.mini-pager-size {
+	height: 30px;
+}
+
+.mini-htmlfile .mini-buttonedit-button {
+	font-size: 12px;
+}
+
+.mini-textboxlist {
+	font: 14px Verdana;
+}
+
+.mini-textboxlist .mini-textboxlist-input {
+	border: 0;
+	padding: 0;
+	font: 14px "Lucida Grande", Verdana;
+}
+
+.mini-tips {
+	border-radius: 5px;
+	font-size: 14px;
+}
+
+.table-style-index .mini-panel-border,.table-style-index .mini-grid-headerCell,.table-style-index .mini-grid-topRightCell
+{
+	border: none;
+	background: transparent;
+}
+
+.table-style-index .mini-grid-headerCell-inner {
+	font-size: 14px;
+}
+
+.table-style-index .mini-grid-cell-inner {
+	font-size: 14px;
+	text-align: center;
+}
+
+.table-style-bt .mini-grid-table .mini-grid-headerCell {
+	background: none;
+}
+
+.table-style-index .mini-grid-table .mini-grid-headerCell {
+	background: none;
+}
+
+.table-style-index .mini-grid-rows.mini-panel-body {
+	min-height: 80px;
+}
+
+.table-style-index .mini-grid-rows-view {
+	overflow: hidden;
+}
+
+.yjbt_style_new .mini-textbox-input {
+	font-weight: bold;
+	font-size: 16px;
+}
+
+
+
+.app-header
+{
+    background:url(../images/header.gif) repeat-x 0 -1px;
+}
+.mini-mask-loading
+{
+    padding:10px 8px 10px 30px; 
+    background:#fff url(../images/grid/loading.gif) no-repeat scroll 5px 50%;
+    border:2px solid #517fad;
+}
+.mini-tools-close
+{
+    background:url(../images/tools/close.gif) no-repeat 50% 1px;
+}
+.mini-tools .mini-tools-collapse
+{
+    background:url(../images/tools/collapse.gif) no-repeat 50% 50%;
+    width:14px; 
+}
+.mini-tools .mini-tools-expand
+{
+    background:url(../images/tools/expand.gif) no-repeat 50% 50%;
+    width:14px; 
+}
+.mini-tools-max
+{
+    background:url(../images/tools/max.gif) no-repeat 50% 50%;
+}
+.mini-tools-min
+{
+    background:url(../images/tools/min.gif) no-repeat 50% 50%;
+}
+.mini-tools-restore
+{
+    background:url(../images/tools/restore.gif) no-repeat 50% 50%;
+}
+.mini-tools-refresh
+{
+    background:url(../images/tools/refresh.gif) no-repeat 50% 50%;
+}
+
+.mini-feedback-add
+{
+    background-image:url(../images/dragdrop/drop-add.gif);
+}
+.mini-feedback-before
+{
+    background-image:url(../images/dragdrop/drop-over.gif);
+}
+.mini-feedback-after
+{
+    background-image:url(../images/dragdrop/drop-under.gif);
+}
+.mini-feedback-no
+{
+    background-image:url(../images/dragdrop/drop-no.gif);
+}
+.mini-feedback-yes
+{
+    background-image:url(../images/dragdrop/drop-yes.gif);
+}
+.mini-resizer-trigger
+{
+    background:url(../images/panel/resize.gif) no-repeat right bottom;
+}
+.mini-errorIcon
+{
+    background:url(../images/textbox/error.gif) no-repeat 50% 50%;
+  }
+  body .mini-button-pressed, body a:hover.mini-button-pressed,
+body .mini-button-checked, body a:hover.mini-button-checked,
+body a.mini-button-popup, body a:hover.mini-button-popup
+{
+    background:#DBDDE2 url(../images/button/pressed.png) repeat-x 0 0; 
+}
+body a.mini-button-disabled, body a:hover.mini-button-disabled
+{
+    background:#F8F9FA url(../images/button/disabled.png) repeat-x 0 0px;      
+}
+.mini-button-menu
+{
+    background:url(../images/button/menu_arrow.png) no-repeat 0px 50%;
+}
+.mini-button-split
+{
+    background:url(../images/button/split_arrow.png) no-repeat 0px 50%;
+}
+.mini-buttonedit-close
+{
+    background:url(../images/buttonedit/close.gif) no-repeat 50% 5px;
+}
+
+.mini-buttonedit-button-hover,
+.mini-buttonedit-hover .mini-buttonedit-button
+{
+   
+    background:#dde6fe url(../images/buttonedit/hover.png) repeat-x 0 0;   
+}
+.mini-buttonedit-button-pressed,
+.mini-buttonedit-popup .mini-buttonedit-button
+{
+    
+    background:#DBDDE2 url(../images/buttonedit/pressed.png) repeat-x 0 0;    
+}
+.mini-buttonedit-icon
+{
+
+    background:url(../images/buttonedit/icon1.gif) no-repeat 50% 50%;
+}
+.mini-popupedit .mini-buttonedit-icon
+{
+    background:url(../images/buttonedit/icon2.gif) no-repeat 3px 1px;
+}
+.mini-datepicker .mini-buttonedit-icon
+{
+    background:url(../images/datepicker/ic_date.png) no-repeat 50% 2px;
+}
+.mini-buttonedit-up span, .mini-buttonedit-down span
+{
+    background:url(../images/buttonedit/up.gif) no-repeat 50% 2px;   
+}
+
+.mini-buttonedit-down span
+{
+    background:url(../images/buttonedit/down.gif) no-repeat 50% 2px; 
+}
+.mini-filteredit .mini-buttonedit-icon
+{
+    background:url(../images/buttonedit/filter.png) no-repeat 50% 0px;
+}
+.mini-panel-header
+{
+    background:#E3E6E8 url(../images/panel/header.png) repeat-x 0 0px;
+}
+.mini-panel-collapse .mini-tools-collapse
+{
+    background:url(../images/tools/expand.gif) no-repeat 50% 50%;
+}
+.mini-window .mini-panel-header
+{
+    background:#E3E6E8 url(../images/window/header.png) repeat-x 0 0px;    
+}
+.mini-window .mini-panel-footer
+{
+    background:#E3E6E8 url(../images/window/footer.png) repeat-x 0 0px;
+}
+.mini-messagebox-info,
+.mini-messagebox-warning,
+.mini-messagebox-question,
+.mini-messagebox-error,
+.mini-messagebox-waiting
+{
+    background:url(../images/messagebox/icon-info.gif) no-repeat 50% 50%;
+}
+.mini-messagebox-warning
+{
+    background:url(../images/messagebox/icon-warning.gif) no-repeat 50% 50%;
+}
+.mini-messagebox-question
+{
+    background:url(../images/messagebox/icon-question.gif) no-repeat 50% 50%;
+}
+.mini-messagebox-error
+{
+    background:url(../images/messagebox/icon-error.gif) no-repeat 50% 50%;
+}
+.mini-messagebox-waiting
+{
+    background:url(../images/messagebox/loading.gif) no-repeat 50% 50%;
+}
+.mini-outlookbar-groupHeader
+{
+    background:url(../images/navbar/header.png) repeat-x 0 0;           
+}
+.mini-outlookbar .mini-outlookbar-expand .mini-tools-collapse
+{
+    background:url(../images/tools/expand.gif) no-repeat 50% 50%;   
+}
+.mini-tab
+{    
+  /*   background: #EBEBEE url(../images/tabs/tab.png) repeat-x 0 0; */        
+}
+.mini-tab-hover
+{    
+   /*  background:#E1E8FD url(../images/tabs/hover.png) repeat-x 0 0;  */
+}
+.mini-tab-close
+{
+    background:url(../images/tabs/close.gif) no-repeat 3px 3px;
+}
+.mini-tabs-tabmenu
+{
+    background:#ebebee url(../images/tabs/down.gif) no-repeat 50% 50%;
+    display:none;
+    height:15px;width:17px;
+    position:absolute;top: 4px;
+    border:1px solid #adadad;
+    z-index: 1000;
+}
+body a:hover.mini-button
+{    
+    padding:0;
+    border:1px solid #A9ACB5;
+    background:#dde6fe url(../images/button/hover.png) repeat-x 0 0;      
+    text-decoration:none;
+}
+.mini-tabs-leftButton, .mini-tabs-rightButton
+{
+    background:#EBEBEE url(../images/tabs/allow_left.gif) no-repeat -1px 0 ;    
+
+}
+.mini-tabs-rightButton
+{
+    background:#EBEBEE url(../images/tabs/allow_right.gif) no-repeat -1px 0 ;
+}
+.mini-splitter-resize-button
+{
+    background:url(../images/splitter/resize.gif) no-repeat 50% 50%;
+}
+.mini-splitter-pane1-button, .mini-splitter-pane2-button
+{   
+    background:url(../images/splitter/mini-left.gif) no-repeat 50% 50%;
+}
+.mini-splitter-pane2-button
+{
+    background:url(../images/splitter/mini-right.gif) no-repeat 50% 50%;
+}
+.mini-splitter-handler-vertical .mini-splitter-pane1-button, 
+.mini-splitter-handler-vertical .mini-splitter-pane2-button
+{
+    background:url(../images/splitter/mini-top.gif) no-repeat 0px 0px;
+}
+.mini-splitter-handler-vertical .mini-splitter-pane2-button
+{
+    background:url(../images/splitter/mini-bottom.gif) no-repeat 0px 0px;
+}
+.mini-splitter-handler-vertical .mini-splitter-resize-button
+{
+    background:url(../images/splitter/resize_h.gif) no-repeat 50% 50%;
+}
+.mini-layout-region-header
+{
+    background:url(../images/layout/header.png) repeat-x 0 0;    
+
+}
+.mini-layout-region-west .mini-layout-region-header .mini-tools-collapse
+{
+    background:url(../images/layout/west.gif) no-repeat 50% 50%;
+}
+.mini-layout-region-east .mini-layout-region-header .mini-tools-collapse
+{
+    background:url(../images/layout/east.gif) no-repeat 50% 50%;
+}
+.mini-layout-region-north .mini-layout-region-header .mini-tools-collapse
+{
+    background:url(../images/layout/north.gif) no-repeat 50% 50%;
+}
+.mini-layout-region-south .mini-layout-region-header .mini-tools-collapse
+{
+    background:url(../images/layout/south.gif) no-repeat 50% 50%;
+}
+
+.mini-layout-proxy-west .mini-tools-collapse
+{
+    background:url(../images/layout/east.gif) no-repeat 50% 50%;
+}
+.mini-layout-proxy-east .mini-tools-collapse
+{
+    background:url(../images/layout/west.gif) no-repeat 50% 50%;
+}
+.mini-layout-proxy-north .mini-tools-collapse
+{
+    background:url(../images/layout/south.gif) no-repeat 50% 50%;
+}
+.mini-layout-proxy-south .mini-tools-collapse
+{
+    background:url(../images/layout/north.gif) no-repeat 50% 50%;
+}
+.mini-layout-spliticon
+{
+ 
+    background:url(../images/splitter/mini-left.gif) no-repeat 50% 50%;
+ 
+}
+.mini-layout-split-east .mini-layout-spliticon
+{
+    background:url(../images/splitter/mini-right.gif) no-repeat 50% 50%;
+}
+.mini-layout-split-north .mini-layout-spliticon,
+.mini-layout-split-south .mini-layout-spliticon
+{
+    background:url(../images/splitter/mini-top.gif) no-repeat 50% 50%;
+}
+.mini-layout-split-south .mini-layout-spliticon
+{    
+    background:url(../images/splitter/mini-bottom.gif) no-repeat 50% 50%;
+}
+
+
+.mini-layout-split-west .mini-layout-spliticon-collapse
+{
+    background:url(../images/splitter/mini-right.gif) no-repeat 50% 50%;
+}
+.mini-layout-split-east .mini-layout-spliticon-collapse
+{
+    background:url(../images/splitter/mini-left.gif) no-repeat 50% 50%;
+}
+.mini-layout-split-north .mini-layout-spliticon-collapse
+{
+    background:url(../images/splitter/mini-bottom.gif) no-repeat 50% 50%;
+}
+.mini-layout-split-south .mini-layout-spliticon-collapse
+{
+    background:url(../images/splitter/mini-top.gif) no-repeat 50% 50%;
+}
+.mini-menu-topArrow, .mini-menu-bottomArrow
+{
+    background:url(../images/menu/top-arrow.gif) no-repeat 50% 2px;    
+}
+.mini-menu-bottomArrow
+{
+    background:url(../images/menu/bottom-arrow.gif) no-repeat 50% 2px;
+}
+.mini-menuitem-hover
+{   
+    background:#E3EBFF url(../images/menu/item.png) repeat-x 0 0;    
+}
+.mini-menu-popup
+{    
+    background:#E3EBFF url(../images/menu/item.png) repeat-x 0 0;
+}
+.mini-menuitem-selected
+{  
+    background:#DBDDE2 url(../images/menu/pressed.png) repeat-x 0 0;
+}
+.mini-menuitem-allow
+{
+    background:url(../images/menu/arrow.png) no-repeat 8px 50%;
+}
+.mini-menu .mini-menuitem-checked .mini-menuitem-icon
+{
+    background:url(../images/menu/checked.gif) no-repeat 50% 6px;
+}
+.mini-menu-horizontal .mini-menu-border
+{
+    background:#F1F2F6 url(../images/menu/hmenubg.png) repeat-x 0 0;
+}
+.mini-menu-horizontal .mini-menuitem-allow
+{
+    background:url(../images/menu/hallow.gif) no-repeat 50% 0px;
+}
+.mini-menu-overflow .mini-menu-topArrow,
+.mini-menu-overflow .mini-menu-bottomArrow
+{
+    background: url("../images/tabs/allow_left.gif") no-repeat scroll -1px 50% ;
+}
+
+.mini-menu-overflow .mini-menu-bottomArrow
+{
+    background: url("../images/tabs/allow_right.gif") no-repeat scroll -1px 50%;
+}
+.mini-calendar-header
+{      
+    background:#E7EBEF url(../images/calendar/header.png) repeat-x 0 0;        
+}
+.mini-calendar-yearPrev, .mini-calendar-yearNext,
+.mini-calendar-monthPrev, .mini-calendar-monthNext
+{
+    background:url(../images/calendar/prev.gif) no-repeat 50% 3px;
+}
+.mini-calendar-yearNext
+{
+    background:url(../images/calendar/next.gif) no-repeat 50% 3px;
+}
+.mini-calendar-monthPrev
+{
+    background:url(../images/calendar/months.gif) no-repeat 0 50%;    
+}
+.mini-calendar-monthNext
+{
+    background:url(../images/calendar/months.gif) no-repeat right 50%;    
+}
+.mini-calendar-tadayButton, .mini-calendar-clearButton,
+.mini-calendar-okButton, .mini-calendar-cancelButton
+{        
+    background:#EBEDF2 url(../images/calendar/button.png) repeat-x 0 0;
+}
+.mini-calendar-menu-prevYear,
+.mini-calendar-menu-nextYear
+{
+    background:url(../images/calendar/months.gif) no-repeat 0 50%;   
+}
+.mini-calendar-menu-nextYear
+{
+    background:url(../images/calendar/months.gif) no-repeat right 50%;   
+}
+.mini-listbox-header
+{
+    background:#E7EBEF url(../images/listbox/header.png) repeat-x 0 0;    
+}
+.mini-tooltip-loading
+{
+    background:url(../images/tooltip/wait.gif) no-repeat 50% 50%;
+}
+.mini-grid-headerCell
+{   
+    background:#E7EBEF url(../images/grid/header.png) repeat-x 0 0;
+}
+.mini-grid-topRightCell
+{
+    background:#E7EBEF url(../images/grid/header.png) repeat-x 0 0;
+ }
+.mini-grid-cell-dirty
+{
+    background:url(../images/grid/dirty.gif) no-repeat right 4px;  
+}
+.mini-grid-groupTitle
+{
+    background:url(../images/grid/expand.gif) no-repeat 4px 6px;
+}
+.mini-grid-group-collapse .mini-grid-groupTitle
+{
+    background:url(../images/grid/collapse.gif) no-repeat 3px 6px;
+}
+.mini-grid-topPager
+{
+    background:#E7EAEE url(../images/grid/footer.png) repeat-x 0 0;
+}
+
+.mini-grid-sortIcon
+{
+    background:url(../images/grid/icons.png) no-repeat -19px -18px;
+}
+.mini-grid-ecIcon
+{
+    background-image:url(../images/tree/collapse.gif);
+}
+.mini-grid-expandRow .mini-grid-ecIcon
+{
+    background-image:url(../images/tree/expand.gif);
+}
+.mini-grid-columnproxy
+{
+    
+    background:#E7EBEF url(../images/grid/header.png) repeat-x 0 0;
+}
+.mini-grid-movetop, .mini-grid-movebottom
+{
+    background:url(../images/grid/col-move-top.gif) no-repeat;
+
+}
+.mini-grid-movebottom
+{
+    background:url(../images/grid/col-move-bottom.gif) no-repeat;
+}
+.mini-grid-no .mini-grid-columnproxy-inner
+{
+    background:url(../images/grid/no.gif) no-repeat 0 6px;
+}
+.mini-grid-ok .mini-grid-columnproxy-inner
+{
+    background:url(../images/grid/ok.gif) no-repeat 0 6px;
+}
+.mini-tree-collapse .mini-tree-node-ecicon
+{
+    background-image:url(../images/tree/collapse.gif);
+}
+.mini-tree-expand .mini-tree-node-ecicon
+{
+    background-image:url(../images/tree/expand.gif);
+}
+.mini-tree-leaf
+{
+    background-image:url(../images/tree/leaf.gif);
+}
+.mini-tree-folder
+{
+    background-image:url(../images/tree/folder.gif);
+}
+.mini-tree-expand .mini-tree-folder
+{
+    background-image:url(../images/tree/folder-open.gif);
+}
+body .mini-tree .mini-tree-loading .mini-tree-node-ecicon,
+body .mini-tree-loading .mini-treegrid-ec-icon
+{
+    background:#fff url(../images/tree/loading.gif) no-repeat scroll 50% 50%;
+}
+.mini-tree-node-hover .mini-tree-nodeshow
+{
+    background:#dde6fe url(../images/tree/hover.png) repeat-x 0 0;        
+}
+
+.mini-tree-selectedNode .mini-tree-nodeshow
+{
+    background:#EBEDF2 url(../images/tree/button.png) repeat-x 0 0;
+}
+.mini-tree-treeLine .mini-tree-indent{
+    background:transparent url(../images/tree/treeline.gif) repeat-y 9px 0px; 
+}
+
+.mini-tree-treeLine .mini-tree-node-ecicon
+{
+    background:transparent url(../images/tree/treeNodeLine.gif) no-repeat 1px -4px; 
+}
+
+.mini-tree-treeLine .mini-tree-expand .mini-tree-node-ecicon{
+    background:transparent url(../images/tree/expandLine.gif) no-repeat 2px -1px;
+}
+.mini-tree-treeLine .mini-tree-collapse .mini-tree-node-ecicon{
+    background:transparent url(../images/tree/collapseLine.gif) no-repeat 1px -1px;
+}
+.mini-tree-treeLine .mini-tree-node-ecicon-last
+{
+    background:transparent url(../images/tree/lastline.gif) no-repeat 2px -5px; 
+}
+
+
+.mini-tree-treeLine .mini-tree-expand .mini-tree-node-ecicon-first
+{
+    background:transparent url(../images/tree/firstExpandNode.gif) no-repeat 2px 0;
+}
+.mini-tree-treeLine .mini-tree-expand .mini-tree-node-ecicon-last
+{
+    background:transparent url(../images/tree/lastExpandNode.gif) no-repeat 2px -1px;
+}
+.mini-tree-treeLine .mini-tree-collapse .mini-tree-node-ecicon-first
+{
+    background:transparent url(../images/tree/firstCollapseNode.gif) no-repeat 1px 0;
+}
+.mini-tree-treeLine .mini-tree-collapse .mini-tree-node-ecicon-last
+{
+    background:transparent url(../images/tree/lastCollapseNode.gif) no-repeat 1px -1px;
+}
+
+.mini-tree-treeLine .mini-tree-expand .mini-tree-node-ecicon-firstLast
+{
+    background:transparent url(../images/tree/expand.gif) no-repeat 1px 0;
+}
+.mini-tree-treeLine .mini-tree-collapse .mini-tree-node-ecicon-firstLast
+{
+    background:transparent url(../images/tree/collapse.gif) no-repeat 0px 0;
+}
+
+
+.mini-tree-treeLine .mini-tree-expand .mini-tree-node-ecicon-firstAndlast
+{
+    background-position:50% 70%;
+    background-image:url(../images/tree/firstAndlastexpand.gif);
+}
+.mini-tree-treeLine .mini-tree-collapse .mini-tree-node-ecicon-firstAndlast
+{
+    background-position:50% 50%;
+    background-image:url(../images/tree/firstAndlastcollapse.gif);
+}
+body .mini-tree-showArrows .mini-tree-collapse .mini-tree-node-ecicon
+{
+    background:url(../images/tree/arrows.gif) no-repeat 0px 2px;
+}
+body .mini-tree-showArrows .mini-tree-expand .mini-tree-node-ecicon
+{
+    background:url(../images/tree/arrows.gif) no-repeat -16px 2px;
+}
+.mini-tree-radio
+{
+    background-image:url(../images/tree/radio_unchecked.gif);
+}
+.mini-tree-selectedNode .mini-tree-radio
+{
+    background-image:url(../images/tree/radio_checked.gif);
+}
+.mini-pager-first
+{    
+    background:url(../images/pager/first.gif) no-repeat;
+}
+.mini-pager-prev
+{
+    background-image:url(../images/pager/prev.gif);
+}
+.mini-pager-next
+{
+    background-image:url(../images/pager/next.gif);
+}
+.mini-pager-last
+{
+    background-image:url(../images/pager/last.gif);
+}
+.mini-pager-reload
+{
+    background-image:url(../images/pager/reload.png);
+}
+.mini-htmlfile .mini-buttonedit-button
+{
+    background:#EBEDF2 url(../images/buttonedit/button.png) repeat-x 0 0;
+}
+.mini-textboxlist-close { position: absolute; right: 4px;top:5px; display: block; width: 7px; height: 7px; font-size: 1px; background: url(images/textboxlist/close.gif); cursor:pointer; }
+.mini-textboxlist-popup-loading
+{
+    background:url(../images/textboxlist/loading.gif) no-repeat 0 5px;
+ 
+}
+.mini-textboxlist-popup-error
+{
+    background:url(../images/textboxlist/error.gif) no-repeat 0 5px;
+}
+.app-header
+{
+    background:url(../images/header.gif) repeat-x 0 -1px;
+}
+  .mini-mask-loading
+{
+    background:#fff url(../images/grid/loading.gif) no-repeat scroll 5px 50%;
+}  
+
+.calendar-style-one.mini-calendar{
+	margin:0 auto;
+}
+.calendar-style-one.mini-calendar,
+.calendar-style-one .mini-calendar-date{
+	border:none;
+}
+.calendar-style-one .mini-calendar-footer,
+.calendar-style-one .mini-calendar-yearPrev,
+.calendar-style-one .mini-calendar-yearNext{
+  display: none;
+}
+.calendar-style-one .mini-calendar-header{
+	background: transparent;
+	height: 28px;
+	border-bottom: none;
+}
+.calendar-style-one.mini-calendar td{
+	line-height: 18px;
+	border-bottom: none;
+}
+.calendar-style-one .mini-calendar-today{
+	border:none;
+    background: transparent;
+}
+
+.calendar-style-one .mini-calendar-selected{
+
+	background: transparent;
+}
+.calendar-style-one .mini-calendar-selected span{
+    color: #fff;
+    background: #EA9E33;
+}
+.mini-calendar.calendar-style-one  .mini-calendar-today{
+	border:none;
+}
+.mini-calendar.calendar-style-one .mini-calendar-selected{
+	border:none;
+	background:transparent;
+}
+.calendar-style-one .mini-calendar-days span{
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	line-height: 25px;
+    border-radius: 100%;
+}
+.calendar-style-one  .mini-calendar-today span{
+	color: #fff;
+	border-radius: 100%;
+	background: #dd6226;
+}
+.calendar-style-one .mini-calendar-othermonth{
+	color: transparent;
+} 
+
+.calendar-style-one .mini-calendar-monthNext{    
+	margin-right: 15px;
+    background: url(../images/calendar/months.png) no-repeat 100% 0;
+}
+.calendar-style-one .mini-calendar-monthPrev{    
+	margin-left: 15px;
+    background: url(../images/calendar/months.png) no-repeat 0 50%;
+}
+.mini-tabs-header .mini-tab{
+    height:23px;
+}
+.mini-button-text
+{   
+    padding:3px 8px 3px 8px;
+}
+.mini-grid-pager .mini-pager-index input {
+    padding: 2px;
+}

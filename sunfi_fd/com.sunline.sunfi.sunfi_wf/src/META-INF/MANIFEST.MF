@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-Description: 业务流程
+Bundle-Name: com.sunline.sunfi.sunfi_wf
+eos-webCtxPath: sunfi_wf
+Bundle-Vendor: 安宣部
+Bundle-SymbolicName: com.sunline.sunfi.sunfi_wf
+Require-Bundle: com.sunline.sunfi,com.eos.foundation,com.primeton.work
+ flow.core,com.eos.workflow
+Bundle-Version: 1.0.0
+

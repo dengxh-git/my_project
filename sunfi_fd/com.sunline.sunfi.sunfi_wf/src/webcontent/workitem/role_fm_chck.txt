@@ -1,0 +1,1 @@
+[{"id":"AGREE","text": "同意"},{"id":"CANCEL","text": "作废"}]

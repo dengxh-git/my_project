@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="gb2312"?>
+<!DOCTYPE commonfield [<!ENTITY common_request_field SYSTEM "common_request.entity"> <!ENTITY common_response_field SYSTEM "common_response.entity">]>
+<packet prcscd="qredct">
+    <Request>
+    	<Field name="CommStruct" multi="false"  cnvtna="/request/CommStruct" >
+    		<Record>
+    		
+    		</Record>
+    	</Field>
+    	<Field name="list" multi="true" cnvtna="/request/List">
+    		<Record>
+    			<Field name="lncfno" title="" cnvtna="Duebillno" type="String" maxlen="50"/>
+    			<Field name="AgainstArm" title="" cnvtna="AgainstArm" type="String" maxlen="50"/>
+    			<Field name="AgainstAmt" title="" cnvtna="AgainstAmt" type="String" maxlen="50"/>
+    			<Field name="InterestArm" title="" cnvtna="InterestArm" type="String" maxlen="50"/>
+    			<Field name="InterestAmt" title="" cnvtna="InterestAmt" type="String" maxlen="50"/>
+    		</Record>
+    	</Field>
+    </Request>
+    <Response>
+      &common_response_field;
+       <Field name="lttsdt" title="" cnvtna="lttsdt" type="String" maxlen="20" defaultval="0"/>
+    </Response>
+</packet>

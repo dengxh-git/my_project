@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<process:tBusinessLogic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://com.primeton.emf.core" xmlns:process="http://primeton.com/emf/core/process" name="getComBrch.bizx" detailDescription="" demonstration="" urls="" gridVisibility="false" rulerVisibility="true" snapToGeometry="true" productVersion="7.0.0.0">
+  <nodes xsi:type="process:tStart" id="start0" name="开始" displayName="开始" type="start">
+    <sourceConnections xsi:type="process:tLink" id="link0" name="link0" displayName="连接线" isDefault="true" type="transition">
+      <sourceNode>start0</sourceNode>
+      <targetNode>assign0</targetNode>
+    </sourceConnections>
+    <location x="165" y="150"/>
+    <size height="28" width="28"/>
+    <nodeLabel>start0label</nodeLabel>
+  </nodes>
+  <nodes xsi:type="process:tEnd" id="end0" name="结束" displayName="结束" type="end">
+    <targetConnections>link2</targetConnections>
+    <targetConnections>link5</targetConnections>
+    <location x="735" y="150"/>
+    <size height="28" width="28"/>
+    <nodeLabel>end0label</nodeLabel>
+    <process:returns>
+      <process:return id="0" language="com.sunline.sunfi.sunfi_cm.brch.ComBrch" name="combrch" type="query" valueType="DataObject">combrch</process:return>
+    </process:returns>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="start0label" name="label" displayName="label" nodeType="label">
+    <location x="167" y="186"/>
+    <figSize height="17" width="25"/>
+    <node>start0</node>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="end0label" name="label" displayName="label" nodeType="label">
+    <location x="737" y="186"/>
+    <figSize height="17" width="25"/>
+    <node>end0</node>
+  </nodes>
+  <nodes xsi:type="process:tAssign" id="assign0" name="赋值" displayName="赋值" type="assign">
+    <sourceConnections xsi:type="process:tLink" description="" id="link1" name="link1" displayName="连接线" isDefault="true" type="transition">
+      <sourceNode>assign0</sourceNode>
+      <targetNode>invokePojo0</targetNode>
+      <process:transitionCondition>
+        <process:simpleCondition operator="EQ">
+          <process:leftOperand type="query"></process:leftOperand>
+          <process:rightOperand type="literal">1</process:rightOperand>
+        </process:simpleCondition>
+      </process:transitionCondition>
+    </sourceConnections>
+    <sourceConnections xsi:type="process:tLink" description="" id="link6" name="机构类型为责任中心" displayName="连接线" type="transition">
+      <sourceNode>assign0</sourceNode>
+      <targetNode>assign1</targetNode>
+      <process:transitionCondition>
+        <process:simpleCondition operator="EQ">
+          <process:leftOperand type="query">combrch/brchtp</process:leftOperand>
+          <process:rightOperand type="literal">0001</process:rightOperand>
+        </process:simpleCondition>
+      </process:transitionCondition>
+    </sourceConnections>
+    <targetConnections>link0</targetConnections>
+    <location x="300" y="150"/>
+    <size height="28" width="28"/>
+    <nodeLabel>assign0label</nodeLabel>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="assign0label" name="label" nodeType="label">
+    <location x="302" y="186"/>
+    <figSize height="17" width="25"/>
+    <node>assign0</node>
+  </nodes>
+  <nodes xsi:type="process:tInvoke" description="" id="invokePojo0" name="法人机构" displayName="Query according to the dataObject" type="invoke" index="0" invokeType="invoke_pojo" varArgs="false">
+    <sourceConnections xsi:type="process:tLink" id="link2" name="link2" displayName="连接线" isDefault="true" type="transition">
+      <sourceNode>invokePojo0</sourceNode>
+      <targetNode>end0</targetNode>
+    </sourceConnections>
+    <targetConnections>link1</targetConnections>
+    <location x="510" y="150"/>
+    <size height="28" width="22"/>
+    <nodeLabel>invokePojo0label</nodeLabel>
+    <process:pojo methodType="instance" synchronization="true" transactionType="join">
+      <process:partner type="literal">com.eos.foundation.database.DatabaseUtil.expandEntity</process:partner>
+      <process:instance instanceName=""/>
+    </process:pojo>
+    <process:inputVariables>
+      <process:inputVariable id="0" name="dsName" type="literal" value="java.lang.String" valueType="Java" pattern="reference">default</process:inputVariable>
+      <process:inputVariable id="1" name="dataObject" type="query" value="commonj.sdo.DataObject" valueType="Java" pattern="reference">combrch</process:inputVariable>
+    </process:inputVariables>
+    <process:outputVariables>
+      <process:outputVariable id="0" name="out0" type="query" value="int" valueType="Java"></process:outputVariable>
+    </process:outputVariables>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="invokePojo0label" name="label" nodeType="label">
+    <location x="497" y="186"/>
+    <figSize height="17" width="49"/>
+    <node>invokePojo0</node>
+  </nodes>
+  <nodes xsi:type="process:tInvoke" description="" id="invokePojo1" name="责任中心" displayName="Query according to the dataObject" type="invoke" index="0" invokeType="invoke_pojo" varArgs="false">
+    <sourceConnections xsi:type="process:tLink" id="link4" name="link4" displayName="连接线" isDefault="true" type="transition">
+      <sourceNode>invokePojo1</sourceNode>
+      <targetNode>assign3</targetNode>
+    </sourceConnections>
+    <targetConnections>link3</targetConnections>
+    <location x="405" y="300"/>
+    <size height="28" width="22"/>
+    <nodeLabel>invokePojo1label</nodeLabel>
+    <process:pojo methodType="instance" synchronization="true" transactionType="join">
+      <process:partner type="literal">com.eos.foundation.database.DatabaseUtil.expandEntity</process:partner>
+      <process:instance instanceName=""/>
+    </process:pojo>
+    <process:inputVariables>
+      <process:inputVariable id="0" name="dsName" type="literal" value="java.lang.String" valueType="Java" pattern="reference">default</process:inputVariable>
+      <process:inputVariable id="1" name="dataObject" type="query" value="commonj.sdo.DataObject" valueType="Java" pattern="reference">comduty</process:inputVariable>
+    </process:inputVariables>
+    <process:outputVariables>
+      <process:outputVariable id="0" name="out0" type="query" value="int" valueType="Java"></process:outputVariable>
+    </process:outputVariables>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="invokePojo1label" name="label" nodeType="label">
+    <location x="392" y="336"/>
+    <figSize height="17" width="49"/>
+    <node>invokePojo1</node>
+  </nodes>
+  <nodes xsi:type="process:tAssign" description="" id="assign1" name="赋值1" displayName="赋值" type="assign">
+    <sourceConnections xsi:type="process:tLink" id="link3" name="link3" displayName="连接线" isDefault="true" type="transition">
+      <sourceNode>assign1</sourceNode>
+      <targetNode>invokePojo1</targetNode>
+    </sourceConnections>
+    <targetConnections>link6</targetConnections>
+    <location x="300" y="300"/>
+    <size height="28" width="28"/>
+    <nodeLabel>assign1label</nodeLabel>
+    <process:copy>
+      <process:from type="query" pattern="reference">combrch/brchcd</process:from>
+      <process:to type="query">comduty/dutycd</process:to>
+    </process:copy>
+    <process:copy>
+      <process:from type="query" pattern="reference">combrch/sprrcd</process:from>
+      <process:to type="query">comduty/sprrcd</process:to>
+    </process:copy>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="assign1label" name="label" nodeType="label">
+    <location x="298" y="336"/>
+    <figSize height="17" width="32"/>
+    <node>assign1</node>
+  </nodes>
+  <nodes xsi:type="process:tAssign" description="" id="assign2" name="赋值2" displayName="赋值" type="assign">
+    <sourceConnections xsi:type="process:tLink" id="link5" name="link5" displayName="连接线" isDefault="true" type="transition">
+      <sourceNode>assign2</sourceNode>
+      <targetNode>end0</targetNode>
+    </sourceConnections>
+    <targetConnections>link7</targetConnections>
+    <location x="675" y="300"/>
+    <size height="28" width="28"/>
+    <nodeLabel>assign2label</nodeLabel>
+    <process:copy>
+      <process:from type="query" pattern="reference">comduty/dutycd</process:from>
+      <process:to type="query">combrch/brchcd</process:to>
+    </process:copy>
+    <process:copy>
+      <process:from type="query" pattern="reference">comduty/sprrcd</process:from>
+      <process:to type="query">combrch/sprrcd</process:to>
+    </process:copy>
+    <process:copy>
+      <process:from type="query" pattern="reference">comduty/dutyna</process:from>
+      <process:to type="query">combrch/brchna</process:to>
+    </process:copy>
+    <process:copy>
+      <process:from type="query" pattern="reference">comduty/dutysq</process:from>
+      <process:to type="query">combrch/brchsq</process:to>
+    </process:copy>
+    <process:copy>
+      <process:from type="query" pattern="reference">comduty/dutytp</process:from>
+      <process:to type="query">combrch/brchtp</process:to>
+    </process:copy>
+    <process:copy>
+      <process:from type="query" pattern="reference">comduty/usedtp</process:from>
+      <process:to type="query">combrch/usedtp</process:to>
+    </process:copy>
+    <process:copy>
+      <process:from type="query" pattern="reference">comduty/remark</process:from>
+      <process:to type="query">combrch/remark</process:to>
+    </process:copy>
+    <process:copy>
+      <process:from type="query" pattern="reference">template/brchna</process:from>
+      <process:to type="query">combrch/sprrna</process:to>
+    </process:copy>
+    <process:copy>
+      <process:from type="query" pattern="reference">comduty/flowtp</process:from>
+      <process:to type="query">combrch/flowtp</process:to>
+    </process:copy>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="assign2label" name="label" nodeType="label">
+    <location x="673" y="336"/>
+    <figSize height="17" width="32"/>
+    <node>assign2</node>
+  </nodes>
+  <nodes xsi:type="process:tInvoke" description="" id="invokePojo2" name="查询上级" displayName="Query according to the dataObject" type="invoke" index="0" invokeType="invoke_pojo" varArgs="false">
+    <sourceConnections xsi:type="process:tLink" id="link7" name="link7" displayName="连接线" isDefault="true" type="transition">
+      <sourceNode>invokePojo2</sourceNode>
+      <targetNode>assign2</targetNode>
+    </sourceConnections>
+    <targetConnections>link8</targetConnections>
+    <location x="601" y="300"/>
+    <size height="28" width="22"/>
+    <nodeLabel>invokePojo2label</nodeLabel>
+    <process:pojo methodType="instance" synchronization="true" transactionType="join">
+      <process:partner type="literal">com.eos.foundation.database.DatabaseUtil.expandEntity</process:partner>
+      <process:instance instanceName=""/>
+    </process:pojo>
+    <process:inputVariables>
+      <process:inputVariable id="0" name="dsName" type="literal" value="java.lang.String" valueType="Java" pattern="reference">default</process:inputVariable>
+      <process:inputVariable id="1" name="dataObject" type="query" value="commonj.sdo.DataObject" valueType="Java" pattern="reference">template</process:inputVariable>
+    </process:inputVariables>
+    <process:outputVariables>
+      <process:outputVariable id="0" name="out0" type="query" value="int" valueType="Java"></process:outputVariable>
+    </process:outputVariables>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="invokePojo2label" name="label" nodeType="label">
+    <location x="588" y="336"/>
+    <figSize height="17" width="49"/>
+    <node>invokePojo2</node>
+  </nodes>
+  <nodes xsi:type="process:tAssign" description="" id="assign3" name="赋值3" displayName="赋值" type="assign">
+    <sourceConnections xsi:type="process:tLink" id="link8" name="link8" displayName="连接线" isDefault="true" type="transition">
+      <sourceNode>assign3</sourceNode>
+      <targetNode>invokePojo2</targetNode>
+    </sourceConnections>
+    <targetConnections>link4</targetConnections>
+    <location x="495" y="300"/>
+    <size height="28" width="28"/>
+    <nodeLabel>assign3label</nodeLabel>
+    <process:copy>
+      <process:from type="query" pattern="reference">comduty/sprrcd</process:from>
+      <process:to type="query">template/brchcd</process:to>
+    </process:copy>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="assign3label" name="label" nodeType="label">
+    <location x="493" y="336"/>
+    <figSize height="17" width="32"/>
+    <node>assign3</node>
+  </nodes>
+  <topRuler/>
+  <leftRuler/>
+  <process:info author="weixin" createTime="2018-12-06 10:11:09" date="2018-12-06Z" description="" name="getComBrch" version="7.0.0.0"/>
+  <process:variables>
+    <process:variable description="" historyStateLocation="client" isArray="false" modelType="com.sunline.sunfi.sunfi_cm.brch.ComDuty" name="comduty"/>
+    <process:variable description="" historyStateLocation="client" isArray="false" modelType="com.sunline.sunfi.sunfi_cm.brch.ComBrch" name="template"/>
+  </process:variables>
+  <process:inputs varArgs="false">
+    <process:input description="" isArray="false" modelType="com.sunline.sunfi.sunfi_cm.brch.ComBrch" name="combrch"/>
+  </process:inputs>
+  <process:outputs>
+    <process:output description="" isArray="false" modelType="com.sunline.sunfi.sunfi_cm.brch.ComBrch" name="combrch"/>
+  </process:outputs>
+  <process:extAttribute1>public</process:extAttribute1>
+  <process:transactionType>true</process:transactionType>
+</process:tBusinessLogic>

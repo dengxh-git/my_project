@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<process:tBusinessLogic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://com.primeton.emf.core" xmlns:process="http://primeton.com/emf/core/process" name="setWkflidByEntity" detailDescription="" demonstration="" urls="" gridVisibility="false" rulerVisibility="true" snapToGeometry="true" productVersion="6.1">
+  <nodes xsi:type="model:Note" id="node0" name="注释" displayName="注释" nodeType="note" type="note" content="更新流程参数(workFlowMap)中实体（workFlowMap/detail）的流程id(workFlowMap/master/wkflid)&#xD;&#xA;1、workFlowMap/master/entityna&#xD;&#xA;2、workFlowMap/detail" title="安宣部&#x9;11-4-1 下午4:27">
+    <location x="162" y="375"/>
+    <size height="100" width="440"/>
+  </nodes>
+  <nodes xsi:type="process:tStart" description="" id="start0" name="开始" displayName="开始" type="start">
+    <sourceConnections xsi:type="process:tLink" id="link8" name="link8" displayName="连接线" isDefault="true" type="transition">
+      <sourceNode>start0</sourceNode>
+      <targetNode>assign0</targetNode>
+      <process:transitionCondition/>
+    </sourceConnections>
+    <location x="60" y="154"/>
+    <size height="28" width="28"/>
+    <nodeLabel>start0label</nodeLabel>
+  </nodes>
+  <nodes xsi:type="process:tEnd" id="end0" name="结束" displayName="结束" type="end">
+    <targetConnections>link11</targetConnections>
+    <location x="1005" y="154"/>
+    <size height="28" width="28"/>
+    <nodeLabel>end0label</nodeLabel>
+    <process:returns/>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="start0label" name="label" displayName="label" nodeType="label">
+    <location x="62" y="190"/>
+    <figSize height="17" width="25"/>
+    <node>start0</node>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="end0label" name="label" displayName="label" nodeType="label">
+    <location x="1007" y="190"/>
+    <figSize height="17" width="25"/>
+    <node>end0</node>
+  </nodes>
+  <nodes xsi:type="model:GroupNode" id="group0" name="group" grouped="true" gstart="loopstart0" gend="loopend0">
+    <location x="315" y="105"/>
+    <size height="126" width="391"/>
+    <chidren>assign1</chidren>
+    <chidren>loopstart0</chidren>
+    <chidren>loopend0</chidren>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="loopstart0label" name="label" nodeType="label">
+    <location x="315" y="188"/>
+    <figSize height="17" width="25"/>
+    <node>loopstart0</node>
+  </nodes>
+  <nodes xsi:type="process:tLoopStart" description="" id="loopstart0" name="循环" displayName="循环" grouped="true" type="loopstart" matchedName="loopend0" loopType="iterate">
+    <sourceConnections xsi:type="process:tLink" id="link7" name="link7" displayName="link1" isDefault="true" type="transition">
+      <sourceNode>loopstart0</sourceNode>
+      <targetNode>assign1</targetNode>
+      <process:transitionCondition/>
+    </sourceConnections>
+    <targetConnections>link9</targetConnections>
+    <location x="315" y="156"/>
+    <size height="24" width="24"/>
+    <nodeLabel>loopstart0label</nodeLabel>
+    <process:condition/>
+    <process:iterate iterable="workFlowMap/detail" iterableElement="detail"/>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="loopend0label" name="label" nodeType="label">
+    <location x="670" y="188"/>
+    <figSize height="17" width="49"/>
+    <node>loopend0</node>
+  </nodes>
+  <nodes xsi:type="process:tLoopEnd" id="loopend0" name="循环结束" displayName="循环结束" grouped="true" type="loopend" matchedName="loopstart0">
+    <sourceConnections xsi:type="process:tLink" id="link10" name="link10" displayName="连接线" isDefault="true" type="transition">
+      <sourceNode>loopend0</sourceNode>
+      <targetNode>invokePojo1</targetNode>
+    </sourceConnections>
+    <targetConnections>link1</targetConnections>
+    <location x="682" y="156"/>
+    <size height="24" width="24"/>
+    <nodeLabel>loopend0label</nodeLabel>
+  </nodes>
+  <nodes xsi:type="process:tAssign" description="" id="assign1" name="赋值" displayName="赋值" grouped="true" type="assign">
+    <sourceConnections xsi:type="process:tLink" id="link1" name="link1" displayName="link0" isDefault="true" type="transition">
+      <sourceNode>assign1</sourceNode>
+      <targetNode>loopend0</targetNode>
+    </sourceConnections>
+    <targetConnections>link7</targetConnections>
+    <location x="482" y="154"/>
+    <size height="28" width="28"/>
+    <nodeLabel>assign1label</nodeLabel>
+    <process:copy>
+      <process:from type="query" pattern="reference">workFlowMap/master/wkflid</process:from>
+      <process:to type="query">detail/wkflid</process:to>
+    </process:copy>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="assign1label" name="label" nodeType="label">
+    <location x="484" y="190"/>
+    <figSize height="17" width="25"/>
+    <node>assign1</node>
+  </nodes>
+  <nodes xsi:type="process:tAssign" description="" id="assign0" name="赋值" displayName="赋值" collapsed="false" type="assign">
+    <sourceConnections xsi:type="process:tLink" id="link9" name="link9" displayName="连接线" isDefault="true" type="transition">
+      <sourceNode>assign0</sourceNode>
+      <targetNode>loopstart0</targetNode>
+    </sourceConnections>
+    <targetConnections>link8</targetConnections>
+    <location x="227" y="154"/>
+    <size height="28" width="28"/>
+    <nodeLabel>assign0label</nodeLabel>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="assign0label" name="label" nodeType="label">
+    <location x="229" y="190"/>
+    <figSize height="17" width="25"/>
+    <node>assign0</node>
+  </nodes>
+  <nodes xsi:type="process:tInvoke" description="" id="invokePojo1" name="将dataobj转换实体类型" displayName="Convert dataObject array to specified dataObject array" type="invoke" index="0" invokeType="invoke_pojo" varArgs="false">
+    <sourceConnections xsi:type="process:tLink" id="link12" name="link12" displayName="连接线" isDefault="true" type="transition">
+      <sourceNode>invokePojo1</sourceNode>
+      <targetNode>invokePojo0</targetNode>
+      <process:transitionCondition/>
+    </sourceConnections>
+    <targetConnections>link10</targetConnections>
+    <location x="782" y="154"/>
+    <size height="28" width="22"/>
+    <nodeLabel>invokePojo1label</nodeLabel>
+    <process:pojo methodType="instance" synchronization="true" transactionType="join">
+      <process:partner type="literal">com.eos.foundation.data.DataObjectUtil.convertDataObjects</process:partner>
+      <process:instance instanceName=""/>
+    </process:pojo>
+    <process:inputVariables>
+      <process:inputVariable id="0" name="objs" type="query" value="java.lang.Object" valueType="Java" pattern="reference">workFlowMap/detail</process:inputVariable>
+      <process:inputVariable id="1" name="entityName" type="query" value="java.lang.String" valueType="Java" pattern="reference">workFlowMap/master/entityna</process:inputVariable>
+      <process:inputVariable id="2" name="convertAll" type="literal" value="boolean" valueType="Java" pattern="reference">true</process:inputVariable>
+    </process:inputVariables>
+    <process:outputVariables>
+      <process:outputVariable id="0" name="out0" type="query" value="commonj.sdo.DataObject[]" valueType="Java">temp</process:outputVariable>
+    </process:outputVariables>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="invokePojo1label" name="label" nodeType="label">
+    <location x="728" y="190"/>
+    <figSize height="17" width="130"/>
+    <node>invokePojo1</node>
+  </nodes>
+  <nodes xsi:type="process:tInvoke" description="" id="invokePojo0" name="批量更新实体" displayName="Batch update records" grouped="true" type="invoke" index="0" invokeType="invoke_pojo" varArgs="false">
+    <sourceConnections xsi:type="process:tLink" id="link11" name="link11" displayName="连接线" isDefault="true" type="transition">
+      <sourceNode>invokePojo0</sourceNode>
+      <targetNode>end0</targetNode>
+      <process:transitionCondition/>
+    </sourceConnections>
+    <targetConnections>link12</targetConnections>
+    <location x="900" y="154"/>
+    <size height="28" width="22"/>
+    <nodeLabel>invokePojo0label</nodeLabel>
+    <process:pojo methodType="instance" synchronization="true" transactionType="join">
+      <process:partner type="literal">com.eos.foundation.database.DatabaseUtil.updateEntityBatch</process:partner>
+      <process:instance instanceName=""/>
+    </process:pojo>
+    <process:inputVariables>
+      <process:inputVariable id="0" name="dsName" type="literal" value="java.lang.String" valueType="Java" pattern="reference">default</process:inputVariable>
+      <process:inputVariable id="1" name="dataObjects" type="query" value="commonj.sdo.DataObject[]" valueType="Java" pattern="reference">temp</process:inputVariable>
+    </process:inputVariables>
+    <process:outputVariables/>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="invokePojo0label" name="label" nodeType="label">
+    <location x="875" y="190"/>
+    <figSize height="17" width="73"/>
+    <node>invokePojo0</node>
+  </nodes>
+  <topRuler/>
+  <leftRuler/>
+  <process:info author="安宣部" createTime="2010-10-08 06:45:36" date="2010-10-08Z" description="" name="updateProcessInstID" version="6.1"/>
+  <process:variables>
+    <process:variable anyType="commonj.sdo.DataObject" description="" historyStateLocation="client" isArray="true" name="temp"/>
+  </process:variables>
+  <process:inputs varArgs="false">
+    <process:input anyType="java.util.HashMap" description="" isArray="false" name="workFlowMap"/>
+  </process:inputs>
+  <process:outputs/>
+  <process:extAttribute1>public</process:extAttribute1>
+  <process:transactionType>true</process:transactionType>
+</process:tBusinessLogic>

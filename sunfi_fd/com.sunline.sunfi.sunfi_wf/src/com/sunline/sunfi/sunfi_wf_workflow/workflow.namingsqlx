@@ -1,0 +1,688 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- author:孙志国 -->
+<sqlMap>
+    <resultMap class="com.sunline.sunfi.sunfi_wf.workflow.WfFile" id="wffileMap">    
+		<result column="fileid"  property="fileid"/>
+		<result column="catalg"  property="catalg"/>
+		<result column="filena"  property="filena"/>
+		<result column="nwname"  property="nwname"/>
+		<result column="flpath"  property="flpath"/>
+		<result column="abpath"  property="abpath"/>
+		<result column="flsize"  property="flsize"/>
+		<result column="fltype"  property="fltype"/>
+		<result column="uptime"  property="uptime" javaType="java.util.Date"/>
+		<result column="savetp"  property="savetp"/>
+		<result column="contet"  property="contet"/>
+		<result column="usercd"  property="usercd"/>
+		<result column="userna"  property="userna"/>
+		<result column="brchcd"  property="brchcd"/>
+		<result column="wkflid"  property="wkflid"/>
+		<result column="brchna"  property="brchna"/>
+		<result column="user_usercd"  property="user_usercd"/>
+    </resultMap>
+    
+    <resultMap class="commonj.sdo.DataObject" id="taskList">
+	    <result column="processinstid"  property="processinstid"/>
+	    <result column="processinstname"  property="processinstname"/>
+	    <result column="processinstdesc"  property="processinstdesc"/>
+	    <result column="creator"  property="creator"/>
+	    <result column="owner"  property="owner"/>
+	    <result column="currentstate"  property="currentstate"/>
+	    <result column="priority"  property="priority"/>
+		<result column="limitnum"  property="limitnum"/>
+		<result column="limitnumdesc"  property="limitnumdesc"/>
+		<result column="createtime"  property="createtime" javaType="java.util.Date" />
+		<result column="starttime"  property="starttime" javaType="java.util.Date" />
+		<result column="endtime"  property="endtime" javaType="java.util.Date" />
+		<result column="finaltime"  property="finaltime" javaType="java.util.Date" />
+		<result column="remindtime"  property="remindtime" javaType="java.util.Date"/>
+		<result column="parentprocid"  property="parentprocid"/>
+		<result column="processdefid"  property="processdefid"/>
+		<result column="istimeout"  property="istimeout"/>
+		<result column="timeoutnumdesc"  property="timeoutnumdesc"/>
+		<result column="updateversion"  property="updateversion"/>
+		<result column="processdefname"  property="processdefname"/>
+		<result column="approv"  property="approv"/>
+		<result column="applps"  property="applps"/>
+		<result column="extend3"  property="extend3"/>
+		<result column="extend4"  property="extend4"/>
+		<result column="extend5"  property="extend5"/>
+		<result column="extend6"  property="extend6"/>
+		<result column="extend7"  property="extend7"/>
+		<result column="cataloguuid"  property="cataloguuid"/>
+		<result column="catalogname"  property="catalogname"/>
+		<result column="remark"  property="remark"/>
+		<result column="brchna"  property="brchna"/>
+    </resultMap>
+    <resultMap class="commonj.sdo.DataObject" id="itemList">
+	    <result column="workitemid"  property="workitemid"/>
+	    <result column="workitemname"  property="workitemname"/>
+	    <result column="assistantname"  property="assistantname"/>
+	    <result column="endtime"  property="endtime" javaType="java.util.Date"/>
+	    <result column="participant"  property="participant"/>
+	    <result column="partiname"  property="partiname"/>
+	    <result column="annota"  property="annota"/>
+		<result column="approv"  property="approv"/>
+		<result column="cataloguuid"  property="cataloguuid"/>
+		<result column="catalogname"  property="catalogname" />
+    </resultMap>
+    <resultMap class="commonj.sdo.DataObject" id="unfinishtaskList">
+	    <result column="processinstid"  property="processInstID"/>
+	    <result column="processinstname"  property="processinstname"/>
+	    <result column="processinstdesc"  property="processinstdesc"/>
+	    <result column="creator"  property="creator"/>
+	    <result column="owner"  property="owner"/>
+	    <result column="currentstate"  property="currentstate"/>
+	    <result column="priority"  property="priority"/>
+		<result column="limitnum"  property="limitnum"/>
+		<result column="limitnumdesc"  property="limitnumdesc"/>
+		<result column="createtime"  property="createtime" javaType="java.util.Date" />
+		<result column="starttime"  property="starttime" javaType="java.util.Date" />
+		<result column="endtime"  property="endtime" javaType="java.util.Date" />
+		<result column="finaltime"  property="finaltime" javaType="java.util.Date" />
+		<result column="remindtime"  property="remindtime" javaType="java.util.Date"/>
+		<result column="parentprocid"  property="parentprocid"/>
+		<result column="processdefid"  property="processdefid"/>
+		<result column="istimeout"  property="istimeout"/>
+		<result column="timeoutnumdesc"  property="timeoutnumdesc"/>
+		<result column="updateversion"  property="updateversion"/>
+		<result column="processdefname"  property="processdefname"/>
+		<result column="approv"  property="approv"/>
+		<result column="applps"  property="applps"/>
+		<result column="extend3"  property="extend3"/>
+		<result column="extend4"  property="extend4"/>
+		<result column="extend5"  property="extend5"/>
+		<result column="extend6"  property="extend6"/>
+		<result column="extend7"  property="extend7"/>
+		<result column="cataloguuid"  property="cataloguuid"/>
+		<result column="catalogname"  property="catalogname"/>
+		<result column="workitemid"  property="workItemID"/>
+		<result column="activityinstid"  property="activityInstID"/>
+		<result column="brchna"  property="brchna"/>
+		<result column="remark"  property="remark"/>
+    </resultMap>
+    <parameterMap id="query_task" class="map">
+		<!-- 报文数据 -->
+	    <parameter property="Pi_Pckgdt" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+	</parameterMap>
+	<resultMap class="commonj.sdo.DataObject" id="wfactivityinst">
+	    <result column="ACTIVITYINSTID"  property="ACTIVITYINSTID"/>
+	    <result column="ACTIVITYDEFID"  property="ACTIVITYDEFID"/>
+	</resultMap>
+    
+    <!--查询活动实例ID -->
+    <select id="select_wfactivityinst" parameterClass="java.util.HashMap" resultMap="wfactivityinst">
+        select max(ACTIVITYINSTID) as ACTIVITYINSTID,ACTIVITYDEFID 
+          from WFActivityInst 
+         where ACTIVITYDEFID in (#activityDefID#,#activityDefID1#,#activityDefID2#,#activityDefID3#,#activityDefID4#,#activityDefID5#,#activityDefID6#
+         		,#activityDefID7#,#activityDefID8#,#activityDefID9#,#activityDefID10#,#activityDefID11#,#activityDefID12#,#activityDefID13#)
+               and PROCESSINSTID=#processInstID#
+         <isNotNull property="currentstate">
+            and currentstate = #currentstate#
+         </isNotNull>
+         group by ACTIVITYDEFID    
+    </select>
+    
+    <!--根据机构权限查询工作流附件 -->
+    <select id="select_wffile" parameterClass="java.util.HashMap" resultMap="wffileMap">
+        select a.*,b.brchna,b.usercd as user_usercd 
+            from wf_file a,eos_auth_brch b 
+            where a.brchcd = b.brchcd and b.usercd = #user_usercd#
+        <isNotNull property="brchcd">
+            and a.brchcd = #brchcd#
+        </isNotNull>
+        <isNotNull property="filena">
+            and a.filena like '%' || #filena# || '%'
+        </isNotNull>
+    </select>
+    
+    
+    <!--查已经完成工作项 -->
+        <!--查已经完成工作项 -->
+    <select id="select_finsheditem" parameterClass="java.util.HashMap" resultMap="itemList">
+        select b.workitemid,b.workitemname,
+		       b.assistantname,
+		       b.endtime,b.participant,b.partiname,
+		       it.annota,it.approv,b.cataloguuid,b.catalogname
+		from wfworkitem b left join wkf_item it on b.workitemid = it.itemid
+		where b.processinstid = #processinstid#
+		order by b.workitemid asc
+    </select>
+    
+       <select id="select_finshedtask" parameterClass="java.util.HashMap" resultMap="taskList">
+    	   select distinct 
+		       a.processinstid,a.processinstname,a.processinstdesc,u.empname creator,a.owner,
+		       a.currentstate,a.priority,a.limitnum,a.limitnumdesc,a.createtime,
+		       a.starttime,a.endtime,a.finaltime,a.remindtime,a.parentprocid,
+		       a.processdefid,a.istimeout,a.timeoutnumdesc,a.updateversion,a.processdefname,
+		       inst.approv,inst.applps,a.extend3,a.extend4,a.extend5,brch.orgname brchna,
+		       a.extend6,a.extend7,a.cataloguuid,a.catalogname,mark.remark remark
+		from wfprocessinst a left join wfworkitem b on (a.processinstid = b.processinstid)
+		                     left join wkf_inst inst on (a.processinstid = inst.procid)
+		                     left join org_employee u on(a.creator = u.empid)
+		                     left join org_organization brch on (u.orgid = brch.orgid)
+		                     inner join wfp_mark mark on  (a.processinstid =mark.wkflid )
+		where b.assistant=#empid#
+		<isNotNull property="creator">
+            and (a.creator like '%' || #creator# || '%' or inst.applps like '%' || #creator# || '%')
+        </isNotNull>
+        <isNotNull property="catalogname">
+            and (a.catalogname like '%' || #catalogname# || '%' )
+        </isNotNull>
+        <isNotNull property="money">
+            and (a.processinstname like '%' || #money# || '%' )
+        </isNotNull>
+         <isNotNull property="remark">
+            and (mark.remark like '%' || #remark# || '%' )
+        </isNotNull>
+        <isNotNull property="currentstate">
+            <isEqual property="currentstate" compareValue="2">
+         	   and (a.currentstate=#currentstate# )
+            </isEqual>
+            <isNotEqual property="currentstate" compareValue="2">
+         	   <![CDATA[ and a.currentstate='7' ]]>
+         	   <!-- 0、通过 1、不通过 -->
+               <isEqual property="currentstate" compareValue="0">
+         	        and (inst.approv='通过' )
+              </isEqual>	 
+              <isEqual property="currentstate" compareValue="1">
+         	        and (inst.approv='不通过' )
+              </isEqual>	 
+           </isNotEqual>
+        </isNotNull>
+        <isNotNull property="processinstname">
+        	and a.processinstname like '%' || #processinstname# || '%'
+        </isNotNull>
+        <isNotNull property="starttime1">
+             <![CDATA[ and to_char(a.createtime,'yyyyMMdd')> =  ]]> #starttime1#
+        </isNotNull>
+         <isNotNull property="starttime2">
+             <![CDATA[ and to_char(a.createtime,'yyyyMMdd')<=  ]]> #starttime2#
+        </isNotNull>
+        order by a.starttime desc,a.endtime desc
+    </select>
+    <!--查待处理任务 zhm 20151229-->
+    <select id="select_unfinshedtask" parameterClass="java.util.HashMap" resultMap="unfinishtaskList">
+ 		  select distinct 
+           a.processinstid,a.processinstname,a.processinstdesc,u.empname creator,a.owner,
+           a.currentstate,a.priority,a.limitnum,a.limitnumdesc,a.createtime,
+           a.starttime,a.endtime,a.finaltime,a.remindtime,a.parentprocid,
+           a.processdefid,a.istimeout,a.timeoutnumdesc,a.updateversion,a.processdefname,
+           inst.approv,inst.applps,a.extend3,a.extend4,a.extend5,
+           a.extend6,a.extend7,a.cataloguuid,a.catalogname ,
+           b.workitemid,b.activityinstid,b.createtime,brch.orgname brchna,mark.remark remark
+    from wfprocessinst a left join wfworkitem b on (a.processinstid = b.processinstid)
+                             left join wkf_inst inst on (a.processinstid = inst.procid)
+                             left join  org_employee u on(a.creator = u.empid)
+                             left join org_organization brch on (u.orgid = brch.orgid)
+                             inner join wfp_mark mark on  (a.processinstid =mark.wkflid )
+       where b.currentstate in ('4','10')
+    <isNotNull property="creator">
+            and (a.creator like '%' || #creator# || '%' or inst.applps like '%' || #creator# || '%')
+        </isNotNull>
+        <isNotNull property="usercd">
+            and (b.participant like '%' || #usercd# || '%' )
+        </isNotNull>
+         <isNotNull property="brchna">
+            and (brch.brchna like '%' || #brchna#  || '%')
+        </isNotNull>
+	  <isNotNull property="money">
+            and (a.processinstname like '%' || #money# || '%' )
+        </isNotNull>
+         <isNotNull property="empid">
+	       and (b.participant like '%$empid$%' or b.participant =#empid#)
+	     </isNotNull>
+         <isNotNull property="remark">
+            and (mark.remark like '%' || #remark# || '%' )
+        </isNotNull>
+        <isNotNull property="processinstname">
+          and a.processinstname like '%' || #processinstname# || '%'
+        </isNotNull>
+        <isNotNull property="createtime">
+             and (to_date(to_char(a.createtime,'yyyyMMdd'),'yyyyMMdd')=to_date(#createtime#,'yyyyMMdd'))
+        </isNotNull>
+        <isNotNull property="starttime1">
+          <![CDATA[ and to_char(a.createtime,'yyyyMMdd')> =  ]]> #starttime1#
+        </isNotNull>
+        <isNotNull property="starttime2">
+          <![CDATA[ and to_char(a.createtime,'yyyyMMdd')<=  ]]> #starttime2#
+        </isNotNull>	
+		order by b.createtime desc
+    </select>
+    
+
+    <!-- 以下为用户自定义命名sql -->
+    
+    <resultMap class="commonj.sdo.DataObject" id="totalMap">    
+		<result column="total" property="total"/>
+    </resultMap>
+    
+     <resultMap class="commonj.sdo.DataObject" id="afecount">    
+		<result column="afecount"  property="afecount"/>
+    </resultMap>
+    
+    <resultMap class="commonj.sdo.DataObject" id="bsnsdt">    
+		<result column="bsnsdt"  property="bsnsdt"/>
+    </resultMap>
+    
+    <resultMap class="commonj.sdo.DataObject" id="activitydefidMap">
+		<result column="activitydefid"  property="activitydefid"/>
+    </resultMap>  
+    
+    <!--预算编制插入预算登记簿表 -->
+    <insert id="insert_bdbbdch" parameterClass="java.util.HashMap">
+        insert into bdb_budg
+		select budgcd, ctbrch, prsncd, yearmh, crcycd, nwbdvl, chngus, chngdt,
+		0, nwbdvl
+		from bdb_bdch  where wkflid=#wkflid#
+    </insert>
+    
+     <!--预算调整更新预算登记簿表 -->
+    <update id="update_bdbbudg" parameterClass="java.util.HashMap">
+		update bdb_budg a set a.budgvl = (
+				select b.nwbdvl from bdb_bdch b 
+								where a.brchcd = b.ctbrch
+									  and a.budgcd=b.budgcd 
+									  and a.prsncd=b.prsncd 
+									  and a.yearmh=b.yearmh 
+									  and a.crcycd=b.crcycd 
+									  and b.wkflid=#wkflid#)
+		where exists(
+				select 1 from bdb_bdch b 
+								where a.brchcd = b.ctbrch
+									  and a.budgcd=b.budgcd 
+									  and a.prsncd=b.prsncd 
+									  and a.yearmh=b.yearmh 
+									  and a.crcycd=b.crcycd 
+									  and b.wkflid=#wkflid#)
+    </update>
+    
+    <!--根据流程id查找单笔费用明细金额大于审批金额条数 -->
+    <select id="select_afecount" parameterClass="java.util.HashMap" resultMap="afecount">
+        select  count(*) afecount from afb_rgst a,afb_rgst_detl b,com_para c
+                where a.bsnsdt = b.bsnsdt
+                and a.bsnssq = b.bsnssq
+                and c.parana='afamntLimits'
+                and b.afamnt>=c.paravl
+                and a.wkflid = #wkflid#
+
+    </select>
+    
+    <!--根据流程id统计费用明细金额 -->
+    <select id="select_totalafe" parameterClass="java.util.HashMap" resultMap="totalMap">
+
+        select sum(b.afamnt) total  from afb_rgst a,afb_rgst_detl b
+			where a.bsnsdt = b.bsnsdt
+			and a.bsnssq = b.bsnssq
+			and a.wkflid = #wkflid#
+
+    </select>
+    
+    <!--根据流程id统计应收应付审批金额 -->
+    <select id="select_totalapb" parameterClass="java.util.HashMap" resultMap="totalMap">
+        select sum(a.apamnt) total  from apb_rgst_detl a
+			where a.apflag = #apflag#
+			and a.wkflid = #wkflid#
+    </select>
+    
+    <!--根据流程id统计资产审批金额 -->
+    <select id="select_totalasb" parameterClass="java.util.HashMap" resultMap="totalMap">
+        select sum(a.thisam) total  from asb_card a
+			where a.wkflid = #wkflid#
+    </select>
+    
+    <!--根据流程id统计资产审批本次发生金额 -->
+    <select id="select_totalthisam" parameterClass="java.util.HashMap" resultMap="totalMap">
+        select sum(a.thisam) total  from asb_card a
+			where a.wkflid = #wkflid#
+    </select>
+    
+    <!--根据流程id查找公用费用非固定费用的数目 -->
+    <select id="select_extdcount" parameterClass="java.util.HashMap" resultMap="afecount">
+        select  count(*) afecount from afb_rgst a,afb_rgst_detl b,afp_type_extd c
+                where a.bsnsdt = b.bsnsdt
+                and a.bsnssq = b.bsnssq
+                and b.typecd = c.typecd
+                and c.ispblc = '1'
+                and c.isfixd = '0'
+                and a.wkflid = #wkflid#
+
+    </select>
+    
+    <!--根据审批金额来判断费用是否超支 -->
+    <select id="select_tranamcount" parameterClass="java.util.HashMap" resultMap="afecount">
+        select  count(*) afecount from sch_book a,com_para b
+                where b.parana=#parana#
+               <![CDATA[ and a.ractam > b.paravl ]]>
+                and a.wkflid = #wkflid#
+
+    </select>
+    
+    <!--根据审批金额来判断费用是否超支 -->
+    <select id="select_lowtranamcount" parameterClass="java.util.HashMap" resultMap="afecount">
+        select  count(*) afecount from sch_book a,com_para b
+                where b.parana=#parana#
+               <![CDATA[ and a.ractam <= b.paravl ]]>
+                and a.wkflid = #wkflid#
+
+    </select>
+    
+    <!--事前核准计划金额额度控制 计划金额大于等于参数值-->
+    <select id="select_schractam" parameterClass="java.util.HashMap" resultMap="afecount">
+        select  count(*) afecount from sch_book a,com_para b
+                where b.parana=#parana#
+               <![CDATA[ and a.ractam >= b.paravl ]]>
+                and a.wkflid = #wkflid#
+    </select>
+    
+    <!--取得申请月份 -->
+    <select id="select_applmonth" parameterClass="java.util.HashMap" resultMap="bsnsdt">
+        select bsnsdt from sch_book where wkflid = #wkflid#
+    </select>
+    
+    <!--根据审批金额来判断费用是否超支 -->
+    <select id="select_monthtranam" parameterClass="java.util.HashMap" resultMap="totalMap">
+        select  sum(a.ractam) total from sch_book a,sch_book_detl c
+                where a.schesq = c.bsnssq and c.infocd = 'canled' 
+                  and c.infovl in (select d.infovl from sch_book b,sch_book_detl d where b.schesq = d.bsnssq and b.wkflid = #wkflid# and d.infocd = 'canled')
+                <![CDATA[ and a.bsnsdt >= #month# ]]>
+                <![CDATA[ and a.bsnsdt < #nextmonth# ]]>
+    </select>
+    
+    <!--根据审批金额来判断费用是否超支 -->
+    <select id="select_bsmonthtranam" parameterClass="java.util.HashMap" resultMap="totalMap">
+        select  sum(a.ractam) total from sch_book a,sch_book_detl c
+                where a.schesq = c.bsnssq and c.infocd = 'bsuser' 
+                  and c.infovl in (select d.infovl from sch_book b,sch_book_detl d where b.schesq = d.bsnssq and b.wkflid = #wkflid# and d.infocd = 'bsuser')
+                <![CDATA[ and a.bsnsdt >= #month# ]]>
+                <![CDATA[ and a.bsnsdt < #nextmonth# ]]>
+    </select>
+    
+    <!--取得月累计额度参数 -->
+    <select id="select_paramonth" parameterClass="java.util.HashMap" resultMap="totalMap">
+        select paravl as total from com_para where parana = #parana#
+    </select>
+    
+    <!--根据流程id查找行办审批单笔采购申请明细金额大于审批金额条数 -->
+    <select id="select_limitamcompar" parameterClass="java.util.HashMap" resultClass="commonj.sdo.DataObject">
+        select * from ayb_docu a,ayb_docu_detl b,com_para c
+                where a.bathid = b.bathid
+            <isEqual property="cityno" compareValue="80000">
+         	   and c.parana='HB_limitam'
+            </isEqual>
+            <isEqual property="cityno" compareValue="71800">
+         	   and c.parana='HB_limitam1'
+            </isEqual>
+                <![CDATA[ 
+                and b.docuam > c.paravl
+                ]]>
+                and a.wkflid = #wkflid#
+    </select>
+    
+    <!--根据流程id和类别查找单笔采购申请明细金额大于审批金额条数 -->
+    <select id="select_limitamcomparbytp" parameterClass="java.util.HashMap" resultClass="commonj.sdo.DataObject">
+        select a.bathid,count(*) icount  from ayb_docu a ,ayb_docu_detl b ,wf_brtp c 
+		 where a.bathid = b.bathid  
+		   and b.typecd like  c.typecd || '%'
+		   <![CDATA[   
+		   and c.rppsmy < b.docuam
+		   ]]>
+		   and c.dcdlcd = #dcdlcd#
+		   and a.wkflid = #wkflid#
+		   and b.catest = #catest#
+		   and c.orgacd = #orgacd#
+	  group by a.bathid
+    </select>
+    
+    <!--资产大类为低值易耗品  根据流程id和类别查找合计采购申请明细金额小于审批金额条数   b.asettp = '4'  低值易耗品大类  -->
+    <select id="select_limitamimlvndayb" parameterClass="java.util.HashMap" resultClass="commonj.sdo.DataObject">
+        select * from (
+		    select round(sum(b.docuam),2)  money from ayb_docu a,ayb_docu_detl b 
+			where a.bathid = b.bathid 
+			and a.wkflid = #wkflid#
+			and b.asettp = '4'  
+			) b,com_para c
+		where
+		  c.parana=#parana#
+		 <![CDATA[   
+		   and b.money <c.paravl
+		 ]]>
+    </select>
+    
+    
+    
+    <!--采购申请中，根据流程id判断自动活动5的前项活动是否都执行完 -->
+    <select id="select_isoverprocessbyid" parameterClass="java.util.HashMap" resultClass="commonj.sdo.DataObject">
+        SELECT a.Activitydefid,
+                a.Currentstate
+           FROM Wfworkitem a
+          WHERE a.Processinstid = #wkflid#   
+            AND a.Activitydefid IN ('manualActivity','manualActivity3', 'manualActivity_qt',
+                 'manualActivity011_jj', 'manualActivity121_dzxx')
+            AND a.Currentstate in ('4','10')
+    </select>
+    
+    <!--债券投资事前核准中，根据流程id作废删除 -->
+    <delete id="delete_ibbapprbyid" parameterClass="java.util.HashMap">
+        delete from ibb_appr a where a.wkflid=#wkflid#
+    </delete> 
+   
+   <!-- 投资新增关联事前核准，流程取消，更新使用状态 -->
+   <update id="update_ibbapprisused" parameterClass="java.util.HashMap">
+		UPDATE Ibb_Appr a
+            SET a.Isused = '0'
+        WHERE a.Schesq = #schesq#
+	</update>
+	
+	<!-- 投资新增关联事前核准，流程取消，更新事前核准流水 -->
+	<update id="update_ibbbookschesq" parameterClass="java.util.HashMap">
+		UPDATE Ibb_Book a
+        	SET a.Schesq = ''
+     	WHERE  a.Schesq = #schesq#
+	</update>
+	
+	<!-- 回购新增关联事前核准，流程取消，更新使用状态 -->
+   <update id="update_irbapprisused" parameterClass="java.util.HashMap">
+		UPDATE Irb_Appr a
+            SET a.Isused = '0'
+        WHERE a.Schesq = #schesq#
+	</update>
+	
+	<!-- 回购新增关联事前核准，流程取消，更新事前核准流水 -->
+	<update id="update_irbbookschesq" parameterClass="java.util.HashMap">
+		UPDATE Irb_Book a
+        	SET a.Schesq = ''
+     	WHERE  a.Schesq = #schesq#
+	</update>
+	
+	<!-- 拆借新增关联事前核准，流程取消，更新使用状态 -->
+   <update id="update_icbapprisused" parameterClass="java.util.HashMap">
+		UPDATE Icb_Appr a
+            SET a.Isused = '0'
+        WHERE a.Schesq = #schesq#
+	</update>
+	
+	<!-- 拆借新增关联事前核准，流程取消，更新事前核准流水 -->
+	<update id="update_icbbookschesq" parameterClass="java.util.HashMap">
+		UPDATE Icb_Book a
+        	SET a.Schesq = ''
+     	WHERE  a.Schesq = #schesq#
+	</update>
+	
+	        <!--债券投资事前核准中，根据流程id比较结算金额和角色对应的限额 -->
+    <select id="select_compapaval" parameterClass="java.util.HashMap">
+	   select 1 from com_para b
+            ,com_para c
+        where 1=1
+       <isNotNull property="parana1">
+       <![CDATA[
+          and to_number(#tranam#) > to_number(b.paravl)
+	   ]]>
+	      and b.parana=#parana1#
+	   </isNotNull>
+	   <isNotNull property="parana2">
+	   <![CDATA[
+		  and to_number(#tranam#) <= to_number(c.paravl)
+	   ]]>
+	      and c.parana=#parana2#
+	    </isNotNull> 
+    </select>
+    
+    <!--债券投资事前核准中，根据流程id比较结算金额和角色对应的限额 -->
+    <select id="select_compapaval1" parameterClass="java.util.HashMap">
+	   select 1 from com_para b
+        where 1=1
+       <isEmpty property="parana1">
+       <![CDATA[
+          and to_number(#tranam#) <= to_number(b.paravl)
+	   ]]>
+	      and b.parana=#parana2#
+	   </isEmpty>
+	   <isEmpty property="parana2">
+	   <![CDATA[
+		  and to_number(#tranam#) > to_number(b.paravl)
+	   ]]>
+	      and b.parana=#parana1#
+	    </isEmpty> 
+    </select>
+    
+    <!--债券投资事前核准中，根据流程id作废 -->
+    <delete id="delete_ibbappr" parameterClass="java.util.HashMap">
+	   delete 
+	   <isEqual property="operate" compareValue="ibbAppr">
+         ibb_appr  a
+       </isEqual>
+       <isEqual property="operate" compareValue="irbAppr">
+        irb_appr  a
+       </isEqual>
+       <isEqual property="operate" compareValue="icbAppr">
+        icb_appr  a
+       </isEqual>
+       <isEqual property="operate" compareValue="iobAppr">
+        iob_appr  a
+       </isEqual>
+	   where a.wkflid=#wkflid#
+    </delete>
+    
+    <!--债券投资事前核准中，根据流程id拒绝并作废流程，更新wkflid和transt -->
+    <update id="update_apprrefuse" parameterClass="java.util.HashMap">
+	   update 
+	   <isEqual property="operate" compareValue="ibbAppr">
+         ibb_appr  a
+       </isEqual>
+       <isEqual property="operate" compareValue="irbAppr">
+        irb_appr  a
+       </isEqual>
+       <isEqual property="operate" compareValue="icbAppr">
+        icb_appr  a
+       </isEqual>
+       <isEqual property="operate" compareValue="iobAppr">
+        iob_appr  a
+       </isEqual>
+       set wkflid ='' , transt= 0
+	   where a.wkflid=#wkflid#
+    </update>
+    
+    
+    <!--流程是否完成 -->
+    <select id="select_wfis_end" parameterClass="java.util.HashMap">
+	   select 1 from wfprocessinst b
+        where processinstid = #processinstid# and currentstate ='7'
+    </select>
+    
+    <!--资产新增审批，根据流程id比较交易金额和行长审批金额上限 -->
+    <select id="select_comparforhz" parameterClass="java.util.HashMap">
+	   select 1 from com_para b
+        where b.parana = 'HZlimitam'
+       <isNotNull property="tranam">
+       <![CDATA[
+          and to_number(#tranam#) <= b.paravl
+	   ]]>    
+	   </isNotNull>
+    </select>
+    
+    <!--根据流程id统计租赁经营审批本次发生金额 -->
+    <select id="select_totallesefe" parameterClass="java.util.HashMap" resultMap="totalMap">
+        select sum(a.dbasam) total  from adb_card a
+			where a.wkflid = #wkflid#
+    </select>
+    
+    <!--经营租赁新增审批，根据流程id比较交易金额和行长审批金额上限 -->
+    <select id="select_comparforhzls" parameterClass="java.util.HashMap">
+	   select 1 from com_para b
+        where b.parana = 'HZlslimam'
+       <isNotNull property="tranam">
+       <![CDATA[
+          and to_number(#tranam#) > b.paravl
+	   ]]>    
+	   </isNotNull>
+    </select>
+    <!--根据流程id统计租赁经营审批发生金额 -->
+    <select id="select_tlthisam" parameterClass="java.util.HashMap" resultMap="totalMap">
+        select sum(a.thisam) total  from adb_card a
+			where a.wkflid = #wkflid#
+    </select>
+    <!--根据流程id统计资产新增审批金额 -->
+    <select id="select_totalinitvl" parameterClass="java.util.HashMap" resultMap="totalMap">
+        select sum(a.initvl) total  from asb_card a
+			where a.wkflid = #wkflid#
+    </select>    
+    
+    <!--流程审批结束后,修改审批意见为同意 -->
+    <update id="update_wkfitemannota" parameterClass="java.util.HashMap">
+		update wkf_item set annota='同意' 
+		where itemid in(select max(workitemid) 
+		                from wfworkitem a,wfprocessinst b 
+                        where a.processinstid=b.processinstid and b.processinstid=#processinstid# and b.currentstate ='7')
+		and approv='AGREE'
+    </update>   
+    
+    <!--采购申请中，根据流程id判断行长审批的前项活动是否都执行完 -->
+    <select id="select_activitydefid" parameterClass="java.util.HashMap" resultMap="activitydefidMap">
+        SELECT a.Activitydefid
+           FROM Wfworkitem a
+          WHERE a.Processinstid = #wkflid#
+            AND a.Activitydefid IN ('manualActivity_qt','manualActivity011_jj', 'manualActivity121_dzxx')
+            AND a.Currentstate in ('4','10')
+    </select> 
+    
+    <!--根据流程id和类别查找单笔采购申请明细金额大于审批金额条数 -->
+    <select id="select_limitaminworkflow" parameterClass="java.util.HashMap" resultClass="commonj.sdo.DataObject">
+        select a.bathid,count(*) icount  from ayb_docu a ,ayb_docu_detl b ,wf_brtp c 
+		 where a.bathid = b.bathid  
+		   and b.typecd like  c.typecd || '%'
+		   <![CDATA[   
+		   and c.rppsmy < b.docuam
+		   ]]>
+		   and c.dcdlcd = #dcdlcd#
+		   and a.wkflid = #wkflid#
+		   and c.orgacd = #orgacd#
+	  group by a.bathid
+    </select>    
+    <!--根据流程id统计发票审核发生金额   IMS_INVO-->
+    <select id="selectAmountByWkflidFromIMSINVO" parameterClass="java.util.HashMap" resultMap="totalMap">
+    	select sum(amount) total from ims_invo where wkflid=#wkflid#
+    </select>
+    <!--新增流程备注 -->
+    
+    <insert id="insert_wfp_mark" parameterClass="java.util.HashMap">
+    	insert into wfp_mark (wkflid,remark)
+    	values (#wkflid#,#remark#)
+    </insert> 
+    
+    <!-- 根据业务流水业务日期设置流程id-->
+    
+     <update id="set_Wkflid" parameterClass="java.util.HashMap">
+     	<![CDATA[update $tbname$ set wkflid=#wkflid# 
+     		where bsnsdt=#bsnsdt# and bsnssq=#bsnssq# 
+      ]]> 
+     </update>
+     
+     <!-- 根据流程ID设置transt  -->
+     <update id="update_transtwkflid" parameterClass="java.util.HashMap">
+     <![CDATA[
+     	update $tbname$ set transt=#transt# 
+     		where	wkflid=#wkflid#
+     ]]> 
+     </update>
+</sqlMap>

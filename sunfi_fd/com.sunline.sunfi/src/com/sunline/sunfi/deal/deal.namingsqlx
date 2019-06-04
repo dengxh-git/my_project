@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- author:weixin -->
+<sqlMap>  
+    <resultMap class="commonj.sdo.DataObject" id="unfinishtaskList">
+       <result column="app_code"   property="appCode"/>  
+	   <result column="app_name"   property="appName"/>  
+	   <result column="task_id"   property="taskId"/>  
+	   <result column="task_name"   property="taskName"/>
+	   <result column="curr_userid" property="currUserid"/>
+	   <result column="curr_username"   property="currUsername"/>
+	   <result column="dept_id"   property="deptTd"/>
+	   <result column="dept_name"   property="deptName"/>
+	   <result column="task_time" javaType="java.util.Date"  property="taskTime"/>
+	   <result column="process_url"   property="processUrl"/>
+	   <result column="task_type"   property="taskType"/>
+	   <result column="task_state"   property="taskState"/>
+	   <result column="product_time" javaType="java.util.Date"  property="productTime"/>
+	   <result column="draft_user"   property="draftUser"/>
+	   <result column="draft_dept"   property="draftDept"/>
+	   <result column="draft_time"   property="draftTime"/>
+	   <result column="process_instance_id"   property="processInstanceId"/>
+	   <result column="optype"   property="optype"/>
+	   <result column="process_belong"   property="processBelong"/>
+	   <result column="priority"   property="priority"/>
+	   <result column="pre_userid"   property="preUserid"/>
+	   <result column="pre_username"   property="preUsername"/>
+	   <result column="pre_dept"   property="preDept"/>
+	   <result column="pre_comp"   property="preComp"/>
+	   <result column="activity_name"   property="activityName"/>
+	   <result column="draft_comp"   property="draftComp"/>
+	   <result column="doc_number"   property="docNumber"/>	   	  
+    </resultMap>
+    
+      <resultMap class="commonj.sdo.DataObject" id="participant">
+	    <result column="processinstid"  property="processinstid" javaType="java.lang.String"/>
+	  </resultMap>
+    
+    <select id="select_unfinshedtask" parameterClass="java.util.HashMap" resultMap="unfinishtaskList">
+          <![CDATA[ select 'cwxt' as app_code,'财务审批系统' as app_name, b.wiparticid as task_id,
+             c.remark as task_name,
+            case when b.participantid  is null then e.participant else b.participantid end  as curr_userid,
+            case when b.participantname is null then e.partiname else b.participantname end as curr_username,             
+            '' as dept_id,'' as dept_name,
+            case when b.starttime is null then e.starttime  else b.starttime end as task_time,
+             case when  b.currentstate=4 or b.currentstate=10
+              then 'sunfi_wf/workitem/finish_workitem_manager.jsp?wkflid='||a.processinstid||'&&'||'wfitid='||b.workitemid||'&&emstype=01&&transt='||c.transt||'&&usercd='||c.usercd
+              else 'sunfi_wf/workitem/finish_workitem_manager.jsp?wkflid='||a.processinstid||'&&'||'emstype=01'
+              end as process_url,
+            case when  b.currentstate=12 then '1' when b.currentstate=4 or b.currentstate=10 then '0' else '3' end as task_type,
+            case when b.currentstate=12 then '1' else '0' end as task_state, 
+           sysdate as product_time,'' as draft_user,'' as draft_dept,'' as draft_time,
+            a.processinstid as process_instance_id,'' as optype, '公文待办' as process_belong,'' as priority,
+            '' as pre_userid,'' as pre_username,'' as pre_dept,'' as pre_comp,'' as activity_name,'' as draft_comp,'' as doc_number
+            from wfprocessinst a
+             left join  wfwiparticipant b on a.processinstid=b.processinstid
+             left join wfworkitem e on a.processinstid= e.processinstid             
+             inner join exp_rgst c on a.processinstid=c.wkflid]]>  
+             where 1=1          
+             <isNotNull property="wkflid">
+             and a.processinstid = #wkflid#
+             </isNotNull>
+              <isNotNull property="flag">
+              and b.workitemid=e.workitemid 
+              </isNotNull>  
+             union 
+             <![CDATA[ select 'cwxt' as app_code,'财务审批系统' as app_name, b.wiparticid as task_id,
+             c.remark as task_name,
+            case when b.participantid  is null then e.participant else b.participantid end  as curr_userid,
+            case when b.participantname is null then e.partiname else b.participantname end as curr_username,  
+            '' as dept_id,'' as dept_name,
+            case when b.starttime is null then e.starttime  else b.starttime end  as task_time,
+               case when  b.currentstate=4 or b.currentstate=10
+               then 'sunfi_wf/workitem/finish_workitem_manager.jsp?wkflid='||a.processinstid||'&&'||'wfitid='||b.workitemid||'&&emstype='||c.acetna||'&&transt='||c.transt||'&&usercd='||c.usercd
+               else 'sunfi_wf/workitem/finish_workitem_manager.jsp?wkflid='||a.processinstid||'&&'||'emstype='||c.acetna
+               end as process_url,
+            case when  b.currentstate=12 then '1' when b.currentstate=4 or b.currentstate=10 then '0' else '3' end as task_type,
+            case when b.currentstate=12 then '1' else '0' end as task_state, 
+           sysdate as product_time,'' as draft_user,'' as draft_dept,'' as draft_time,
+            a.processinstid as process_instance_id,'' as optype, '公文待办' as process_belong,'' as priority,
+            '' as pre_userid,'' as pre_username,'' as pre_dept,'' as pre_comp,'' as activity_name,'' as draft_comp,'' as doc_number
+            from wfprocessinst a
+             left join  wfwiparticipant b on a.processinstid=b.processinstid 
+             left join wfworkitem e on a.processinstid= e.processinstid              
+             inner join exp_aeuv c on a.processinstid=c.wkflid]]>
+             where c.acetna in ('02','03','04')            
+             <isNotNull property="wkflid">
+             and a.processinstid = #wkflid#
+             </isNotNull>   
+              <isNotNull property="flag">
+             and b.workitemid=e.workitemid  
+             </isNotNull>         
+    </select>
+    
+    
+    <select id="select_participant" parameterClass="java.util.HashMap" resultMap="participant">
+    select processinstid  from wfwiparticipant where processinstid = #wkflid#
+    </select>
+</sqlMap>

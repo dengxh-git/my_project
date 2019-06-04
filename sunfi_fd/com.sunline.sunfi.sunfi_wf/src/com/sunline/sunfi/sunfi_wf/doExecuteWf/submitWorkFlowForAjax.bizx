@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<process:tBusinessLogic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://com.primeton.emf.core" xmlns:process="http://primeton.com/emf/core/process" name="submitWorkFlowForAjax.bizx" detailDescription="" demonstration="" urls="" gridVisibility="false" rulerVisibility="true" snapToGeometry="true" productVersion="6.1">
+  <nodes xsi:type="process:tStart" id="start0" name="开始" displayName="开始" nodeType="common" type="start">
+    <sourceConnections xsi:type="process:tLink" id="link0" name="link0" displayName="连接线" isDefault="true" type="transition">
+      <sourceNode>start0</sourceNode>
+      <targetNode>assign0</targetNode>
+    </sourceConnections>
+    <location x="100" y="150"/>
+    <size height="28" width="28"/>
+    <nodeLabel>start0label</nodeLabel>
+  </nodes>
+  <nodes xsi:type="process:tEnd" description="" id="end0" name="结束" displayName="结束" nodeType="common" type="end">
+    <targetConnections>link3</targetConnections>
+    <location x="630" y="150"/>
+    <size height="28" width="28"/>
+    <nodeLabel>end0label</nodeLabel>
+    <process:returns>
+      <process:return id="0" language="String" name="retmsg" type="query" valueType="Primitive">retmsg</process:return>
+    </process:returns>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="start0label" name="label" displayName="label" nodeType="label">
+    <location x="102" y="186"/>
+    <figSize height="12" width="25"/>
+    <node>start0</node>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="end0label" name="label" displayName="label" nodeType="label">
+    <location x="632" y="186"/>
+    <figSize height="12" width="25"/>
+    <node>end0</node>
+  </nodes>
+  <nodes xsi:type="process:tSubprocess" description="" id="subprocess0" name="submitWorkFlow" displayName="submitWorkFlow" type="subprocess">
+    <sourceConnections xsi:type="process:tLink" id="link1" name="link1" displayName="连接线" isDefault="true" type="transition">
+      <sourceNode>subprocess0</sourceNode>
+      <targetNode>assign1</targetNode>
+    </sourceConnections>
+    <targetConnections>link2</targetConnections>
+    <location x="390" y="150"/>
+    <size height="27" width="27"/>
+    <nodeLabel>subprocess0label</nodeLabel>
+    <process:flow index="2" synchronization="true" transactionType="join" varArgs="false">
+      <process:partner type="literal">this.submitWorkFlow</process:partner>
+      <process:inputVariables>
+        <process:inputVariable id="0" name="workFlowMap" type="query" value="java.util.HashMap" valueType="Java" pattern="reference">workFlowMap</process:inputVariable>
+        <process:inputVariable id="1" name="uploadFile" type="query" value="com.primeton.ext.access.http.IUploadFile[]" valueType="Java" pattern="reference">uploadFile</process:inputVariable>
+      </process:inputVariables>
+      <process:outputVariables/>
+    </process:flow>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="subprocess0label" name="label" nodeType="label">
+    <location x="361" y="185"/>
+    <figSize height="12" width="85"/>
+    <node>subprocess0</node>
+  </nodes>
+  <nodes xsi:type="process:tAssign" description="" id="assign0" name="赋值" displayName="赋值" type="assign">
+    <sourceConnections xsi:type="process:tLink" id="link2" name="link2" displayName="连接线" isDefault="true" type="transition">
+      <sourceNode>assign0</sourceNode>
+      <targetNode>subprocess0</targetNode>
+    </sourceConnections>
+    <targetConnections>link0</targetConnections>
+    <location x="240" y="150"/>
+    <size height="28" width="28"/>
+    <nodeLabel>assign0label</nodeLabel>
+    <process:copy>
+      <process:from type="query" pattern="reference">shform/workFlowMap/shform</process:from>
+      <process:to type="query">workFlowMap/shform</process:to>
+    </process:copy>
+    <process:copy>
+      <process:from type="query" pattern="reference">wfitid</process:from>
+      <process:to type="query">workFlowMap/master/wfitid</process:to>
+    </process:copy>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="assign0label" name="label" nodeType="label">
+    <location x="242" y="186"/>
+    <figSize height="12" width="25"/>
+    <node>assign0</node>
+  </nodes>
+  <nodes xsi:type="process:tAssign" description="" id="assign1" name="赋值" displayName="赋值" type="assign">
+    <sourceConnections xsi:type="process:tLink" id="link3" name="link3" displayName="连接线" isDefault="true" type="transition">
+      <sourceNode>assign1</sourceNode>
+      <targetNode>end0</targetNode>
+    </sourceConnections>
+    <targetConnections>link1</targetConnections>
+    <location x="509" y="150"/>
+    <size height="28" width="28"/>
+    <nodeLabel>assign1label</nodeLabel>
+    <process:copy>
+      <process:from type="literal" pattern="reference">0</process:from>
+      <process:to type="query">retmsg</process:to>
+    </process:copy>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="assign1label" name="label" nodeType="label">
+    <location x="511" y="186"/>
+    <figSize height="12" width="25"/>
+    <node>assign1</node>
+  </nodes>
+  <topRuler/>
+  <leftRuler/>
+  <process:info author="安宣部" createTime="2011-07-18 10:27:42" date="2011-07-18Z" description="" name="submitWorkFlowForAjax" version="6.1"/>
+  <process:variables/>
+  <process:inputs varArgs="false">
+    <process:input description="" isArray="false" name="wfitid" primitiveType="String"/>
+    <process:input anyType="java.util.HashMap" description="" isArray="false" name="shform"/>
+    <process:input anyType="java.util.HashMap" description="" isArray="false" name="workFlowMap"/>
+    <process:input anyType="com.primeton.ext.access.http.IUploadFile" description="" isArray="true" name="uploadFile"/>
+  </process:inputs>
+  <process:outputs>
+    <process:output description="" isArray="false" name="retmsg" primitiveType="String"/>
+  </process:outputs>
+  <process:extAttribute1>public</process:extAttribute1>
+  <process:transactionType>true</process:transactionType>
+</process:tBusinessLogic>

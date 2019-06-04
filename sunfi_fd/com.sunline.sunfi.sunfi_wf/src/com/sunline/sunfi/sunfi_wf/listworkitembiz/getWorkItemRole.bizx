@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<process:tBusinessLogic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://com.primeton.emf.core" xmlns:process="http://primeton.com/emf/core/process" name="getWorkItemRole.bizx" detailDescription="" demonstration="" urls="" gridVisibility="false" rulerVisibility="true" snapToGeometry="true" productVersion="7.0.0.0">
+  <nodes xsi:type="process:tStart" id="start0" name="开始" displayName="开始" type="start">
+    <sourceConnections xsi:type="process:tLink" id="link4" name="link4" displayName="连接线" isDefault="true" type="transition">
+      <sourceNode>start0</sourceNode>
+      <targetNode>assign0</targetNode>
+    </sourceConnections>
+    <location x="120" y="143"/>
+    <size height="28" width="28"/>
+    <nodeLabel>start0label</nodeLabel>
+  </nodes>
+  <nodes xsi:type="process:tEnd" id="end0" name="结束" displayName="结束" type="end">
+    <targetConnections>link12</targetConnections>
+    <targetConnections>link10</targetConnections>
+    <targetConnections>link8</targetConnections>
+    <location x="975" y="300"/>
+    <size height="28" width="28"/>
+    <nodeLabel>end0label</nodeLabel>
+    <process:returns>
+      <process:return id="0" language="String" name="ischange" type="query" valueType="Primitive">ischange</process:return>
+    </process:returns>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="start0label" name="label" displayName="label" nodeType="label">
+    <location x="122" y="179"/>
+    <figSize height="17" width="25"/>
+    <node>start0</node>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="end0label" name="label" displayName="label" nodeType="label">
+    <location x="977" y="336"/>
+    <figSize height="17" width="25"/>
+    <node>end0</node>
+  </nodes>
+  <nodes xsi:type="process:tAssign" description="" id="assign0" name="赋值" displayName="赋值" type="assign">
+    <sourceConnections xsi:type="process:tLink" description="" id="link3" name="登录人与发起人相同" displayName="连接线" isDefault="false" type="transition">
+      <sourceNode>assign0</sourceNode>
+      <targetNode>assign1</targetNode>
+      <process:transitionCondition>
+        <process:simpleCondition operator="OBJEQ">
+          <process:leftOperand type="query">usercd</process:leftOperand>
+          <process:rightOperand type="query">sessionUsercd</process:rightOperand>
+        </process:simpleCondition>
+      </process:transitionCondition>
+    </sourceConnections>
+    <sourceConnections xsi:type="process:tLink" description="" id="link5" name="登录人与发起人不同" displayName="连接线" isDefault="true" type="transition">
+      <sourceNode>assign0</sourceNode>
+      <targetNode>assign2</targetNode>
+      <process:transitionCondition>
+        <process:simpleCondition operator="EQ">
+          <process:leftOperand type="query"/>
+          <process:rightOperand type="literal">1</process:rightOperand>
+        </process:simpleCondition>
+      </process:transitionCondition>
+    </sourceConnections>
+    <targetConnections>link4</targetConnections>
+    <location x="285" y="143"/>
+    <size height="28" width="28"/>
+    <nodeLabel>assign0label</nodeLabel>
+    <process:copy>
+      <process:from type="query" pattern="reference">m:userObject/attributes/EXTEND_USER_ID</process:from>
+      <process:to type="query">sessionUsercd</process:to>
+    </process:copy>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="assign0label" name="label" nodeType="label">
+    <location x="287" y="179"/>
+    <figSize height="17" width="25"/>
+    <node>assign0</node>
+  </nodes>
+  <nodes xsi:type="process:tAssign" id="assign1" name="赋值1" displayName="赋值" type="assign">
+    <sourceConnections xsi:type="process:tLink" description="" id="link6" name="状态为2（退回）" displayName="连接线" isDefault="false" type="transition">
+      <sourceNode>assign1</sourceNode>
+      <targetNode>assign4</targetNode>
+      <process:transitionCondition>
+        <process:simpleCondition operator="EQ">
+          <process:leftOperand type="query">transt</process:leftOperand>
+          <process:rightOperand type="literal">2</process:rightOperand>
+        </process:simpleCondition>
+      </process:transitionCondition>
+    </sourceConnections>
+    <sourceConnections xsi:type="process:tLink" description="" id="link9" name="状态为8" displayName="连接线" isDefault="false" type="transition">
+      <sourceNode>assign1</sourceNode>
+      <targetNode>invokeService1</targetNode>
+      <process:transitionCondition>
+        <process:simpleCondition operator="EQ">
+          <process:leftOperand type="query">transt</process:leftOperand>
+          <process:rightOperand type="literal">8</process:rightOperand>
+        </process:simpleCondition>
+      </process:transitionCondition>
+    </sourceConnections>
+    <sourceConnections xsi:type="process:tLink" description="" id="link2" name="其它状态" displayName="连接线" isDefault="true" type="transition">
+      <sourceNode>assign1</sourceNode>
+      <targetNode>assign7</targetNode>
+      <process:transitionCondition>
+        <process:simpleCondition operator="EQ">
+          <process:leftOperand type="query"></process:leftOperand>
+          <process:rightOperand type="literal">1</process:rightOperand>
+        </process:simpleCondition>
+      </process:transitionCondition>
+    </sourceConnections>
+    <targetConnections>link3</targetConnections>
+    <location x="510" y="143"/>
+    <size height="28" width="28"/>
+    <nodeLabel>assign1label</nodeLabel>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="assign1label" name="label" nodeType="label">
+    <location x="508" y="179"/>
+    <figSize height="17" width="32"/>
+    <node>assign1</node>
+  </nodes>
+  <nodes xsi:type="process:tAssign" id="assign2" name="赋值2" displayName="赋值" type="assign">
+    <sourceConnections xsi:type="process:tLink" description="" id="link11" name="状态为3（财务初审）" displayName="连接线" isDefault="false" type="transition">
+      <sourceNode>assign2</sourceNode>
+      <targetNode>assign3</targetNode>
+      <process:transitionCondition>
+        <process:simpleCondition operator="EQ">
+          <process:leftOperand type="query">transt</process:leftOperand>
+          <process:rightOperand type="literal">3</process:rightOperand>
+        </process:simpleCondition>
+      </process:transitionCondition>
+    </sourceConnections>
+    <sourceConnections xsi:type="process:tLink" description="" id="link14" name="其它状态" displayName="连接线" isDefault="true" type="transition">
+      <sourceNode>assign2</sourceNode>
+      <targetNode>assign8</targetNode>
+      <process:transitionCondition>
+        <process:simpleCondition operator="EQ">
+          <process:leftOperand type="query"></process:leftOperand>
+          <process:rightOperand type="literal">1</process:rightOperand>
+        </process:simpleCondition>
+      </process:transitionCondition>
+    </sourceConnections>
+    <targetConnections>link5</targetConnections>
+    <location x="286" y="300"/>
+    <size height="28" width="28"/>
+    <nodeLabel>assign2label</nodeLabel>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="assign2label" name="label" nodeType="label">
+    <location x="284" y="336"/>
+    <figSize height="17" width="32"/>
+    <node>assign2</node>
+  </nodes>
+  <nodes xsi:type="process:tAssign" description="" id="assign3" name="赋值3" displayName="赋值" type="assign">
+    <sourceConnections xsi:type="process:tLink" id="link8" name="link8" displayName="连接线" isDefault="true" type="transition">
+      <sourceNode>assign3</sourceNode>
+      <targetNode>end0</targetNode>
+    </sourceConnections>
+    <targetConnections>link11</targetConnections>
+    <targetConnections>link16</targetConnections>
+    <location x="508" y="300"/>
+    <size height="28" width="28"/>
+    <nodeLabel>assign3label</nodeLabel>
+    <process:copy>
+      <process:from type="literal" pattern="reference">true</process:from>
+      <process:to type="query">ischange</process:to>
+    </process:copy>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="assign3label" name="label" nodeType="label">
+    <location x="506" y="336"/>
+    <figSize height="17" width="32"/>
+    <node>assign3</node>
+  </nodes>
+  <nodes xsi:type="process:tAssign" description="" id="assign4" name="赋值4" displayName="赋值" type="assign">
+    <sourceConnections xsi:type="process:tLink" id="link10" name="link10" displayName="连接线" isDefault="true" type="transition">
+      <sourceNode>assign4</sourceNode>
+      <targetNode>end0</targetNode>
+    </sourceConnections>
+    <targetConnections>link6</targetConnections>
+    <location x="675" y="143"/>
+    <size height="28" width="28"/>
+    <nodeLabel>assign4label</nodeLabel>
+    <process:copy>
+      <process:from type="literal" pattern="reference">true</process:from>
+      <process:to type="query">ischange</process:to>
+    </process:copy>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="assign4label" name="label" nodeType="label">
+    <location x="673" y="179"/>
+    <figSize height="17" width="32"/>
+    <node>assign4</node>
+  </nodes>
+  <nodes xsi:type="process:tAssign" description="" id="assign7" name="赋值7" displayName="赋值" type="assign">
+    <sourceConnections xsi:type="process:tLink" id="link12" name="link12" displayName="连接线" isDefault="true" type="transition">
+      <sourceNode>assign7</sourceNode>
+      <targetNode>end0</targetNode>
+    </sourceConnections>
+    <targetConnections>link2</targetConnections>
+    <targetConnections>link15</targetConnections>
+    <targetConnections>link17</targetConnections>
+    <location x="510" y="451"/>
+    <size height="28" width="28"/>
+    <nodeLabel>assign7label</nodeLabel>
+    <process:copy>
+      <process:from type="literal" pattern="reference">false</process:from>
+      <process:to type="query">ischange</process:to>
+    </process:copy>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="assign7label" name="label" nodeType="label">
+    <location x="508" y="487"/>
+    <figSize height="17" width="32"/>
+    <node>assign7</node>
+  </nodes>
+  <nodes xsi:type="process:tAssign" id="assign8" name="赋值8" displayName="赋值" type="assign">
+    <sourceConnections xsi:type="process:tLink" id="link15" name="link15" displayName="连接线" isDefault="true" type="transition">
+      <sourceNode>assign8</sourceNode>
+      <targetNode>assign7</targetNode>
+    </sourceConnections>
+    <targetConnections>link14</targetConnections>
+    <location x="286" y="451"/>
+    <size height="28" width="28"/>
+    <nodeLabel>assign8label</nodeLabel>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="assign8label" name="label" nodeType="label">
+    <location x="284" y="487"/>
+    <figSize height="17" width="32"/>
+    <node>assign8</node>
+  </nodes>
+  <nodes xsi:type="process:tInvoke" description="" id="invokeService1" name="获取工作项详细信息" displayName="WorkItemManagerService.queryWorkItemDetail" type="invoke" index="0" invokeType="invoke_service" varArgs="false">
+    <sourceConnections xsi:type="process:tLink" id="link7" name="link7" displayName="连接线" isDefault="true" type="transition">
+      <sourceNode>invokeService1</sourceNode>
+      <targetNode>assign5</targetNode>
+    </sourceConnections>
+    <targetConnections>link9</targetConnections>
+    <location x="435" y="234"/>
+    <size height="22" width="28"/>
+    <nodeLabel>invokeService1label</nodeLabel>
+    <process:service transactionType="join">
+      <process:partner type="literal">com.eos.workflow.component.client.WorkItemManagerComponent/WorkItemManagerService.queryWorkItemDetail</process:partner>
+    </process:service>
+    <process:inputVariables>
+      <process:inputVariable id="0" name="workItemID" type="query" value="long" valueType="Java" pattern="reference">wfitid</process:inputVariable>
+    </process:inputVariables>
+    <process:outputVariables>
+      <process:outputVariable id="0" name="out0" type="query" value="com.eos.workflow.data.WFWorkItem" valueType="Java">workitem</process:outputVariable>
+    </process:outputVariables>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="invokeService1label" name="label" nodeType="label">
+    <location x="395" y="264"/>
+    <figSize height="17" width="109"/>
+    <node>invokeService1</node>
+  </nodes>
+  <nodes xsi:type="process:tAssign" description="" id="assign5" name="赋值5" displayName="赋值" type="assign">
+    <sourceConnections xsi:type="process:tLink" description="" id="link16" name="发起人" displayName="连接线" isDefault="false" type="transition">
+      <sourceNode>assign5</sourceNode>
+      <targetNode>assign3</targetNode>
+      <process:transitionCondition>
+        <process:simpleCondition operator="OBJEQ">
+          <process:leftOperand type="query">activityDefID</process:leftOperand>
+          <process:rightOperand type="literal">manualActivity</process:rightOperand>
+        </process:simpleCondition>
+      </process:transitionCondition>
+    </sourceConnections>
+    <sourceConnections xsi:type="process:tLink" description="" id="link17" name="领导" displayName="连接线" isDefault="true" type="transition">
+      <sourceNode>assign5</sourceNode>
+      <targetNode>assign7</targetNode>
+      <process:transitionCondition>
+        <process:simpleCondition operator="EQ">
+          <process:leftOperand type="query"></process:leftOperand>
+          <process:rightOperand type="literal">1</process:rightOperand>
+        </process:simpleCondition>
+      </process:transitionCondition>
+    </sourceConnections>
+    <targetConnections>link7</targetConnections>
+    <location x="435" y="390"/>
+    <size height="28" width="28"/>
+    <nodeLabel>assign5label</nodeLabel>
+    <process:copy>
+      <process:from type="query" pattern="reference">workitem/activityDefID</process:from>
+      <process:to type="query">activityDefID</process:to>
+    </process:copy>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="assign5label" name="label" nodeType="label">
+    <location x="433" y="426"/>
+    <figSize height="17" width="32"/>
+    <node>assign5</node>
+  </nodes>
+  <topRuler/>
+  <leftRuler/>
+  <process:info author="weixin" createTime="2019-01-03 15:26:57" date="2019-01-03Z" description="" name="getWorkItemRole" version="7.0.0.0"/>
+  <process:variables>
+    <process:variable anyType="com.eos.workflow.data.WFWorkItem" description="" historyStateLocation="client" isArray="false" name="workitem"/>
+    <process:variable description="" historyStateLocation="client" isArray="false" name="activityDefID" primitiveType="String"/>
+  </process:variables>
+  <process:inputs varArgs="false">
+    <process:input description="" isArray="false" name="wkflid" primitiveType="String"/>
+    <process:input description="" isArray="false" name="wfitid" primitiveType="String"/>
+    <process:input description="" isArray="false" name="transt" primitiveType="String"/>
+    <process:input description="" isArray="false" name="usercd" primitiveType="String"/>
+  </process:inputs>
+  <process:outputs>
+    <process:output description="是否可修改" isArray="false" name="ischange" primitiveType="String"/>
+  </process:outputs>
+  <process:extAttribute1>public</process:extAttribute1>
+  <process:transactionType>true</process:transactionType>
+</process:tBusinessLogic>

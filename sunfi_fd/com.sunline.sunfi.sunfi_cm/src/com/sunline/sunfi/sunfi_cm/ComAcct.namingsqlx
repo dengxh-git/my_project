@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- author:kaifasanshi93 -->
+<sqlMap>
+    <parameterMap class="commonj.sdo.DataObject" id="parameterMap">
+        <parameter javaType="date" jdbcType="DATE" property="dateType"/>
+    </parameterMap>
+    <resultMap class="commonj.sdo.DataObject" id="AcctnoCount">
+        <result column="count" javaType="java.lang.String" property="count"/>
+    </resultMap>
+    <resultMap class="commonj.sdo.DataObject" id="GetIsAcct">
+        <result column="isacct" jdbcType="java.lang.String" property="isacct"/>
+    </resultMap>
+    <resultMap class="commonj.sdo.DataObject" id="GetCount">
+        <result column="counts" jdbcType="java.lang.String" property="counts"/>
+    </resultMap>
+    <resultMap class="commonj.sdo.DataObject" id="GetBrchCount">
+        <result column="brchcounts" jdbcType="java.lang.String" property="brchcounts"/>
+    </resultMap>
+    
+    <select id="select_count" parameterClass="java.util.HashMap" resultMap="AcctnoCount">
+    select count(*) as count from com_acct a where a.acctno=#acctno#
+    </select>
+    
+    <select id="get_isacct" parameterClass="java.util.HashMap" resultMap="GetIsAcct">
+       select a.isacct from com_acct a where 1=1
+       <isNotNull property="brchcd">
+          and a.brchcd=#brchcd#
+       </isNotNull>
+        <isNotNull property="acctno">
+          and a.acctno=#acctno#
+       </isNotNull>
+    </select>
+    
+    <select id="get_count" parameterClass="java.util.HashMap" resultMap="GetCount">
+       select count(*) as counts from com_acct a where a.isacct = '0'
+       <isNotNull property="brchcd">
+          and a.brchcd=#brchcd#
+       </isNotNull>
+    </select>
+    
+    <select id="get_brchcount" parameterClass="java.util.HashMap" resultMap="GetBrchCount">
+       select count(*) as brchcounts from com_acct a where 1=1
+       <isNotNull property="brchcd">
+          and a.brchcd=#brchcd#
+       </isNotNull>
+    </select>
+</sqlMap>

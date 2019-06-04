@@ -1,0 +1,601 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:DataSetDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://www.primeton.com/datamodel" name="file" gridVisibility="false" rulerVisibility="true" snapToGeometry="true" displayName="file" author="weixin">
+  <nodes xsi:type="model:PEntityNode" id="node0" name="AtFileupload" nodeType="table" displayName="AtFileupload" author="kaifasishi82" open="true" table="AT_FILEUPLOAD" genStrategy="assigned">
+    <location x="60" y="60"/>
+    <size height="376" width="150"/>
+    <figSize height="20" width="150"/>
+    <columnProperty id="property19" name="fileId" displayName="fileId" columnName="FILE_ID" nullAble="false" PK="true" columnType="VARCHAR2" eosDataType="String" length="32" dasType="string" overWriteDefaultColumnType="false" showType="String" update="true" insert="true">
+      <comment xsi:nil="true"/>
+      <viewField dict="false" displayName="fileId" id="fileId" label="fileId" name="fileId" userDefined="true">
+        <fieldView>
+          <type name="write"/>
+          <attr name="formatPattern"/>
+          <attr name="srcFormatPattern"/>
+          <attr name="maxLength"/>
+          <attr attrValue="" defaultValue="" name="filter"/>
+          <attr attrValue="" defaultValue="" name="maxLengthString"/>
+          <attr name="value"/>
+        </fieldView>
+        <fieldEdit>
+          <type name="text"/>
+          <attr attrValue="nui-textbox" defaultValue="nui-textbox" name="class"/>
+          <attr attrValue="" defaultValue="" name="emptyText"/>
+          <attr attrValue="" defaultValue="" name="inputStyle"/>
+          <attr attrValue="false" defaultValue="false" name="required"/>
+          <attr attrValue="" defaultValue="" name="borderStyle"/>
+          <attr attrValue="" defaultValue="" name="cls"/>
+          <attr attrValue="true" defaultValue="true" name="enabled"/>
+          <attr attrValue="" defaultValue="" name="height"/>
+          <attr attrValue="" defaultValue="" name="id"/>
+          <attr attrValue="" defaultValue="" name="name"/>
+          <attr attrValue="" defaultValue="" name="style"/>
+          <attr attrValue="" defaultValue="" name="tooltip"/>
+          <attr attrValue="true" defaultValue="true" name="visible"/>
+          <attr attrValue="" defaultValue="" name="width"/>
+        </fieldEdit>
+      </viewField>
+    </columnProperty>
+    <columnProperty id="property0" name="fileCatalog" displayName="fileCatalog" columnName="FILE_CATALOG" nullAble="true" columnType="VARCHAR2" eosDataType="String" length="255" dasType="string" overWriteDefaultColumnType="false" showType="String" update="true" insert="true">
+      <comment xsi:nil="true"/>
+      <viewField dict="false" displayName="fileCatalog" id="fileCatalog" label="fileCatalog" name="fileCatalog" userDefined="true">
+        <fieldView>
+          <type name="write"/>
+          <attr name="formatPattern"/>
+          <attr name="srcFormatPattern"/>
+          <attr name="maxLength"/>
+          <attr attrValue="" defaultValue="" name="filter"/>
+          <attr attrValue="" defaultValue="" name="maxLengthString"/>
+          <attr name="value"/>
+        </fieldView>
+        <fieldEdit>
+          <type name="text"/>
+          <attr attrValue="nui-textbox" defaultValue="nui-textbox" name="class"/>
+          <attr attrValue="" defaultValue="" name="emptyText"/>
+          <attr attrValue="" defaultValue="" name="inputStyle"/>
+          <attr attrValue="false" defaultValue="false" name="required"/>
+          <attr attrValue="" defaultValue="" name="borderStyle"/>
+          <attr attrValue="" defaultValue="" name="cls"/>
+          <attr attrValue="true" defaultValue="true" name="enabled"/>
+          <attr attrValue="" defaultValue="" name="height"/>
+          <attr attrValue="" defaultValue="" name="id"/>
+          <attr attrValue="" defaultValue="" name="name"/>
+          <attr attrValue="" defaultValue="" name="style"/>
+          <attr attrValue="" defaultValue="" name="tooltip"/>
+          <attr attrValue="true" defaultValue="true" name="visible"/>
+          <attr attrValue="" defaultValue="" name="width"/>
+        </fieldEdit>
+      </viewField>
+    </columnProperty>
+    <columnProperty id="property1" name="fileName" displayName="fileName" columnName="FILE_NAME" nullAble="false" columnType="VARCHAR2" eosDataType="String" length="128" dasType="string" overWriteDefaultColumnType="false" showType="String" update="true" insert="true">
+      <comment xsi:nil="true"/>
+      <viewField dict="false" displayName="fileName" id="fileName" label="fileName" name="fileName" userDefined="true">
+        <fieldView>
+          <type name="write"/>
+          <attr name="formatPattern"/>
+          <attr name="srcFormatPattern"/>
+          <attr name="maxLength"/>
+          <attr attrValue="" defaultValue="" name="filter"/>
+          <attr attrValue="" defaultValue="" name="maxLengthString"/>
+          <attr name="value"/>
+        </fieldView>
+        <fieldEdit>
+          <type name="text"/>
+          <attr attrValue="nui-textbox" defaultValue="nui-textbox" name="class"/>
+          <attr attrValue="" defaultValue="" name="emptyText"/>
+          <attr attrValue="" defaultValue="" name="inputStyle"/>
+          <attr attrValue="false" defaultValue="false" name="required"/>
+          <attr attrValue="" defaultValue="" name="borderStyle"/>
+          <attr attrValue="" defaultValue="" name="cls"/>
+          <attr attrValue="true" defaultValue="true" name="enabled"/>
+          <attr attrValue="" defaultValue="" name="height"/>
+          <attr attrValue="" defaultValue="" name="id"/>
+          <attr attrValue="" defaultValue="" name="name"/>
+          <attr attrValue="" defaultValue="" name="style"/>
+          <attr attrValue="" defaultValue="" name="tooltip"/>
+          <attr attrValue="true" defaultValue="true" name="visible"/>
+          <attr attrValue="" defaultValue="" name="width"/>
+        </fieldEdit>
+      </viewField>
+    </columnProperty>
+    <columnProperty id="property2" name="fileNewName" displayName="fileNewName" columnName="FILE_NEW_NAME" nullAble="true" columnType="VARCHAR2" eosDataType="String" length="128" dasType="string" overWriteDefaultColumnType="false" showType="String" update="true" insert="true">
+      <comment xsi:nil="true"/>
+      <viewField dict="false" displayName="fileNewName" id="fileNewName" label="fileNewName" name="fileNewName" userDefined="true">
+        <fieldView>
+          <type name="write"/>
+          <attr name="formatPattern"/>
+          <attr name="srcFormatPattern"/>
+          <attr name="maxLength"/>
+          <attr attrValue="" defaultValue="" name="filter"/>
+          <attr attrValue="" defaultValue="" name="maxLengthString"/>
+          <attr name="value"/>
+        </fieldView>
+        <fieldEdit>
+          <type name="text"/>
+          <attr attrValue="nui-textbox" defaultValue="nui-textbox" name="class"/>
+          <attr attrValue="" defaultValue="" name="emptyText"/>
+          <attr attrValue="" defaultValue="" name="inputStyle"/>
+          <attr attrValue="false" defaultValue="false" name="required"/>
+          <attr attrValue="" defaultValue="" name="borderStyle"/>
+          <attr attrValue="" defaultValue="" name="cls"/>
+          <attr attrValue="true" defaultValue="true" name="enabled"/>
+          <attr attrValue="" defaultValue="" name="height"/>
+          <attr attrValue="" defaultValue="" name="id"/>
+          <attr attrValue="" defaultValue="" name="name"/>
+          <attr attrValue="" defaultValue="" name="style"/>
+          <attr attrValue="" defaultValue="" name="tooltip"/>
+          <attr attrValue="true" defaultValue="true" name="visible"/>
+          <attr attrValue="" defaultValue="" name="width"/>
+        </fieldEdit>
+      </viewField>
+    </columnProperty>
+    <columnProperty id="property3" name="filePath" displayName="filePath" columnName="FILE_PATH" nullAble="true" columnType="VARCHAR2" eosDataType="String" length="256" dasType="string" overWriteDefaultColumnType="false" showType="String" update="true" insert="true">
+      <comment xsi:nil="true"/>
+      <viewField dict="false" displayName="filePath" id="filePath" label="filePath" name="filePath" userDefined="true">
+        <fieldView>
+          <type name="write"/>
+          <attr name="formatPattern"/>
+          <attr name="srcFormatPattern"/>
+          <attr name="maxLength"/>
+          <attr attrValue="" defaultValue="" name="filter"/>
+          <attr attrValue="" defaultValue="" name="maxLengthString"/>
+          <attr name="value"/>
+        </fieldView>
+        <fieldEdit>
+          <type name="text"/>
+          <attr attrValue="nui-textbox" defaultValue="nui-textbox" name="class"/>
+          <attr attrValue="" defaultValue="" name="emptyText"/>
+          <attr attrValue="" defaultValue="" name="inputStyle"/>
+          <attr attrValue="false" defaultValue="false" name="required"/>
+          <attr attrValue="" defaultValue="" name="borderStyle"/>
+          <attr attrValue="" defaultValue="" name="cls"/>
+          <attr attrValue="true" defaultValue="true" name="enabled"/>
+          <attr attrValue="" defaultValue="" name="height"/>
+          <attr attrValue="" defaultValue="" name="id"/>
+          <attr attrValue="" defaultValue="" name="name"/>
+          <attr attrValue="" defaultValue="" name="style"/>
+          <attr attrValue="" defaultValue="" name="tooltip"/>
+          <attr attrValue="true" defaultValue="true" name="visible"/>
+          <attr attrValue="" defaultValue="" name="width"/>
+        </fieldEdit>
+      </viewField>
+    </columnProperty>
+    <columnProperty id="property4" name="absolutepath" displayName="absolutepath" columnName="ABSOLUTEPATH" nullAble="true" columnType="VARCHAR2" eosDataType="String" length="512" dasType="string" overWriteDefaultColumnType="false" showType="String" update="true" insert="true">
+      <comment xsi:nil="true"/>
+      <viewField dict="false" displayName="absolutepath" id="absolutepath" label="absolutepath" name="absolutepath" userDefined="true">
+        <fieldView>
+          <type name="write"/>
+          <attr name="formatPattern"/>
+          <attr name="srcFormatPattern"/>
+          <attr name="maxLength"/>
+          <attr attrValue="" defaultValue="" name="filter"/>
+          <attr attrValue="" defaultValue="" name="maxLengthString"/>
+          <attr name="value"/>
+        </fieldView>
+        <fieldEdit>
+          <type name="text"/>
+          <attr attrValue="nui-textbox" defaultValue="nui-textbox" name="class"/>
+          <attr attrValue="" defaultValue="" name="emptyText"/>
+          <attr attrValue="" defaultValue="" name="inputStyle"/>
+          <attr attrValue="false" defaultValue="false" name="required"/>
+          <attr attrValue="" defaultValue="" name="borderStyle"/>
+          <attr attrValue="" defaultValue="" name="cls"/>
+          <attr attrValue="true" defaultValue="true" name="enabled"/>
+          <attr attrValue="" defaultValue="" name="height"/>
+          <attr attrValue="" defaultValue="" name="id"/>
+          <attr attrValue="" defaultValue="" name="name"/>
+          <attr attrValue="" defaultValue="" name="style"/>
+          <attr attrValue="" defaultValue="" name="tooltip"/>
+          <attr attrValue="true" defaultValue="true" name="visible"/>
+          <attr attrValue="" defaultValue="" name="width"/>
+        </fieldEdit>
+      </viewField>
+    </columnProperty>
+    <columnProperty id="property5" name="fileSize" displayName="fileSize" columnName="FILE_SIZE" nullAble="true" columnType="NUMBER" eosDataType="Long" length="16" dasType="long" overWriteDefaultColumnType="false" showType="Long" update="true" insert="true">
+      <comment xsi:nil="true"/>
+      <viewField dict="false" displayName="fileSize" id="fileSize" label="fileSize" name="fileSize" userDefined="true">
+        <fieldView>
+          <type name="write"/>
+          <attr name="formatPattern"/>
+          <attr name="srcFormatPattern"/>
+          <attr name="maxLength"/>
+          <attr attrValue="" defaultValue="" name="filter"/>
+          <attr attrValue="" defaultValue="" name="maxLengthString"/>
+          <attr name="value"/>
+        </fieldView>
+        <fieldEdit>
+          <type name="text"/>
+          <attr attrValue="nui-textbox" defaultValue="nui-textbox" name="class"/>
+          <attr attrValue="" defaultValue="" name="emptyText"/>
+          <attr attrValue="" defaultValue="" name="inputStyle"/>
+          <attr attrValue="false" defaultValue="false" name="required"/>
+          <attr attrValue="" defaultValue="" name="borderStyle"/>
+          <attr attrValue="" defaultValue="" name="cls"/>
+          <attr attrValue="true" defaultValue="true" name="enabled"/>
+          <attr attrValue="" defaultValue="" name="height"/>
+          <attr attrValue="" defaultValue="" name="id"/>
+          <attr attrValue="" defaultValue="" name="name"/>
+          <attr attrValue="" defaultValue="" name="style"/>
+          <attr attrValue="" defaultValue="" name="tooltip"/>
+          <attr attrValue="true" defaultValue="true" name="visible"/>
+          <attr attrValue="" defaultValue="" name="width"/>
+        </fieldEdit>
+      </viewField>
+    </columnProperty>
+    <columnProperty id="property6" name="fileType" displayName="fileType" columnName="FILE_TYPE" nullAble="true" columnType="VARCHAR2" eosDataType="String" length="64" dasType="string" overWriteDefaultColumnType="false" showType="String" update="true" insert="true">
+      <comment xsi:nil="true"/>
+      <viewField dict="false" displayName="fileType" id="fileType" label="fileType" name="fileType" userDefined="true">
+        <fieldView>
+          <type name="write"/>
+          <attr name="formatPattern"/>
+          <attr name="srcFormatPattern"/>
+          <attr name="maxLength"/>
+          <attr attrValue="" defaultValue="" name="filter"/>
+          <attr attrValue="" defaultValue="" name="maxLengthString"/>
+          <attr name="value"/>
+        </fieldView>
+        <fieldEdit>
+          <type name="text"/>
+          <attr attrValue="nui-textbox" defaultValue="nui-textbox" name="class"/>
+          <attr attrValue="" defaultValue="" name="emptyText"/>
+          <attr attrValue="" defaultValue="" name="inputStyle"/>
+          <attr attrValue="false" defaultValue="false" name="required"/>
+          <attr attrValue="" defaultValue="" name="borderStyle"/>
+          <attr attrValue="" defaultValue="" name="cls"/>
+          <attr attrValue="true" defaultValue="true" name="enabled"/>
+          <attr attrValue="" defaultValue="" name="height"/>
+          <attr attrValue="" defaultValue="" name="id"/>
+          <attr attrValue="" defaultValue="" name="name"/>
+          <attr attrValue="" defaultValue="" name="style"/>
+          <attr attrValue="" defaultValue="" name="tooltip"/>
+          <attr attrValue="true" defaultValue="true" name="visible"/>
+          <attr attrValue="" defaultValue="" name="width"/>
+        </fieldEdit>
+      </viewField>
+    </columnProperty>
+    <columnProperty id="property7" name="fileTime" displayName="fileTime" columnName="FILE_TIME" nullAble="true" columnType="DATE" eosDataType="Date" dasType="date" overWriteDefaultColumnType="false" showType="Date" update="true" insert="true">
+      <comment xsi:nil="true"/>
+      <viewField dict="false" displayName="fileTime" id="fileTime" label="fileTime" name="fileTime" userDefined="true">
+        <fieldView>
+          <type name="write"/>
+          <attr name="formatPattern"/>
+          <attr name="srcFormatPattern"/>
+          <attr name="maxLength"/>
+          <attr attrValue="" defaultValue="" name="filter"/>
+          <attr attrValue="" defaultValue="" name="maxLengthString"/>
+          <attr name="value"/>
+        </fieldView>
+        <fieldEdit>
+          <type name="date"/>
+          <attr attrValue="nui-datepicker" defaultValue="nui-datepicker" name="class"/>
+          <attr attrValue="" defaultValue="" name="popup"/>
+          <attr attrValue="" defaultValue="" name="popupHeight"/>
+          <attr attrValue="100%" defaultValue="100%" name="popupWidth"/>
+          <attr attrValue="false" defaultValue="false" name="required"/>
+          <attr attrValue="" defaultValue="" name="validateOnChanged"/>
+          <attr attrValue="" defaultValue="" name="borderStyle"/>
+          <attr attrValue="" defaultValue="" name="cls"/>
+          <attr attrValue="true" defaultValue="true" name="enabled"/>
+          <attr attrValue="" defaultValue="" name="height"/>
+          <attr attrValue="" defaultValue="" name="id"/>
+          <attr attrValue="" defaultValue="" name="name"/>
+          <attr attrValue="" defaultValue="" name="style"/>
+          <attr attrValue="" defaultValue="" name="tooltip"/>
+          <attr attrValue="true" defaultValue="true" name="visible"/>
+          <attr attrValue="" defaultValue="" name="width"/>
+        </fieldEdit>
+      </viewField>
+    </columnProperty>
+    <columnProperty id="property8" name="fileSave" displayName="fileSave" columnName="FILE_SAVE" nullAble="true" columnType="CHAR" eosDataType="String" length="1" dasType="string" overWriteDefaultColumnType="false" showType="String" update="true" insert="true">
+      <comment xsi:nil="true"/>
+      <viewField dict="false" displayName="fileSave" id="fileSave" label="fileSave" name="fileSave" userDefined="true">
+        <fieldView>
+          <type name="write"/>
+          <attr name="formatPattern"/>
+          <attr name="srcFormatPattern"/>
+          <attr name="maxLength"/>
+          <attr attrValue="" defaultValue="" name="filter"/>
+          <attr attrValue="" defaultValue="" name="maxLengthString"/>
+          <attr name="value"/>
+        </fieldView>
+        <fieldEdit>
+          <type name="text"/>
+          <attr attrValue="nui-textbox" defaultValue="nui-textbox" name="class"/>
+          <attr attrValue="" defaultValue="" name="emptyText"/>
+          <attr attrValue="" defaultValue="" name="inputStyle"/>
+          <attr attrValue="false" defaultValue="false" name="required"/>
+          <attr attrValue="" defaultValue="" name="borderStyle"/>
+          <attr attrValue="" defaultValue="" name="cls"/>
+          <attr attrValue="true" defaultValue="true" name="enabled"/>
+          <attr attrValue="" defaultValue="" name="height"/>
+          <attr attrValue="" defaultValue="" name="id"/>
+          <attr attrValue="" defaultValue="" name="name"/>
+          <attr attrValue="" defaultValue="" name="style"/>
+          <attr attrValue="" defaultValue="" name="tooltip"/>
+          <attr attrValue="true" defaultValue="true" name="visible"/>
+          <attr attrValue="" defaultValue="" name="width"/>
+        </fieldEdit>
+      </viewField>
+    </columnProperty>
+    <columnProperty id="property9" name="content" displayName="content" columnName="CONTENT" nullAble="true" columnType="BLOB" eosDataType="Bytes" lazy="true" dasType="com.primeton.das.entity.impl.lob.type.BlobByteArrayType" overWriteDefaultColumnType="false" showType="BlobByteArray" update="true" insert="true">
+      <comment xsi:nil="true"/>
+      <viewField dict="false" displayName="content" id="content" label="content" name="content" userDefined="true">
+        <fieldView>
+          <type name="write"/>
+          <attr name="formatPattern"/>
+          <attr name="srcFormatPattern"/>
+          <attr name="maxLength"/>
+          <attr attrValue="" defaultValue="" name="filter"/>
+          <attr attrValue="" defaultValue="" name="maxLengthString"/>
+          <attr name="value"/>
+        </fieldView>
+        <fieldEdit>
+          <type name="text"/>
+          <attr attrValue="nui-textbox" defaultValue="nui-textbox" name="class"/>
+          <attr attrValue="" defaultValue="" name="emptyText"/>
+          <attr attrValue="" defaultValue="" name="inputStyle"/>
+          <attr attrValue="false" defaultValue="false" name="required"/>
+          <attr attrValue="" defaultValue="" name="borderStyle"/>
+          <attr attrValue="" defaultValue="" name="cls"/>
+          <attr attrValue="true" defaultValue="true" name="enabled"/>
+          <attr attrValue="" defaultValue="" name="height"/>
+          <attr attrValue="" defaultValue="" name="id"/>
+          <attr attrValue="" defaultValue="" name="name"/>
+          <attr attrValue="" defaultValue="" name="style"/>
+          <attr attrValue="" defaultValue="" name="tooltip"/>
+          <attr attrValue="true" defaultValue="true" name="visible"/>
+          <attr attrValue="" defaultValue="" name="width"/>
+        </fieldEdit>
+      </viewField>
+    </columnProperty>
+    <columnProperty id="property10" name="operatorid" displayName="operatorid" columnName="OPERATORID" nullAble="true" columnType="NUMBER" eosDataType="Long" length="18" dasType="long" overWriteDefaultColumnType="false" showType="Long" update="true" insert="true">
+      <comment xsi:nil="true"/>
+      <viewField dict="false" displayName="operatorid" id="operatorid" label="operatorid" name="operatorid" userDefined="true">
+        <fieldView>
+          <type name="write"/>
+          <attr name="formatPattern"/>
+          <attr name="srcFormatPattern"/>
+          <attr name="maxLength"/>
+          <attr attrValue="" defaultValue="" name="filter"/>
+          <attr attrValue="" defaultValue="" name="maxLengthString"/>
+          <attr name="value"/>
+        </fieldView>
+        <fieldEdit>
+          <type name="text"/>
+          <attr attrValue="nui-textbox" defaultValue="nui-textbox" name="class"/>
+          <attr attrValue="" defaultValue="" name="emptyText"/>
+          <attr attrValue="" defaultValue="" name="inputStyle"/>
+          <attr attrValue="false" defaultValue="false" name="required"/>
+          <attr attrValue="" defaultValue="" name="borderStyle"/>
+          <attr attrValue="" defaultValue="" name="cls"/>
+          <attr attrValue="true" defaultValue="true" name="enabled"/>
+          <attr attrValue="" defaultValue="" name="height"/>
+          <attr attrValue="" defaultValue="" name="id"/>
+          <attr attrValue="" defaultValue="" name="name"/>
+          <attr attrValue="" defaultValue="" name="style"/>
+          <attr attrValue="" defaultValue="" name="tooltip"/>
+          <attr attrValue="true" defaultValue="true" name="visible"/>
+          <attr attrValue="" defaultValue="" name="width"/>
+        </fieldEdit>
+      </viewField>
+    </columnProperty>
+    <columnProperty id="property11" name="operatorname" displayName="operatorname" columnName="OPERATORNAME" nullAble="true" columnType="VARCHAR2" eosDataType="String" length="64" dasType="string" overWriteDefaultColumnType="false" showType="String" update="true" insert="true">
+      <comment xsi:nil="true"/>
+      <viewField dict="false" displayName="operatorname" id="operatorname" label="operatorname" name="operatorname" userDefined="true">
+        <fieldView>
+          <type name="write"/>
+          <attr name="formatPattern"/>
+          <attr name="srcFormatPattern"/>
+          <attr name="maxLength"/>
+          <attr attrValue="" defaultValue="" name="filter"/>
+          <attr attrValue="" defaultValue="" name="maxLengthString"/>
+          <attr name="value"/>
+        </fieldView>
+        <fieldEdit>
+          <type name="text"/>
+          <attr attrValue="nui-textbox" defaultValue="nui-textbox" name="class"/>
+          <attr attrValue="" defaultValue="" name="emptyText"/>
+          <attr attrValue="" defaultValue="" name="inputStyle"/>
+          <attr attrValue="false" defaultValue="false" name="required"/>
+          <attr attrValue="" defaultValue="" name="borderStyle"/>
+          <attr attrValue="" defaultValue="" name="cls"/>
+          <attr attrValue="true" defaultValue="true" name="enabled"/>
+          <attr attrValue="" defaultValue="" name="height"/>
+          <attr attrValue="" defaultValue="" name="id"/>
+          <attr attrValue="" defaultValue="" name="name"/>
+          <attr attrValue="" defaultValue="" name="style"/>
+          <attr attrValue="" defaultValue="" name="tooltip"/>
+          <attr attrValue="true" defaultValue="true" name="visible"/>
+          <attr attrValue="" defaultValue="" name="width"/>
+        </fieldEdit>
+      </viewField>
+    </columnProperty>
+    <columnProperty id="property12" name="relationId" displayName="relationId" columnName="RELATION_ID" nullAble="true" columnType="VARCHAR2" eosDataType="String" length="32" dasType="string" overWriteDefaultColumnType="false" showType="String" update="true" insert="true">
+      <comment xsi:nil="true"/>
+      <viewField dict="false" displayName="relationId" id="relationId" label="relationId" name="relationId" userDefined="true">
+        <fieldView>
+          <type name="write"/>
+          <attr name="formatPattern"/>
+          <attr name="srcFormatPattern"/>
+          <attr name="maxLength"/>
+          <attr attrValue="" defaultValue="" name="filter"/>
+          <attr attrValue="" defaultValue="" name="maxLengthString"/>
+          <attr name="value"/>
+        </fieldView>
+        <fieldEdit>
+          <type name="text"/>
+          <attr attrValue="nui-textbox" defaultValue="nui-textbox" name="class"/>
+          <attr attrValue="" defaultValue="" name="emptyText"/>
+          <attr attrValue="" defaultValue="" name="inputStyle"/>
+          <attr attrValue="false" defaultValue="false" name="required"/>
+          <attr attrValue="" defaultValue="" name="borderStyle"/>
+          <attr attrValue="" defaultValue="" name="cls"/>
+          <attr attrValue="true" defaultValue="true" name="enabled"/>
+          <attr attrValue="" defaultValue="" name="height"/>
+          <attr attrValue="" defaultValue="" name="id"/>
+          <attr attrValue="" defaultValue="" name="name"/>
+          <attr attrValue="" defaultValue="" name="style"/>
+          <attr attrValue="" defaultValue="" name="tooltip"/>
+          <attr attrValue="true" defaultValue="true" name="visible"/>
+          <attr attrValue="" defaultValue="" name="width"/>
+        </fieldEdit>
+      </viewField>
+    </columnProperty>
+    <columnProperty id="property13" name="groupId" displayName="groupId" columnName="GROUP_ID" nullAble="true" columnType="VARCHAR2" eosDataType="String" length="32" dasType="string" overWriteDefaultColumnType="false" showType="String" update="true" insert="true">
+      <comment xsi:nil="true"/>
+      <viewField dict="false" displayName="groupId" id="groupId" label="groupId" name="groupId" userDefined="true">
+        <fieldView>
+          <type name="write"/>
+          <attr name="formatPattern"/>
+          <attr name="srcFormatPattern"/>
+          <attr name="maxLength"/>
+          <attr attrValue="" defaultValue="" name="filter"/>
+          <attr attrValue="" defaultValue="" name="maxLengthString"/>
+          <attr name="value"/>
+        </fieldView>
+        <fieldEdit>
+          <type name="text"/>
+          <attr attrValue="nui-textbox" defaultValue="nui-textbox" name="class"/>
+          <attr attrValue="" defaultValue="" name="emptyText"/>
+          <attr attrValue="" defaultValue="" name="inputStyle"/>
+          <attr attrValue="false" defaultValue="false" name="required"/>
+          <attr attrValue="" defaultValue="" name="borderStyle"/>
+          <attr attrValue="" defaultValue="" name="cls"/>
+          <attr attrValue="true" defaultValue="true" name="enabled"/>
+          <attr attrValue="" defaultValue="" name="height"/>
+          <attr attrValue="" defaultValue="" name="id"/>
+          <attr attrValue="" defaultValue="" name="name"/>
+          <attr attrValue="" defaultValue="" name="style"/>
+          <attr attrValue="" defaultValue="" name="tooltip"/>
+          <attr attrValue="true" defaultValue="true" name="visible"/>
+          <attr attrValue="" defaultValue="" name="width"/>
+        </fieldEdit>
+      </viewField>
+    </columnProperty>
+    <columnProperty id="property14" name="beginDate" displayName="beginDate" columnName="BEGIN_DATE" nullAble="true" columnType="CHAR" eosDataType="String" length="8" dasType="string" overWriteDefaultColumnType="false" showType="String" update="true" insert="true">
+      <comment xsi:nil="true"/>
+      <viewField dict="false" displayName="beginDate" id="beginDate" label="beginDate" name="beginDate" userDefined="true">
+        <fieldView>
+          <type name="write"/>
+          <attr name="formatPattern"/>
+          <attr name="srcFormatPattern"/>
+          <attr name="maxLength"/>
+          <attr attrValue="" defaultValue="" name="filter"/>
+          <attr attrValue="" defaultValue="" name="maxLengthString"/>
+          <attr name="value"/>
+        </fieldView>
+        <fieldEdit>
+          <type name="text"/>
+          <attr attrValue="nui-textbox" defaultValue="nui-textbox" name="class"/>
+          <attr attrValue="" defaultValue="" name="emptyText"/>
+          <attr attrValue="" defaultValue="" name="inputStyle"/>
+          <attr attrValue="false" defaultValue="false" name="required"/>
+          <attr attrValue="" defaultValue="" name="borderStyle"/>
+          <attr attrValue="" defaultValue="" name="cls"/>
+          <attr attrValue="true" defaultValue="true" name="enabled"/>
+          <attr attrValue="" defaultValue="" name="height"/>
+          <attr attrValue="" defaultValue="" name="id"/>
+          <attr attrValue="" defaultValue="" name="name"/>
+          <attr attrValue="" defaultValue="" name="style"/>
+          <attr attrValue="" defaultValue="" name="tooltip"/>
+          <attr attrValue="true" defaultValue="true" name="visible"/>
+          <attr attrValue="" defaultValue="" name="width"/>
+        </fieldEdit>
+      </viewField>
+    </columnProperty>
+    <columnProperty id="property15" name="endDate" displayName="endDate" columnName="END_DATE" nullAble="true" columnType="CHAR" eosDataType="String" length="8" dasType="string" overWriteDefaultColumnType="false" showType="String" update="true" insert="true">
+      <comment xsi:nil="true"/>
+      <viewField dict="false" displayName="endDate" id="endDate" label="endDate" name="endDate" userDefined="true">
+        <fieldView>
+          <type name="write"/>
+          <attr name="formatPattern"/>
+          <attr name="srcFormatPattern"/>
+          <attr name="maxLength"/>
+          <attr attrValue="" defaultValue="" name="filter"/>
+          <attr attrValue="" defaultValue="" name="maxLengthString"/>
+          <attr name="value"/>
+        </fieldView>
+        <fieldEdit>
+          <type name="text"/>
+          <attr attrValue="nui-textbox" defaultValue="nui-textbox" name="class"/>
+          <attr attrValue="" defaultValue="" name="emptyText"/>
+          <attr attrValue="" defaultValue="" name="inputStyle"/>
+          <attr attrValue="false" defaultValue="false" name="required"/>
+          <attr attrValue="" defaultValue="" name="borderStyle"/>
+          <attr attrValue="" defaultValue="" name="cls"/>
+          <attr attrValue="true" defaultValue="true" name="enabled"/>
+          <attr attrValue="" defaultValue="" name="height"/>
+          <attr attrValue="" defaultValue="" name="id"/>
+          <attr attrValue="" defaultValue="" name="name"/>
+          <attr attrValue="" defaultValue="" name="style"/>
+          <attr attrValue="" defaultValue="" name="tooltip"/>
+          <attr attrValue="true" defaultValue="true" name="visible"/>
+          <attr attrValue="" defaultValue="" name="width"/>
+        </fieldEdit>
+      </viewField>
+    </columnProperty>
+    <columnProperty id="property16" name="authOrg" displayName="authOrg" columnName="AUTH_ORG" nullAble="true" columnType="VARCHAR2" eosDataType="String" length="512" dasType="string" overWriteDefaultColumnType="false" showType="String" update="true" insert="true">
+      <comment xsi:nil="true"/>
+      <viewField dict="false" displayName="authOrg" id="authOrg" label="authOrg" name="authOrg" userDefined="true">
+        <fieldView>
+          <type name="write"/>
+          <attr name="formatPattern"/>
+          <attr name="srcFormatPattern"/>
+          <attr name="maxLength"/>
+          <attr attrValue="" defaultValue="" name="filter"/>
+          <attr attrValue="" defaultValue="" name="maxLengthString"/>
+          <attr name="value"/>
+        </fieldView>
+        <fieldEdit>
+          <type name="text"/>
+          <attr attrValue="nui-textbox" defaultValue="nui-textbox" name="class"/>
+          <attr attrValue="" defaultValue="" name="emptyText"/>
+          <attr attrValue="" defaultValue="" name="inputStyle"/>
+          <attr attrValue="false" defaultValue="false" name="required"/>
+          <attr attrValue="" defaultValue="" name="borderStyle"/>
+          <attr attrValue="" defaultValue="" name="cls"/>
+          <attr attrValue="true" defaultValue="true" name="enabled"/>
+          <attr attrValue="" defaultValue="" name="height"/>
+          <attr attrValue="" defaultValue="" name="id"/>
+          <attr attrValue="" defaultValue="" name="name"/>
+          <attr attrValue="" defaultValue="" name="style"/>
+          <attr attrValue="" defaultValue="" name="tooltip"/>
+          <attr attrValue="true" defaultValue="true" name="visible"/>
+          <attr attrValue="" defaultValue="" name="width"/>
+        </fieldEdit>
+      </viewField>
+    </columnProperty>
+    <columnProperty id="property17" name="wkflid" displayName="wkflid" columnName="WKFLID" nullAble="true" columnType="VARCHAR2" eosDataType="String" length="32" dasType="string" overWriteDefaultColumnType="false" showType="String" update="true" insert="true">
+      <comment xsi:nil="true"/>
+      <viewField dict="false" displayName="wkflid" id="wkflid" label="wkflid" name="wkflid" userDefined="true">
+        <fieldView>
+          <type name="write"/>
+          <attr name="formatPattern"/>
+          <attr name="srcFormatPattern"/>
+          <attr name="maxLength"/>
+          <attr attrValue="" defaultValue="" name="filter"/>
+          <attr attrValue="" defaultValue="" name="maxLengthString"/>
+          <attr name="value"/>
+        </fieldView>
+        <fieldEdit>
+          <type name="text"/>
+          <attr attrValue="nui-textbox" defaultValue="nui-textbox" name="class"/>
+          <attr attrValue="" defaultValue="" name="emptyText"/>
+          <attr attrValue="" defaultValue="" name="inputStyle"/>
+          <attr attrValue="false" defaultValue="false" name="required"/>
+          <attr attrValue="" defaultValue="" name="borderStyle"/>
+          <attr attrValue="" defaultValue="" name="cls"/>
+          <attr attrValue="true" defaultValue="true" name="enabled"/>
+          <attr attrValue="" defaultValue="" name="height"/>
+          <attr attrValue="" defaultValue="" name="id"/>
+          <attr attrValue="" defaultValue="" name="name"/>
+          <attr attrValue="" defaultValue="" name="style"/>
+          <attr attrValue="" defaultValue="" name="tooltip"/>
+          <attr attrValue="true" defaultValue="true" name="visible"/>
+          <attr attrValue="" defaultValue="" name="width"/>
+        </fieldEdit>
+      </viewField>
+    </columnProperty>
+  </nodes>
+  <topRuler/>
+  <leftRuler/>
+</model:DataSetDiagram>

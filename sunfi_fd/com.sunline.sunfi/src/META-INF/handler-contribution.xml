@@ -1,0 +1,4 @@
+<handlers>
+	<!--<handler handle-class="com.primeton.runtime.resource.event.ContributionDemoListener"/>-->
+	<handler handle-class="com.sunline.sunfi.util.XssContributionListener"></handler>
+</handlers>

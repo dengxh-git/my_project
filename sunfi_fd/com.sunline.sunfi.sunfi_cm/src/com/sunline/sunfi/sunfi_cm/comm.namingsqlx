@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- author:weixin -->
+<sqlMap>
+    <resultMap class="commonj.sdo.DataObject" id="getexpaeuvs">		
+		 <result column="trandt" javaType="java.lang.String"  property="trandt"/>
+		 <result column="bsnsdt" javaType="java.lang.String"  property="bsnsdt"/>
+		 <result column="bsnssq" javaType="java.lang.String"  property="bsnssq"/>
+		 <result column="acctbr" javaType="java.lang.String"  property="acctbr"/>
+		 <result column="dutycd" javaType="java.lang.String"  property="dutycd"/>
+		 <result column="crcycd" javaType="java.lang.String"  property="crcycd"/>
+		 <result column="itemcd" javaType="java.lang.String"  property="itemcd"/>
+		 <result column="strkst" javaType="java.lang.String"  property="strkst"/>
+		 <result column="totalC" javaType="java.lang.String"  property="totalC"/>
+		 <result column="totalD" javaType="java.lang.String"  property="totalD"/>
+	</resultMap>
+	
+	<resultMap class="commonj.sdo.DataObject" id="getexpaeuvsall">				
+		 <result column="acctbr" javaType="java.lang.String"  property="acctbr"/>
+		 <result column="dutycd" javaType="java.lang.String"  property="dutycd"/>
+		 <result column="crcycd" javaType="java.lang.String"  property="crcycd"/>
+		 <result column="itemcd" javaType="java.lang.String"  property="itemcd"/>
+		 <result column="amntcd" javaType="java.lang.String"  property="amntcd"/>		
+		 <result column="total" javaType="java.lang.String"  property="total"/>
+	</resultMap>
+	
+	
+	 <resultMap class="commonj.sdo.DataObject" id="expaeuvexcel">
+        <result column="stacid" javaType="java.math.BigDecimal" property="stacid"/>
+        <result column="bsnsdt" javaType="java.lang.String" property="bsnsdt"/>
+        <result column="bsnssq" javaType="java.lang.String" property="bsnssq"/>
+        <result column="acetna" javaType="java.lang.String" property="acetna"/>
+        <result column="usercd" javaType="java.lang.String" property="usercd"/>
+        <result column="transt" javaType="java.lang.String" property="transt"/>
+        <result column="trandt" javaType="java.lang.String" property="trandt"/>
+        <result column="transq" javaType="java.lang.String" property="transq"/>
+        <result column="strkst" javaType="java.lang.String" property="strkst"/>
+        <result column="odbsdt" javaType="java.lang.String" property="odbsdt"/>
+        <result column="odbssq" javaType="java.lang.String" property="odbssq"/>
+        <result column="crcycd" javaType="java.lang.String" property="crcycd"/>
+        <result column="totlamD" javaType="java.lang.String" property="totlamD"/>
+        <result column="brchna" javaType="java.lang.String" property="brchna"/>
+        <result column="dutycd" javaType="java.lang.String" property="dutycd"/>
+        <result column="itemcd" javaType="java.lang.String" property="itemcd"/>
+        <result column="itemna" javaType="java.lang.String" property="itemna"/>
+        <result column="amntcd" javaType="java.lang.String" property="amntcd"/>
+        <result column="totlamC" javaType="java.lang.String" property="totlamC"/>
+        <result column="remark" javaType="java.lang.String" property="remark"/>
+    </resultMap>
+	
+
+    
+
+    
+    <!--更新日期-->
+     <update id="updateComStac" parameterClass="java.util.HashMap">
+     UPDATE Com_Stac
+               SET bsnsdt = To_Char(To_Date(#bsnsdt#,'yyyymmdd') + 1,'yyyymmdd'),
+                   acctdt = To_Char(To_Date(#bsnsdt#,'yyyymmdd') + 1,'yyyymmdd'),
+                   glisdt = To_Char(To_Date(#bsnsdt#,'yyyymmdd') + 1,'yyyymmdd')                             
+    </update>
+    
+   
+</sqlMap>

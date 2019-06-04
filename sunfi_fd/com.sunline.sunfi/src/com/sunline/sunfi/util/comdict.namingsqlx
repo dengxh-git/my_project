@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- author:chenlzh -->
+<sqlMap>
+    <resultMap class="com.sunline.sunfi.generledg.brch.ComLeadQy" id="comdictMap">
+        <result column="dcdlna" javaType="java.lang.String"  property="dcdlna"/>
+        <result column="dcdltx" javaType="java.lang.String"  property="dcdltx"/>
+    </resultMap>
+    
+    <select id="comdictList" parameterClass="java.util.HashMap" resultMap="comdictMap">
+		select dcdlna,dcdltx
+		  from com_dict_detl
+		where dictcd=#dictcd#
+		and dcdlcd=(select cityno from com_brch where brchcd=#brchcd#)
+    </select>    
+</sqlMap>

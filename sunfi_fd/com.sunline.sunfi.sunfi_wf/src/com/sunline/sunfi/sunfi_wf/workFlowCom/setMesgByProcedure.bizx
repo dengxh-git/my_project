@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<process:tBusinessLogic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://com.primeton.emf.core" xmlns:process="http://primeton.com/emf/core/process" name="setMesgByProcedure.bizx" detailDescription="" demonstration="" urls="" gridVisibility="false" rulerVisibility="true" snapToGeometry="true" productVersion="7.0.0.0">
+  <nodes xsi:type="process:tStart" id="start0" name="开始" displayName="开始" type="start">
+    <sourceConnections xsi:type="process:tLink" description="" id="link0" name="link0" displayName="连接线" isDefault="false" type="transition">
+      <sourceNode>start0</sourceNode>
+      <targetNode>assign0</targetNode>
+      <process:transitionCondition>
+        <process:simpleCondition operator="OBJEQ">
+          <process:leftOperand type="query">workFlowMap/shform/appFlow</process:leftOperand>
+          <process:rightOperand type="query">appflow</process:rightOperand>
+        </process:simpleCondition>
+      </process:transitionCondition>
+    </sourceConnections>
+    <sourceConnections xsi:type="process:tLink" description="" id="link4" name="link4" displayName="连接线" isDefault="true" type="transition">
+      <sourceNode>start0</sourceNode>
+      <targetNode>end1</targetNode>
+      <process:transitionCondition>
+        <process:simpleCondition operator="EQ">
+          <process:leftOperand type="query"/>
+          <process:rightOperand type="literal">1</process:rightOperand>
+        </process:simpleCondition>
+      </process:transitionCondition>
+    </sourceConnections>
+    <sourceConnections xsi:type="process:tLink" description="" id="link5" name="link5" displayName="连接线" isDefault="false" type="transition">
+      <sourceNode>start0</sourceNode>
+      <targetNode>switch0</targetNode>
+      <process:transitionCondition>
+        <process:simpleCondition operator="OBJEQ">
+          <process:leftOperand type="query">appflow</process:leftOperand>
+          <process:rightOperand type="literal">begin</process:rightOperand>
+        </process:simpleCondition>
+      </process:transitionCondition>
+    </sourceConnections>
+    <location x="101" y="159"/>
+    <size height="28" width="28"/>
+    <nodeLabel>start0label</nodeLabel>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="start0label" name="label" displayName="label" nodeType="label">
+    <location x="103" y="195"/>
+    <figSize height="17" width="25"/>
+    <node>start0</node>
+  </nodes>
+  <nodes xsi:type="process:tAssign" description="" id="assign0" name="赋值" displayName="赋值" type="assign">
+    <sourceConnections xsi:type="process:tLink" id="link1" name="link1" displayName="连接线" isDefault="true" type="transition">
+      <sourceNode>assign0</sourceNode>
+      <targetNode>invokePojo1</targetNode>
+    </sourceConnections>
+    <targetConnections>link0</targetConnections>
+    <targetConnections>link6</targetConnections>
+    <location x="240" y="159"/>
+    <size height="28" width="28"/>
+    <nodeLabel>assign0label</nodeLabel>
+    <process:copy>
+      <process:from type="query" pattern="reference">workFlowMap/master</process:from>
+      <process:to type="query">master</process:to>
+    </process:copy>
+    <process:copy>
+      <process:from type="literal" pattern="reference">comIttp</process:from>
+      <process:to type="query">muKey[1]</process:to>
+    </process:copy>
+    <process:copy>
+      <process:from type="literal" pattern="reference">acbrna</process:from>
+      <process:to type="query">muKey[2]</process:to>
+    </process:copy>
+    <process:copy>
+      <process:from type="literal" pattern="reference">execst</process:from>
+      <process:to type="query">muKey[3]</process:to>
+    </process:copy>
+    <process:copy>
+      <process:from type="literal" pattern="reference">itemna</process:from>
+      <process:to type="query">muKey[4]</process:to>
+    </process:copy>
+    <process:copy>
+      <process:from type="literal" pattern="reference">acbrst</process:from>
+      <process:to type="query">muKey[5]</process:to>
+    </process:copy>
+    <process:copy>
+      <process:from type="literal" pattern="reference">cndtst</process:from>
+      <process:to type="query">muKey[6]</process:to>
+    </process:copy>
+    <process:copy>
+      <process:from type="literal" pattern="reference">vcmdcd</process:from>
+      <process:to type="query">muKey[7]</process:to>
+    </process:copy>
+    <process:copy>
+      <process:from type="literal" pattern="reference">editfg</process:from>
+      <process:to type="query">muKey[8]</process:to>
+    </process:copy>
+    <process:copy>
+      <process:from type="literal" pattern="reference">assisq</process:from>
+      <process:to type="query">muKey[9]</process:to>
+    </process:copy>
+    <process:copy>
+      <process:from type="literal" pattern="reference">cyclfg</process:from>
+      <process:to type="query">muKey[10]</process:to>
+    </process:copy>
+    <process:copy>
+      <process:from type="literal" pattern="reference">showName</process:from>
+      <process:to type="query">singleKey[1]</process:to>
+    </process:copy>
+    <process:copy>
+      <process:from type="literal" pattern="reference">processInstDesc</process:from>
+      <process:to type="query">singleKey[2]</process:to>
+    </process:copy>
+    <process:copy>
+      <process:from type="literal" pattern="reference">criteria</process:from>
+      <process:to type="query">singleKey[3]</process:to>
+    </process:copy>
+    <process:copy>
+      <process:from type="literal" pattern="reference">showUrl</process:from>
+      <process:to type="query">singleKey[4]</process:to>
+    </process:copy>
+    <process:copy>
+      <process:from type="literal" pattern="reference">criteriaName</process:from>
+      <process:to type="query">singleKey[5]</process:to>
+    </process:copy>
+    <process:copy>
+      <process:from type="literal" pattern="reference">processDefName</process:from>
+      <process:to type="query">singleKey[6]</process:to>
+    </process:copy>
+    <process:copy>
+      <process:from type="literal" pattern="reference">processInstID</process:from>
+      <process:to type="query">singleKey[7]</process:to>
+    </process:copy>
+    <process:copy>
+      <process:from type="literal" pattern="reference">processInstName</process:from>
+      <process:to type="query">singleKey[8]</process:to>
+    </process:copy>
+    <process:copy>
+      <process:from type="literal" pattern="reference">beginPrcscd</process:from>
+      <process:to type="query">singleKey[9]</process:to>
+    </process:copy>
+    <process:copy>
+      <process:from type="literal" pattern="reference">endPrcscd</process:from>
+      <process:to type="query">singleKey[10]</process:to>
+    </process:copy>
+    <process:copy>
+      <process:from type="query" pattern="reference">afterProcessStart</process:from>
+      <process:to type="query">singleKey[11]</process:to>
+    </process:copy>
+    <process:copy>
+      <process:from type="query" pattern="reference">afeWorkFlowSubmit</process:from>
+      <process:to type="query">singleKey[12]</process:to>
+    </process:copy>
+    <process:copy>
+      <process:from type="query" pattern="reference">workItemId</process:from>
+      <process:to type="query">singleKey[13]</process:to>
+    </process:copy>
+    <process:copy>
+      <process:from type="expression" pattern="reference">null</process:from>
+      <process:to type="query">workFlowMap/tranInfo</process:to>
+    </process:copy>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="assign0label" name="label" nodeType="label">
+    <location x="242" y="195"/>
+    <figSize height="17" width="25"/>
+    <node>assign0</node>
+  </nodes>
+  <nodes xsi:type="process:tInvoke" description="" id="invokePojo1" name="将DataObject[]转化成HashMap[]" displayName="convertDataObject2HashMap" type="invoke" index="1" invokeType="invoke_pojo" varArgs="false">
+    <sourceConnections xsi:type="process:tLink" id="link2" name="link2" displayName="连接线" isDefault="true" type="transition">
+      <sourceNode>invokePojo1</sourceNode>
+      <targetNode>invokePojo0</targetNode>
+    </sourceConnections>
+    <targetConnections>link1</targetConnections>
+    <location x="375" y="159"/>
+    <size height="28" width="22"/>
+    <nodeLabel>invokePojo1label</nodeLabel>
+    <process:pojo methodType="instance" synchronization="true" transactionType="join">
+      <process:partner type="literal">com.sunline.sunfi.util.Convert.convertDataObject2HashMap</process:partner>
+      <process:instance instanceName=""/>
+    </process:pojo>
+    <process:inputVariables>
+      <process:inputVariable id="0" name="objs" type="query" value="commonj.sdo.DataObject[]" valueType="Java" pattern="reference">workFlowMap/detail</process:inputVariable>
+    </process:inputVariables>
+    <process:outputVariables>
+      <process:outputVariable id="0" name="out0" type="query" value="java.util.HashMap&lt;java.lang.String,java.lang.Object>[]" valueType="Java">detail</process:outputVariable>
+    </process:outputVariables>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="invokePojo1label" name="label" nodeType="label">
+    <location x="293" y="195"/>
+    <figSize height="17" width="186"/>
+    <node>invokePojo1</node>
+  </nodes>
+  <nodes xsi:type="process:tInvoke" description="" id="invokePojo0" name="报文组装" displayName="getPackageEx" type="invoke" index="6" invokeType="invoke_pojo" varArgs="false">
+    <sourceConnections xsi:type="process:tLink" id="link3" name="link3" displayName="连接线" isDefault="true" type="transition">
+      <sourceNode>invokePojo0</sourceNode>
+      <targetNode>invokePojo2</targetNode>
+    </sourceConnections>
+    <targetConnections>link2</targetConnections>
+    <location x="570" y="159"/>
+    <size height="28" width="22"/>
+    <nodeLabel>invokePojo0label</nodeLabel>
+    <process:pojo methodType="instance" synchronization="true" transactionType="join">
+      <process:partner type="literal">com.sunline.sunfi.db.infc.DBInfc.getPackageEx</process:partner>
+      <process:instance instanceName=""/>
+    </process:pojo>
+    <process:inputVariables>
+      <process:inputVariable id="0" name="prcscd" type="query" value="java.lang.String" valueType="Java" pattern="reference">prcscd</process:inputVariable>
+      <process:inputVariable id="1" name="master" type="query" value="java.util.HashMap&lt;java.lang.String,java.lang.String>" valueType="Java" pattern="reference">master</process:inputVariable>
+      <process:inputVariable id="2" name="detail" type="query" value="java.util.HashMap&lt;java.lang.String,java.lang.Object>[]" valueType="Java" pattern="reference">detail</process:inputVariable>
+      <process:inputVariable id="3" name="userinfo" type="query" value="com.eos.data.datacontext.IUserObject" valueType="Java" pattern="reference">workFlowMap/userObject</process:inputVariable>
+      <process:inputVariable id="4" name="singleExcludeKey" type="expression" value="java.lang.String[]" valueType="Java" pattern="reference">singleKey</process:inputVariable>
+      <process:inputVariable id="5" name="muExcludeKey" type="expression" value="java.lang.String[]" valueType="Java" pattern="reference">muKey</process:inputVariable>
+    </process:inputVariables>
+    <process:outputVariables>
+      <process:outputVariable id="0" name="out0" type="query" value="java.lang.String" valueType="Java">pckgdt</process:outputVariable>
+    </process:outputVariables>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="invokePojo0label" name="label" nodeType="label">
+    <location x="557" y="195"/>
+    <figSize height="17" width="49"/>
+    <node>invokePojo0</node>
+  </nodes>
+  <nodes xsi:type="process:tSwitch" id="switch0" name="空操作" displayName="空操作" type="switch">
+    <sourceConnections xsi:type="process:tLink" id="link6" name="link6" displayName="连接线" isDefault="true" type="transition">
+      <sourceNode>switch0</sourceNode>
+      <targetNode>assign0</targetNode>
+    </sourceConnections>
+    <targetConnections>link5</targetConnections>
+    <location x="241" y="300"/>
+    <size height="28" width="28"/>
+    <nodeLabel>switch0label</nodeLabel>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="switch0label" name="label" nodeType="label">
+    <location x="237" y="336"/>
+    <figSize height="17" width="37"/>
+    <node>switch0</node>
+  </nodes>
+  <nodes xsi:type="process:tEnd" id="end1" name="结束" displayName="结束" type="end">
+    <targetConnections>link4</targetConnections>
+    <targetConnections>link11</targetConnections>
+    <targetConnections>link12</targetConnections>
+    <location x="240" y="15"/>
+    <size height="28" width="28"/>
+    <nodeLabel>end1label</nodeLabel>
+    <process:returns/>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="end1label" name="label" nodeType="label">
+    <location x="242" y="51"/>
+    <figSize height="17" width="25"/>
+    <node>end1</node>
+  </nodes>
+  <nodes xsi:type="process:tInvoke" description="" id="invokePojo2" name="调用通用存储过程" displayName="调用后台存储过程" type="invoke" index="0" invokeType="invoke_pojo" varArgs="false">
+    <sourceConnections xsi:type="process:tLink" id="link7" name="link7" displayName="连接线" isDefault="true" type="transition">
+      <sourceNode>invokePojo2</sourceNode>
+      <targetNode>invokePojo3</targetNode>
+    </sourceConnections>
+    <targetConnections>link3</targetConnections>
+    <location x="720" y="159"/>
+    <size height="28" width="22"/>
+    <nodeLabel>invokePojo2label</nodeLabel>
+    <process:pojo methodType="static" synchronization="true" transactionType="join">
+      <process:partner type="literal">com.sunline.sunfi.db.infc.DBInfc.invokeInfcMain</process:partner>
+      <process:instance instanceName=""/>
+    </process:pojo>
+    <process:inputVariables>
+      <process:inputVariable id="0" name="dsName" type="literal" value="java.lang.String" valueType="Java" pattern="reference">default</process:inputVariable>
+      <process:inputVariable id="1" name="prcscd" type="query" value="java.lang.String" valueType="Java" pattern="reference">prcscd</process:inputVariable>
+      <process:inputVariable id="2" name="pckgdt" type="query" value="java.lang.String" valueType="Java" pattern="reference">pckgdt</process:inputVariable>
+    </process:inputVariables>
+    <process:outputVariables>
+      <process:outputVariable id="0" name="out0" type="query" value="java.util.HashMap&lt;java.lang.String,java.lang.Object>" valueType="Java">retMap</process:outputVariable>
+    </process:outputVariables>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="invokePojo2label" name="label" nodeType="label">
+    <location x="683" y="195"/>
+    <figSize height="17" width="97"/>
+    <node>invokePojo2</node>
+  </nodes>
+  <nodes xsi:type="process:tInvoke" description="" id="invokePojo3" name="获取返回信息" displayName="处理调用存储过程后的返回信息" type="invoke" index="0" invokeType="invoke_pojo" varArgs="false">
+    <sourceConnections xsi:type="process:tLink" description="" id="link9" name="link9" displayName="连接线" isDefault="false" type="transition">
+      <sourceNode>invokePojo3</sourceNode>
+      <targetNode>invokePojo4</targetNode>
+      <process:transitionCondition>
+        <process:simpleCondition operator="OBJNE">
+          <process:leftOperand type="query">retmsg/retuin</process:leftOperand>
+          <process:rightOperand type="literal">0</process:rightOperand>
+        </process:simpleCondition>
+      </process:transitionCondition>
+    </sourceConnections>
+    <sourceConnections xsi:type="process:tLink" description="" id="link12" name="link12" displayName="连接线" isDefault="true" type="transition">
+      <sourceNode>invokePojo3</sourceNode>
+      <targetNode>end1</targetNode>
+      <process:transitionCondition>
+        <process:simpleCondition operator="EQ">
+          <process:leftOperand type="query"/>
+          <process:rightOperand type="literal">1</process:rightOperand>
+        </process:simpleCondition>
+      </process:transitionCondition>
+    </sourceConnections>
+    <targetConnections>link7</targetConnections>
+    <location x="825" y="159"/>
+    <size height="28" width="22"/>
+    <nodeLabel>invokePojo3label</nodeLabel>
+    <process:pojo methodType="instance" synchronization="true" transactionType="join">
+      <process:partner type="literal">com.sunline.sunfi.db.infc.DBInfc.processReturnMsg</process:partner>
+      <process:instance instanceName=""/>
+    </process:pojo>
+    <process:inputVariables>
+      <process:inputVariable id="0" name="params" type="query" value="java.util.HashMap&lt;java.lang.String,java.lang.Object>" valueType="Java" pattern="reference">retMap</process:inputVariable>
+    </process:inputVariables>
+    <process:outputVariables>
+      <process:outputVariable id="0" name="out0" type="query" value="java.util.HashMap&lt;java.lang.String,java.lang.Object>" valueType="Java">retmsg</process:outputVariable>
+    </process:outputVariables>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="invokePojo3label" name="label" nodeType="label">
+    <location x="800" y="195"/>
+    <figSize height="17" width="73"/>
+    <node>invokePojo3</node>
+  </nodes>
+  <nodes xsi:type="process:tInvoke" description="" id="invokePojo4" name="运算逻辑" displayName="设置自定义异常FIException信息" type="invoke" index="0" invokeType="invoke_pojo" varArgs="false">
+    <sourceConnections xsi:type="process:tLink" id="link10" name="link10" displayName="连接线" isDefault="true" type="transition">
+      <sourceNode>invokePojo4</sourceNode>
+      <targetNode>invokePojo5</targetNode>
+    </sourceConnections>
+    <targetConnections>link9</targetConnections>
+    <location x="826" y="15"/>
+    <size height="28" width="22"/>
+    <nodeLabel>invokePojo4label</nodeLabel>
+    <process:pojo methodType="instance" synchronization="true" transactionType="join">
+      <process:partner type="literal">com.sunline.sunfi.util.ExceptionUtil.setFIExceptionMsg</process:partner>
+      <process:instance instanceName=""/>
+    </process:pojo>
+    <process:inputVariables>
+      <process:inputVariable id="0" name="key" type="query" value="java.lang.String" valueType="Java" pattern="reference">workFlowMap/userObject/uniqueId</process:inputVariable>
+      <process:inputVariable id="1" name="errorMessage" type="query" value="java.lang.String" valueType="Java" pattern="reference">retmsg/erortx</process:inputVariable>
+    </process:inputVariables>
+    <process:outputVariables/>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="invokePojo4label" name="label" nodeType="label">
+    <location x="813" y="51"/>
+    <figSize height="17" width="49"/>
+    <node>invokePojo4</node>
+  </nodes>
+  <nodes xsi:type="process:tInvoke" description="" id="invokePojo5" name="抛出异常" displayName="抛出自定义异常FIException" type="invoke" index="0" invokeType="invoke_pojo" varArgs="false">
+    <sourceConnections xsi:type="process:tLink" id="link11" name="link11" displayName="连接线" isDefault="true" type="transition">
+      <sourceNode>invokePojo5</sourceNode>
+      <targetNode>end1</targetNode>
+    </sourceConnections>
+    <targetConnections>link10</targetConnections>
+    <location x="720" y="15"/>
+    <size height="28" width="22"/>
+    <nodeLabel>invokePojo5label</nodeLabel>
+    <process:pojo methodType="static" synchronization="true" transactionType="join">
+      <process:partner type="literal">com.sunline.sunfi.util.ExceptionUtil.throwFIException</process:partner>
+      <process:instance instanceName=""/>
+    </process:pojo>
+    <process:inputVariables>
+      <process:inputVariable id="0" name="errorCode" type="query" value="java.lang.String" valueType="Java" pattern="reference">retmsg/retuin</process:inputVariable>
+      <process:inputVariable id="1" name="errorMessage" type="query" value="java.lang.String" valueType="Java" pattern="reference">retmsg/erortx</process:inputVariable>
+    </process:inputVariables>
+    <process:outputVariables/>
+  </nodes>
+  <nodes xsi:type="model:NodeElementLabel" id="invokePojo5label" name="label" nodeType="label">
+    <location x="707" y="51"/>
+    <figSize height="17" width="49"/>
+    <node>invokePojo5</node>
+  </nodes>
+  <topRuler/>
+  <leftRuler/>
+  <process:info author="weixin" createTime="2018-12-27 17:45:57" date="2018-12-27Z" description="" name="setMesgByProcedure" version="7.0.0.0"/>
+  <process:variables>
+    <process:variable description="" historyStateLocation="client" isArray="true" name="singleKey" primitiveType="String"/>
+    <process:variable description="" historyStateLocation="client" isArray="true" name="muKey" primitiveType="String"/>
+  </process:variables>
+  <process:inputs varArgs="false">
+    <process:input anyType="java.util.HashMap" description="" isArray="false" name="workFlowMap"/>
+    <process:input description="" isArray="false" name="appflow" primitiveType="String"/>
+    <process:input description="" isArray="false" name="prcscd" primitiveType="String"/>
+  </process:inputs>
+  <process:outputs/>
+  <process:extAttribute1>public</process:extAttribute1>
+  <process:transactionType>true</process:transactionType>
+</process:tBusinessLogic>
